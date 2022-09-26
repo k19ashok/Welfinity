@@ -247,7 +247,7 @@
           {% csrf_token %}
           <div class="form-group col-12 col-md-6">
             <div class="input-group">
-              <input type="text" name="searchid" class="form-control">
+              <input type="text" name="searchid" class="form-control" required>
               <button type="submit" class="btn btn-success rounded">
                 <i class="fa fa-search" aria-hidden="true"></i>
               </button>
@@ -276,9 +276,9 @@
         {% csrf_token %}
         <div class="row" id="accordion">
           <div class="card col-12 p-0">
-            <div class="card-header bg-info">
+            <div class="card-header bg-info" data-toggle="collapse" data-target="#who">
               <h3 class="mb-0">
-                <a href="" data-toggle="collapse" data-target="#who">WHO</a>
+                <a href="">WHO</a>
               </h3>
             </div>
             <div id="who" data-parent="#accordion" class="collapse show">
@@ -288,7 +288,7 @@
                     >Title</label
                   >
                   <div class="col-12 col-sm-5 col-lg-3">
-                    <select name="title" class="form-control">
+                    <select name="title" class="form-control" required>
                       <option value="Mr">Mr</option>
                       <option value="Mrs">Mrs</option>
                       <option value="Ms">Ms</option>
@@ -304,6 +304,7 @@
                       name="firstname"
                       placeholder="First Name"
                       class="form-control"
+                      required
                     />
                   </div>
                   <div class="col-12 col-sm-5 col-lg-3 mt-1 mt-sm-0">
@@ -318,16 +319,16 @@
                 <div class="form-group row container">
                   <label for="dob" class="col-form-label col-lg-3">DOB</label>
                   <div class="col-12 col-sm-5 col-lg-3">
-                    <input type="date" name="dob" class="form-control" />
+                    <input type="date" name="dob" class="form-control" required />
                   </div>
                 </div>
                 <div class="form-group row container">
                   <label for="sex" class="col-form-label col-lg-3">Sex</label>
                   <div class="col-12 col-sm-5 col-lg-3">
-                    <select name="sex" class="form-control">
-                      <option value="male">Male</option>
-                      <option value="female">Female</option>
-                      <option value="other">Other</option>
+                    <select name="sex" class="form-control" required>
+                      <option value="Male">Male</option>
+                      <option value="Femail">Female</option>
+                      <option value="Other">Other</option>
                     </select>
                   </div>
                 </div>
@@ -373,9 +374,9 @@
           </div>
 
           <div class="card col-12 p-0">
-            <div class="card-header bg-info">
+            <div class="card-header bg-info" data-toggle="collapse" data-target="#contact">
               <h3 class="mb-0">
-                <a href="" data-toggle="collapse" data-target="#contact"
+                <a href="" 
                   >CONTACT</a
                 >
               </h3>
@@ -453,6 +454,7 @@
                       name="phone"
                       placeholder="10 digit Mobile"
                       class="form-control"
+                      required
                     />
                   </div>
                   <label for="email" class="col-form-label col-12"
@@ -485,9 +487,9 @@
           </div>
 
           <div class="card col-12 p-0">
-            <div class="card-header bg-info">
+            <div class="card-header bg-info" data-toggle="collapse" data-target="#choices">
               <h3 class="mb-0">
-                <a href="" data-toggle="collapse" data-target="#choices"
+                <a href="" 
                   >CHOICES</a
                 >
               </h3>
@@ -500,8 +502,8 @@
                   >
                   <div class="col-12 col-md-5 col-lg-3">
                     <select name="hipaa" class="form-control">
-                      <option value="yes">Yes</option>
-                      <option value="no">No</option>
+                      <option value="Yes">Yes</option>
+                      <option value="No">No</option>
                     </select>
                   </div>
                   <label for="allowvoice" class="col-form-label col-lg-3"
@@ -509,8 +511,8 @@
                   >
                   <div class="col-12 col-md-5 col-lg-3">
                     <select name="allowvoice" class="form-control">
-                      <option value="yes">Yes</option>
-                      <option value="no">No</option>
+                      <option value="Yes">Yes</option>
+                      <option value="No">No</option>
                     </select>
                   </div>
                 </div>
@@ -520,8 +522,8 @@
                   >
                   <div class="col-12 col-md-5 col-lg-3">
                     <select name="allowmail" class="form-control">
-                      <option value="yes">Yes</option>
-                      <option value="no">No</option>
+                      <option value="Yes">Yes</option>
+                      <option value="No">No</option>
                     </select>
                   </div>
                   <label for="leavemsg" class="col-form-label col-lg-3"
@@ -537,8 +539,8 @@
                   >
                   <div class="col-12 col-md-5 col-lg-3">
                     <select name="allowimmreg" class="form-control">
-                      <option value="yes">Yes</option>
-                      <option value="no">No</option>
+                      <option value="Yes">Yes</option>
+                      <option value="No">No</option>
                     </select>
                   </div>
                   <label for="allowimmshare" class="col-form-label col-lg-3"
@@ -546,8 +548,8 @@
                   >
                   <div class="col-12 col-md-5 col-lg-3">
                     <select name="allowimmshare" class="form-control">
-                      <option value="yes">Yes</option>
-                      <option value="no">No</option>
+                      <option value="Yes">Yes</option>
+                      <option value="No">No</option>
                     </select>
                   </div>
                 </div>
@@ -557,8 +559,8 @@
                   >
                   <div class="col-12 col-md-5 col-lg-3">
                     <select name="allowhie" class="form-control">
-                      <option value="yes">Yes</option>
-                      <option value="no">No</option>
+                      <option value="Yes">Yes</option>
+                      <option value="No">No</option>
                     </select>
                   </div>
                   <label for="allowpp" class="col-form-label col-lg-3"
@@ -566,8 +568,8 @@
                   >
                   <div class="col-12 col-md-5 col-lg-3">
                     <select name="allowpp" class="form-control">
-                      <option value="yes">Yes</option>
-                      <option value="no">No</option>
+                      <option value="Yes">Yes</option>
+                      <option value="No">No</option>
                     </select>
                   </div>
                 </div>
@@ -578,9 +580,9 @@
                   >
                   <div class="col-12 col-md-5 col-lg-3">
                     <select name="immstatus" class="form-control">
-                      <option value="active">Active</option>
-                      <option value="inactive">Inactive</option>
-                      <option value="unknown">Unknown</option>
+                      <option value="Active">Active</option>
+                      <option value="Inactive">Inactive</option>
+                      <option value="Unknown">Unknown</option>
                     </select>
                   </div>
                   <label for="imstatusdt" class="col-form-label col-lg-3"
@@ -624,10 +626,10 @@
                   >
                   <div class="col-12 col-md-5 col-lg-3">
                     <select name="carestatus" class="form-control">
-                      <option value="unassigned">Unassigned</option>
-                      <option value="active">Active</option>
-                      <option value="inactive">Inactive</option>
-                      <option value="suuspended">Suspended</option>
+                      <option value="Unassigned">Unassigned</option>
+                      <option value="Active">Active</option>
+                      <option value="Inactive">Inactive</option>
+                      <option value="Suspended">Suspended</option>
                     </select>
                   </div>
                   <label for="ptcat" class="col-form-label col-lg-3"
@@ -648,9 +650,9 @@
           </div>
 
           <div class="card col-12 p-0">
-            <div class="card-header bg-info">
+            <div class="card-header bg-info" data-toggle="collapse" data-target="#employer">
               <h3 class="mb-0">
-                <a href="" data-toggle="collapse" data-target="#employer"
+                <a href="" 
                   >EMPLOYER</a
                 >
               </h3>
@@ -709,9 +711,9 @@
           </div>
 
           <div class="card col-12 p-0">
-            <div class="card-header bg-info">
+            <div class="card-header bg-info" data-toggle="collapse" data-target="#stats">
               <h3 class="mb-0">
-                <a href="" data-toggle="collapse" data-target="#stats">STATS</a>
+                <a href="" >STATS</a>
               </h3>
             </div>
             <div id="stats" data-parent="#accordion" class="collapse">
@@ -735,10 +737,10 @@
                   >
                   <div class="col-12 col-sm-5 col-lg-3">
                     <select name="ethnicity" class="form-control">
-                      <option value="unassigned">Unassigned</option>
-                      <option value="declined">Declined to specify</option>
-                      <option value="hisorlat">Hispanic or Latino</option>
-                      <option value="nothisorlat">
+                      <option value="Unassigned">Unassigned</option>
+                      <option value="Declined to specify">Declined to specify</option>
+                      <option value="Hispanic or Latino">Hispanic or Latino</option>
+                      <option value="Not Hispanic or Latino">
                         Not Hispanic or Latino
                       </option>
                     </select>
@@ -771,7 +773,7 @@
 
                 <div class="form-group row container">
                   <label for="homeless" class="col-form-label col-lg-3"
-                    >Homeless etc,</label
+                    >Homeless etc,?</label
                   >
                   <div class="col-12 col-sm-5 col-lg-3">
                     <input type="text" name="homeless" class="form-control" />
@@ -781,8 +783,8 @@
                   >
                   <div class="col-12 col-sm-8 col-lg-3">
                     <select name="migrant" class="form-control">
-                      <option value="yes">Yes</option>
-                      <option value="no">No</option>
+                      <option value="Yes">Yes</option>
+                      <option value="No">No</option>
                     </select>
                   </div>
                 </div>
@@ -798,8 +800,8 @@
                   >
                   <div class="col-12 col-sm-8 col-lg-3">
                     <select name="vfc" class="form-control">
-                      <option value="yes">Yes</option>
-                      <option value="no">No</option>
+                      <option value="Yes">Yes</option>
+                      <option value="No">No</option>
                     </select>
                   </div>
                 </div>
@@ -808,9 +810,9 @@
           </div>
 
           <div class="card col-12 p-0">
-            <div class="card-header bg-info">
+            <div class="card-header bg-info" data-toggle="collapse" data-target="#misc">
               <h3 class="mb-0">
-                <a href="" data-toggle="collapse" data-target="#misc">MISC</a>
+                <a href="">MISC</a>
               </h3>
             </div>
             <div id="misc" data-parent="#accordion" class="collapse">
@@ -867,9 +869,9 @@
                   >
                   <div class="col-12 col-sm-5 col-lg-3">
                     <select name="guardiansex" class="form-control">
-                      <option value="male">Male</option>
-                      <option value="female">Female</option>
-                      <option value="other">Other</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Other">Other</option>
                     </select>
                   </div>
                 </div>

@@ -271,7 +271,7 @@ background-color: pink;
             <div class="row align-items-center">
               <div class="col-3"><i class="fa-solid fa-user fa-5x"></i></div>
               <div class="col-6">
-                <h4 class="text-dark">{{ pt.title }} {{pt.fname }} {{ pt.lname }}</h4>
+                <h4 class="text-dark"><strong class="text-info">{{ pt.title }} {{pt.fname }} {{ pt.lname }}</strong></h4>
                 <h6><small>{{ pt.pid }}</small></h6>
               </div>
             </div>
@@ -282,7 +282,7 @@ background-color: pink;
           <form action="{% url 'getEnc' pt.pid %}" class="w-100" method="post">
             {% csrf_token %}
             <div class="form-group row container">
-              <select name="encval" class="form-control col-6">
+              <select name="encval" class="form-control col-6" required>
                 {% for i in enc %}
                   <option value="{{ i.encid }}">{{ i.dos }}</option>
                 {% endfor %}
@@ -805,8 +805,8 @@ background-color: pink;
           <div class="row">
             <div class="col-12 col-md-5 row-content">
               <div class="card">
-                <div class="card-header bg-primary">
-                  <a data-target="#medicalproblems" data-toggle="modal" href="">
+                <div class="card-header bg-primary" data-target="#medicalproblems" data-toggle="modal">
+                  <a href="">
                     <h4>Medical Problems</h4>
                   </a>
                 </div>
@@ -889,7 +889,7 @@ background-color: pink;
                     {% endfor %}
 
                   {% else %}
-                  No Problems added.
+                  <h6>No Problems added.</h6>
                   {% endif %}
 
                 </div>
@@ -898,8 +898,8 @@ background-color: pink;
             
               <div class="col-12 col-md-5 row-content">
                 <div class="card">
-                  <div class="card-header bg-primary">
-                    <a href="" data-target="#prescriptions" data-toggle="modal">
+                  <div class="card-header bg-primary" data-target="#prescriptions" data-toggle="modal">
+                    <a href="" >
                       <h4>Prescriptions</h4>
                     </a>
                   </div>
@@ -1042,7 +1042,7 @@ background-color: pink;
                   <label for="dos" class="col-form-label col-lg-3"
                     >Date of Service</label>
                   <div class="col-12 col-sm-5 col-lg-3">
-                    <input type="date" class="form-control" name="dos">
+                    <input type="date" class="form-control" name="dos" required>
                   </div>
                   <label for="onsetdt" class="col-form-label col-lg-3"
                     >Onset/Hosp Date</label>
@@ -1056,7 +1056,7 @@ background-color: pink;
                   <label for="encprovider" class="col-form-label col-lg-3"
                     >Encounter Provider</label>
                   <div class="col-12 col-sm-5 col-lg-3">
-                    <input type="text" name="encprovider" class="form-control">
+                    <input type="text" name="encprovider" class="form-control" required>
                     <!-- <select name="encprovider" class="form-control">
                       <option value="Mr">Mr</option>
                       <option value="Mrs">Mrs</option>
@@ -1081,7 +1081,7 @@ background-color: pink;
                   <label for="facility" class="col-form-label col-lg-3"
                     >Facility</label>
                   <div class="col-12 col-sm-5 col-lg-3">
-                    <input type="text" name="facility" class="form-control" id="">
+                    <input type="text" name="facility" class="form-control" id="" required>
                     <!-- <select name="facility" class="form-control">
                       <option value="Mr">Mr</option>
                       <option value="Mrs">Mrs</option>
@@ -1118,6 +1118,7 @@ background-color: pink;
                         name="visitreason"
                         class="form-control"
                         rows="3"
+                        required
                       ></textarea>
                     </div>
                   </div>
@@ -1169,14 +1170,14 @@ background-color: pink;
                 <div class="row form-group container">
                   <div class="col-12 col-md-4"><label for="startdate" class="col-form-label">Start Date</label></div>
                   <div class="col-12 col-md-4">
-                    <input type="date" name="startdate" class="form-control">
+                    <input type="date" name="startdate" class="form-control" required>
                   </div>
                 </div>
 
                 <div class="row form-group container">
                   <div class="col-12 col-md-4"><label for="provider" class="col-form-label">Provider</label></div>
                   <div class="col-12 col-md-4">
-                    <input type="text" name="provider" class="form-control">
+                    <input type="text" name="provider" class="form-control" required>
                   </div>
                 </div>
 
@@ -1184,7 +1185,7 @@ background-color: pink;
                   <div class="row form-group container">
                     <div class="col-12 col-md-4"><label for="drug" class="col-form-label">Drug</label></div>
                     <div class="col-12 col-md-4">
-                      <input type="text" name="drug" class="form-control">
+                      <input type="text" name="drug" class="form-control" required>
                     </div>
                   </div>
                   <div class="row form-group container">
@@ -1195,7 +1196,7 @@ background-color: pink;
                   </div>
                 </div>
                 <div class="form-group row container justify-content-center">
-                  <div class="col-12"><button type="button" class="btn btn-primary" id="rowAdder"><i class="fa fa-plus" aria-hidden="true"></i></button></div>
+                  <div class="col-12"><button type="button" class="btn btn-primary" id="rowAdder" disabled><i class="fa fa-plus" aria-hidden="true"></i></button></div>
                 </div>
 
 
@@ -1305,14 +1306,14 @@ background-color: pink;
                 <div class="row form-group container">
                   <div class="col-12 col-md-4"><label for="begindate" class="col-form-label">Begin Date</label></div>
                   <div class="col-12 col-md-4">
-                    <input type="date" name="begindate" class="form-control">
+                    <input type="date" name="begindate" class="form-control" required>
                   </div>
                 </div>
 
                 <div class="row form-group container">
                   <div class="col-12 col-md-4"><label for="endddate" class="col-form-label">End Date</label></div>
                   <div class="col-12 col-md-4">
-                    <input type="date" name="endddate" class="form-control">
+                    <input type="date" name="endddate" class="form-control" required>
                   </div>
                 </div>
 
