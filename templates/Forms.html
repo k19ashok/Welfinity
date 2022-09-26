@@ -1,0 +1,3452 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script
+      type="text/javascript"
+      async=""
+      src="https://www.googletagmanager.com/gtag/js?id=G-6Q5PTWDYFM&amp;l=dataLayer&amp;cx=c"
+    ></script>
+    <script
+      async=""
+      src="https://www.googletagmanager.com/gtm.js?id=GTM-KZ9FQPX"
+    ></script>
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-KZ9FQPX");
+    </script>
+    <!-- End Google Tag Manager -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="title"
+      content="Welfinity Healthcare- Care At home, Nursing Care, Elder care, Nanny Care, Critical Care"
+    />
+    <meta
+      name="description"
+      content="Welfinity Healthcare Offers Personal Care for Elders, Nursing care for Needy, Nanny Care for babies , Critical Care of Sick in  Hyderabad , Bangalore cities and in Telangana, Andhra Pradesh, Karnataka as well"
+    />
+    <meta
+      name="abstract"
+      content="Welfinity Healthcare Offers Personal Care for Elders, Nursing care for Needy, Nanny Care for babies , Critical Care of Sick in  Hyderabad , Bangalore cities and in Telangana, Andhra Pradesh, Karnataka as well"
+    />
+    <meta
+      name="keywords"
+      content="Personal Care, Nursing care, Nanny Care, Critical Care, India , Hyderabad, Telangana, Andhrapradesh, Karnakata"
+    />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <title>Patient Dashboard</title>
+
+    <link href="js/app.7a158adf.js" rel="preload" as="script" />
+    <link href="js/chunk-vendors.8d040eea.js" rel="preload" as="script" />
+    <link
+      href="{% static 'css/chunk-vendors.d3feeb92.css' %}"
+      rel="stylesheet"
+    />
+    <link href="{% static 'css/app.d80733da.css' %}" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+
+    <style>
+      .row-content {
+        margin: 0px auto;
+        padding: 50px 0px 50px 0px;
+      }
+      .nav-tabs .nav-items {
+        size: 80%;
+      }
+
+      .mycolor {
+        background-color: pink;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="nav">
+      <div>
+        <nav class="navbar navbar-expand-lg">
+          <div class="container">
+            <a href="#" class="navbar-brand"
+              ><img
+                src="{% static 'img/nav_logo.31378e7a.png' %}"
+                alt="nav_logo"
+                width="200rem" /></a
+            ><button
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+              class="navbar-toggler"
+            >
+              <span class="navbar-toggler-icon"
+                ><i id="toggler-icon" class="fa fa-navicon"></i
+              ></span>
+            </button>
+            <div id="navbarNav" class="collapse navbar-collapse">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a href="/aboutUs" class=""
+                    ><a
+                      href="#"
+                      data-toggle="collapse"
+                      data-target="#navbarNav"
+                      class="nav-link"
+                      >About</a
+                    ></a
+                  >
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    data-toggle="dropdown"
+                    href="#"
+                    role="button"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    class="nav-link dropdown-toggle"
+                  >
+                    Services
+                  </a>
+                  <div class="dropdown-menu">
+                    <a
+                      href="/personalCare"
+                      class="dropdown-item"
+                      data-toggle="collapse"
+                      data-target="#navbarNav"
+                      >Personal Care</a
+                    >
+                    <div class="dropdown-divider"></div>
+                    <a
+                      href="/nannyCare"
+                      class="dropdown-item"
+                      data-toggle="collapse"
+                      data-target="#navbarNav"
+                      >Nanny Care</a
+                    >
+                    <div class="dropdown-divider"></div>
+                    <a
+                      href="/criticalCare"
+                      class="dropdown-item"
+                      data-toggle="collapse"
+                      data-target="#navbarNav"
+                      >Critical Care</a
+                    >
+                    <div class="dropdown-divider"></div>
+                    <a
+                      href="/nursingCare"
+                      class="dropdown-item"
+                      data-toggle="collapse"
+                      data-target="#navbarNav"
+                      >Nursing Care</a
+                    >
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a
+                    href="/blog"
+                    class="nav-link"
+                    data-toggle="collapse"
+                    data-target="#navbarNav"
+                    >Blog
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    href="/career"
+                    class="nav-link"
+                    data-toggle="collapse"
+                    data-target="#navbarNav"
+                    >Jobs
+                  </a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    data-toggle="dropdown"
+                    href="#"
+                    role="button"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    class="nav-link dropdown-toggle"
+                  >
+                    Help
+                  </a>
+                  <div class="dropdown-menu">
+                    <a
+                      href="/faqs"
+                      class="dropdown-item"
+                      data-toggle="collapse"
+                      data-target="#navbarNav"
+                      >FAQs </a
+                    ><!----><!---->
+                    <div class="dropdown-divider"></div>
+                    <a
+                      href="/cancellationpolicy"
+                      class="dropdown-item"
+                      data-toggle="collapse"
+                      data-target="#navbarNav"
+                      >Cancellation Policy</a
+                    >
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a
+                    href="/login"
+                    class="nav-link contact"
+                    data-toggle="collapse"
+                    data-target="#navbarNav"
+                    >Sign In
+                  </a>
+                </li>
+                <li class="nav-item dropdown">
+                  <!---->
+                  <div class="dropdown-menu">
+                    <a
+                      href="/register"
+                      class="dropdown-item"
+                      data-toggle="collapse"
+                      data-target="#navbarNav"
+                      >My Profile</a
+                    ><!----><!----><!----><!---->
+                    <div class="dropdown-divider"></div>
+                    <!---->
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="container">
+      <button data-target="#clinicalnotes" data-toggle="modal">ABCD</button>
+
+      <button data-target="#ros" data-toggle="modal">EFGH</button>
+      <button data-target="#soap" data-toggle="modal">IJKL</button>
+      <button data-target="#vitals" data-toggle="modal">MNOP</button>
+    </div>
+
+    <!-- VITALS -->
+
+    <div
+      class="modal fade"
+      id="vitals"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="vitals"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="vitalslabel">VITALS</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form action="" method="post">
+            {% csrf_token %}
+            <div class="modal-body">
+              <div class="container">
+                <div class="card-header">
+                  <div class="row">
+                    <div class="col-3">
+                      <h5>Name</h5>
+                    </div>
+                    <div class="col-2">
+                      <h5>Units</h5>
+                    </div>
+                    <div class="col-2">
+                      <h5>Value</h5>
+                    </div>
+                    <div class="col-3">
+                      <h5>Abnormality</h5>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="container mt-4">
+                  <div class="row form-group">
+                    <div class="col-3">
+                      <h6>Weight</h6>
+                    </div>
+                    <div class="col-2">
+                      <h6>kg</h6>
+                    </div>
+                    <div class="col-2">
+                      <input type="text" class="form-control" name="weight" />
+                    </div>
+                    <div class="col-4">
+                      <select name="weightabn" class="form-control">
+                        <option value="normal">Normal</option>
+                        <option value="high">High</option>
+                        <option value="low ">Low</option>
+                        <option value="criticalabnormal">
+                          Critical Abnormal
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="row form-group">
+                    <div class="col-3">
+                      <h6>Weight</h6>
+                    </div>
+                    <div class="col-2">
+                      <h6>kg</h6>
+                    </div>
+                    <div class="col-2">
+                      <input type="text" class="form-control" name="weight" />
+                    </div>
+                    <div class="col-4">
+                      <select name="weightabn" class="form-control">
+                        <option value="normal">Normal</option>
+                        <option value="high">High</option>
+                        <option value="low ">Low</option>
+                        <option value="criticalabnormal">
+                          Critical Abnormal
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row form-group">
+                    <div class="col-3">
+                      <h6>Height</h6>
+                    </div>
+                    <div class="col-2">
+                      <h6>cm</h6>
+                    </div>
+                    <div class="col-2">
+                      <input type="text" class="form-control" name="height" />
+                    </div>
+                    <div class="col-4">
+                      <select name="heightabn" class="form-control">
+                        <option value="normal">Normal</option>
+                        <option value="high">High</option>
+                        <option value="low ">Low</option>
+                        <option value="criticalabnormal">
+                          Critical Abnormal
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row form-group">
+                    <div class="col-3">
+                      <h6>BP Systolic</h6>
+                    </div>
+                    <div class="col-2">
+                      <h6>mm/Hg</h6>
+                    </div>
+                    <div class="col-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="bpsystolic"
+                      />
+                    </div>
+                    <div class="col-4">
+                      <select name="bpsystolicabn" class="form-control">
+                        <option value="normal">Normal</option>
+                        <option value="high">High</option>
+                        <option value="low ">Low</option>
+                        <option value="criticalabnormal">
+                          Critical Abnormal
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row form-group">
+                    <div class="col-3">
+                      <h6>BP Diastolic</h6>
+                    </div>
+                    <div class="col-2">
+                      <h6>mm/Hg</h6>
+                    </div>
+                    <div class="col-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="bpdiastolic"
+                      />
+                    </div>
+                    <div class="col-4">
+                      <select name="bpdiastolicabn" class="form-control">
+                        <option value="normal">Normal</option>
+                        <option value="high">High</option>
+                        <option value="low ">Low</option>
+                        <option value="criticalabnormal">
+                          Critical Abnormal
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row form-group">
+                    <div class="col-3">
+                      <h6>Pulse</h6>
+                    </div>
+                    <div class="col-2">
+                      <h6>per min</h6>
+                    </div>
+                    <div class="col-2">
+                      <input type="text" class="form-control" name="pulse" />
+                    </div>
+                    <div class="col-4">
+                      <select name="pulseabn" class="form-control">
+                        <option value="normal">Normal</option>
+                        <option value="high">High</option>
+                        <option value="low ">Low</option>
+                        <option value="criticalabnormal">
+                          Critical Abnormal
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row form-group">
+                    <div class="col-3">
+                      <h6>Respiration</h6>
+                    </div>
+                    <div class="col-2">
+                      <h6>per min</h6>
+                    </div>
+                    <div class="col-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="respiration"
+                      />
+                    </div>
+                    <div class="col-4">
+                      <select name="respirationabn" class="form-control">
+                        <option value="normal">Normal</option>
+                        <option value="high">High</option>
+                        <option value="low ">Low</option>
+                        <option value="criticalabnormal">
+                          Critical Abnormal
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row form-group">
+                    <div class="col-3">
+                      <h6>Temperature</h6>
+                    </div>
+                    <div class="col-2">
+                      <h6>F</h6>
+                    </div>
+                    <div class="col-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="temperature"
+                      />
+                    </div>
+                    <div class="col-4">
+                      <select name="temperatureabn" class="form-control">
+                        <option value="normal">Normal</option>
+                        <option value="high">High</option>
+                        <option value="low ">Low</option>
+                        <option value="criticalabnormal">
+                          Critical Abnormal
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row form-group">
+                    <div class="col-3">
+                      <h6>Oxygen Saturation</h6>
+                    </div>
+                    <div class="col-2">
+                      <h6>%</h6>
+                    </div>
+                    <div class="col-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="oxygensaturation"
+                      />
+                    </div>
+                    <div class="col-4">
+                      <select name="oxygensaturationabn" class="form-control">
+                        <option value="normal">Normal</option>
+                        <option value="high">High</option>
+                        <option value="low ">Low</option>
+                        <option value="criticalabnormal">
+                          Critical Abnormal
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row form-group">
+                    <div class="col-3">
+                      <h6>Oxygen flow Rate</h6>
+                    </div>
+                    <div class="col-2">
+                      <h6>l/min</h6>
+                    </div>
+                    <div class="col-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="oxygenflowrate"
+                      />
+                    </div>
+                    <div class="col-4">
+                      <select name="oxygenflowrateabn" class="form-control">
+                        <option value="normal">Normal</option>
+                        <option value="high">High</option>
+                        <option value="low ">Low</option>
+                        <option value="criticalabnormal">
+                          Critical Abnormal
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row form-group">
+                    <div class="col-3">
+                      <h6>Inhaled Oxygen Conc</h6>
+                    </div>
+                    <div class="col-2">
+                      <h6>%</h6>
+                    </div>
+                    <div class="col-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="inhaledoxygenconc"
+                      />
+                    </div>
+                    <div class="col-4">
+                      <select name="inhaledoxygenconcabn" class="form-control">
+                        <option value="normal">Normal</option>
+                        <option value="high">High</option>
+                        <option value="low ">Low</option>
+                        <option value="criticalabnormal">
+                          Critical Abnormal
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row form-group">
+                    <div class="col-3">
+                      <h6>Head Circumference</h6>
+                    </div>
+                    <div class="col-2">
+                      <h6>in</h6>
+                    </div>
+                    <div class="col-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="headcircumference"
+                      />
+                    </div>
+                    <div class="col-4">
+                      <select name="headcircumferenceabn" class="form-control">
+                        <option value="normal">Normal</option>
+                        <option value="high">High</option>
+                        <option value="low ">Low</option>
+                        <option value="criticalabnormal">
+                          Critical Abnormal
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row form-group">
+                    <div class="col-3">
+                      <h6>Waist Circumference</h6>
+                    </div>
+                    <div class="col-2">
+                      <h6>cm</h6>
+                    </div>
+                    <div class="col-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="waistcircumference"
+                      />
+                    </div>
+                    <div class="col-4">
+                      <select name="waistcircumferenceabn" class="form-control">
+                        <option value="normal">Normal</option>
+                        <option value="high">High</option>
+                        <option value="low ">Low</option>
+                        <option value="criticalabnormal">
+                          Critical Abnormal
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row form-group">
+                    <div class="col-3">
+                      <h6>BMI</h6>
+                    </div>
+                    <div class="col-2">
+                      <h6>kg/m^2</h6>
+                    </div>
+                    <div class="col-2">
+                      <input type="text" class="form-control" name="bmi" />
+                    </div>
+                    <div class="col-4">
+                      <select name="bmiabn" class="form-control">
+                        <option value="normal">Normal</option>
+                        <option value="high">High</option>
+                        <option value="low ">Low</option>
+                        <option value="criticalabnormal">
+                          Critical Abnormal
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row form-group">
+                    <div class="col-3">
+                      <h6>Pediatric BMI Percentile</h6>
+                    </div>
+                    <div class="col-2">
+                      <h6>%</h6>
+                    </div>
+                    <div class="col-2">
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="pediatricbmipercentile"
+                      />
+                    </div>
+                    <div class="col-4">
+                      <select
+                        name="pediatricbmipercentileabn"
+                        class="form-control"
+                      >
+                        <option value="normal">Normal</option>
+                        <option value="high">High</option>
+                        <option value="low ">Low</option>
+                        <option value="criticalabnormal">
+                          Critical Abnormal
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- SOAP -->
+
+    <div
+      class="modal fade"
+      id="soap"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="soap"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="soaplabel">SOAP</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form action="" method="post">
+            {% csrf_token %}
+            <div class="modal-body">
+              <div class="container">
+                <div class="row">
+                  <div class="card w-100">
+                    <h5 class="card-header">Subjective</h5>
+                    <div class="card-body">
+                      <textarea
+                        name="subjective"
+                        class="form-control"
+                        cols="30"
+                        rows="5"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="card w-100">
+                    <h5 class="card-header">Objective</h5>
+                    <div class="card-body">
+                      <textarea
+                        name="objective"
+                        class="form-control"
+                        cols="30"
+                        rows="5"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="card w-100">
+                    <h5 class="card-header">Assesment</h5>
+                    <div class="card-body">
+                      <textarea
+                        name="assesment"
+                        class="form-control"
+                        cols="30"
+                        rows="5"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="card w-100">
+                    <h5 class="card-header">Plan</h5>
+                    <div class="card-body">
+                      <textarea
+                        name="plan"
+                        class="form-control"
+                        cols="30"
+                        rows="5"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROS -->
+
+    <div
+      class="modal fade"
+      id="ros"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="ros"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="roslabel">Review of Systems</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form action="" method="post">
+            {% csrf_token %}
+            <div class="modal-body">
+              <div class="container">
+                <h6 class="card-header">CONSTITUTIONAL</h6>
+
+                <div class="form-group row container mt-4">
+                  <label
+                    for="weightchange"
+                    class="col-form-label col-12 col-md-6"
+                    >Weight Change</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="weightchange"
+                        id="weightchange1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="weightchange1"
+                        >YES</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="weightchange"
+                        id="weightchange2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="weightchange2"
+                        >NO</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="weightchange"
+                        id="weightchange3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="weightchange3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label for="anorexia" class="col-form-label col-12 col-md-6"
+                    >Anorexia</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="anorexia"
+                        id="anorexia1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="anorexia1"
+                        >YES</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="anorexia"
+                        id="anorexia2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="anorexia2">NO</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="anorexia"
+                        id="anorexia3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="anorexia3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label
+                    for="nightsweats"
+                    class="col-form-label col-12 col-md-6"
+                    >Night Sweats</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="nightsweats"
+                        id="nightsweats1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="nightsweats1"
+                        >YES</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="nightsweats"
+                        id="nightsweats2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="nightsweats2"
+                        >NO</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="nightsweats"
+                        id="nightsweats3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="nightsweats3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label for="heatorcold" class="col-form-label col-12 col-md-6"
+                    >Heat or Cold</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="heatorcold"
+                        id="heatorcold1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="heatorcold1"
+                        >YES</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="heatorcold"
+                        id="heatorcold2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="heatorcold2"
+                        >NO</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="heatorcold"
+                        id="heatorcold3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="heatorcold3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label for="weakness" class="col-form-label col-12 col-md-6"
+                    >Weakness</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="weakness"
+                        id="weakness1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="weakness1"
+                        >YES</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="weakness"
+                        id="weakness2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="weakness2">NO</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="weakness"
+                        id="weakness3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="weakness3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label for="fever" class="col-form-label col-12 col-md-6"
+                    >Fever</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="fever"
+                        id="fever1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="fever1">YES</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="fever"
+                        id="fever2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="fever2">NO</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="fever"
+                        id="fever3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="fever3">N/A </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label for="insomnia" class="col-form-label col-12 col-md-6"
+                    >Insomnia</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="insomnia"
+                        id="insomnia1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="insomnia1"
+                        >YES</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="insomnia"
+                        id="insomnia2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="insomnia2">NO</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="insomnia"
+                        id="insomnia3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="insomnia3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label
+                    for="intolerence"
+                    class="col-form-label col-12 col-md-6"
+                    >Intolerence</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="intolerence"
+                        id="intolerence1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="intolerence1"
+                        >YES</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="intolerence"
+                        id="intolerence2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="intolerence2"
+                        >NO</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="intolerence"
+                        id="intolerence3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="intolerence3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label for="fatigue" class="col-form-label col-12 col-md-6"
+                    >Fatigue</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="fatigue"
+                        id="fatigue1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="fatigue1">YES</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="fatigue"
+                        id="fatigue2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="fatigue2">NO</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="fatigue"
+                        id="fatigue3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="fatigue3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label for="chills" class="col-form-label col-12 col-md-6"
+                    >Chills</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="chills"
+                        id="chills1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="chills1">YES</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="chills"
+                        id="chills2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="chills2">NO</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="chills"
+                        id="chills3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="chills3">N/A </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label
+                    for="irritability"
+                    class="col-form-label col-12 col-md-6"
+                    >irritability</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="irritability"
+                        id="irritability1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="irritability1"
+                        >YES</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="irritability"
+                        id="irritability2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="irritability2"
+                        >NO</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="irritability"
+                        id="irritability3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="irritability3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <h6 class="card-header">EYES</h6>
+
+                <div class="form-group row container mt-4">
+                  <label
+                    for="changeinvision"
+                    class="col-form-label col-12 col-md-6"
+                    >Change in Vision</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="changeinvision"
+                        id="changeinvision1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="changeinvision1"
+                        >YES</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="changeinvision"
+                        id="changeinvision2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="changeinvision2"
+                        >NO</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="changeinvision"
+                        id="changeinvision3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="changeinvision3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label for="irritation" class="col-form-label col-12 col-md-6"
+                    >Irritation</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="irritation"
+                        id="irritation1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="irritation1"
+                        >YES</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="irritation"
+                        id="irritation2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="irritation2"
+                        >NO</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="irritation"
+                        id="irritation3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="irritation3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label
+                    for="doublevision"
+                    class="col-form-label col-12 col-md-6"
+                    >Double Vision</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="doublevision"
+                        id="doublevision1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="doublevision1"
+                        >YES</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="doublevision"
+                        id="doublevision2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="doublevision2"
+                        >NO</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="doublevision"
+                        id="doublevision3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="doublevision3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label
+                    for="familyhistoryofglaucoma"
+                    class="col-form-label col-12 col-md-6"
+                    >Family History of Glaucoma</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="familyhistoryofglaucoma"
+                        id="familyhistoryofglaucoma1"
+                        value="yes"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="familyhistoryofglaucoma1"
+                        >YES</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="familyhistoryofglaucoma"
+                        id="familyhistoryofglaucoma2"
+                        value="no"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="familyhistoryofglaucoma2"
+                        >NO</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="familyhistoryofglaucoma"
+                        id="familyhistoryofglaucoma3"
+                        value="0"
+                        checked
+                      />
+                      <label
+                        class="form-check-label"
+                        for="familyhistoryofglaucoma3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label for="redness" class="col-form-label col-12 col-md-6"
+                    >Redness</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="redness"
+                        id="redness1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="redness1">YES</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="redness"
+                        id="redness2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="redness2">NO</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="redness"
+                        id="redness3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="redness3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label for="blindspots" class="col-form-label col-12 col-md-6"
+                    >Blind Spots</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="blindspots"
+                        id="blindspots1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="blindspots1"
+                        >YES</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="blindspots"
+                        id="blindspots2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="blindspots2"
+                        >NO</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="blindspots"
+                        id="blindspots3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="blindspots3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label for="eyepain" class="col-form-label col-12 col-md-6"
+                    >Eye Pain</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="eyepain"
+                        id="eyepain1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="eyepain1">YES</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="eyepain"
+                        id="eyepain2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="eyepain2">NO</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="eyepain"
+                        id="eyepain3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="eyepain3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label
+                    for="excessivetearing"
+                    class="col-form-label col-12 col-md-6"
+                    >Excessive tearing</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="excessivetearing"
+                        id="excessivetearing1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="excessivetearing1"
+                        >YES</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="excessivetearing"
+                        id="excessivetearing2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="excessivetearing2"
+                        >NO</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="excessivetearing"
+                        id="excessivetearing3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="excessivetearing3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label
+                    for="photophobia"
+                    class="col-form-label col-12 col-md-6"
+                    >Photophobia</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="photophobia"
+                        id="photophobia1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="photophobia1"
+                        >YES</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="photophobia"
+                        id="photophobia2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="photophobia2"
+                        >NO</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="photophobia"
+                        id="photophobia3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="photophobia3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <h6 class="card-header">EAR NOSE MOUTH THROAT</h6>
+
+                <div class="form-group row container">
+                  <label
+                    for="hearingloss"
+                    class="col-form-label col-12 col-md-6"
+                    >Hearing Loss</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="hearingloss"
+                        id="hearingloss1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="hearingloss1"
+                        >YES</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="hearingloss"
+                        id="hearingloss2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="hearingloss2"
+                        >NO</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="hearingloss"
+                        id="hearingloss3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="hearingloss3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label for="vertigo" class="col-form-label col-12 col-md-6"
+                    >Vertigo</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="vertigo"
+                        id="vertigo1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="vertigo1">YES</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="vertigo"
+                        id="vertigo2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="vertigo2">NO</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="vertigo"
+                        id="vertigo3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="vertigo3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label for="sorethroat" class="col-form-label col-12 col-md-6"
+                    >Sore Throat</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="sorethroat"
+                        id="sorethroat1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="sorethroat1"
+                        >YES</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="sorethroat"
+                        id="sorethroat2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="sorethroat2"
+                        >NO</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="sorethroat"
+                        id="sorethroat3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="sorethroat3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label for="nosebleed" class="col-form-label col-12 col-md-6"
+                    >Nose Bleed</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="nosebleed"
+                        id="nosebleed1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="nosebleed1"
+                        >YES</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="nosebleed"
+                        id="nosebleed2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="nosebleed2"
+                        >NO</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="nosebleed"
+                        id="nosebleed3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="nosebleed3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label for="discharge" class="col-form-label col-12 col-md-6"
+                    >Discharge</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="discharge"
+                        id="discharge1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="discharge1"
+                        >YES</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="discharge"
+                        id="discharge2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="discharge2"
+                        >NO</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="discharge"
+                        id="discharge3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="discharge3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label for="tinnitus" class="col-form-label col-12 col-md-6"
+                    >Tinnitus</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="tinnitus"
+                        id="tinnitus1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="tinnitus1"
+                        >YES</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="tinnitus"
+                        id="tinnitus2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="tinnitus2">NO</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="tinnitus"
+                        id="tinnitus3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="tinnitus3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label
+                    for="sinusproblem"
+                    class="col-form-label col-12 col-md-6"
+                    >Sinus Problem</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="sinusproblem"
+                        id="sinusproblem1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="sinusproblem1"
+                        >YES</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="sinusproblem"
+                        id="sinusproblem2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="sinusproblem2"
+                        >NO</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="sinusproblem"
+                        id="sinusproblem3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="sinusproblem3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label for="snoring" class="col-form-label col-12 col-md-6"
+                    >Snoring</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="snoring"
+                        id="snoring1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="snoring1">YES</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="snoring"
+                        id="snoring2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="snoring2">NO</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="snoring"
+                        id="snoring3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="snoring3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label for="pain" class="col-form-label col-12 col-md-6"
+                    >Pain</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="pain"
+                        id="pain1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="pain1">YES</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="pain"
+                        id="pain2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="pain2">NO</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="pain"
+                        id="pain3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="pain3">N/A </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label
+                    for="frequentcolds"
+                    class="col-form-label col-12 col-md-6"
+                    >Frequent Colds</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="frequentcolds"
+                        id="frequentcolds1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="frequentcolds1"
+                        >YES</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="frequentcolds"
+                        id="frequentcolds2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="frequentcolds2"
+                        >NO</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="frequentcolds"
+                        id="frequentcolds3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="frequentcolds3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label
+                    for="postnasaldrip"
+                    class="col-form-label col-12 col-md-6"
+                    >Post Nasal Drip</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="postnasaldrip"
+                        id="postnasaldrip1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="postnasaldrip1"
+                        >YES</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="postnasaldrip"
+                        id="postnasaldrip2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="postnasaldrip2"
+                        >NO</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="postnasaldrip"
+                        id="postnasaldrip3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="postnasaldrip3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label for="apnea" class="col-form-label col-12 col-md-6"
+                    >Apnea</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="apnea"
+                        id="apnea1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="apnea1">YES</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="apnea"
+                        id="apnea2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="apnea2">NO</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="apnea"
+                        id="apnea3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="apnea3">N/A </label>
+                    </div>
+                  </div>
+                </div>
+
+                <h6 class="card-header">Breast</h6>
+
+                <div class="form-group row container">
+                  <label for="breastmass" class="col-form-label col-12 col-md-6"
+                    >Breast Mass</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="breastmass"
+                        id="breastmass1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="breastmass1"
+                        >YES</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="breastmass"
+                        id="breastmass2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="breastmass2"
+                        >NO</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="breastmass"
+                        id="breastmass3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="breastmass3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label
+                    for="abnormalmammogram"
+                    class="col-form-label col-12 col-md-6"
+                    >Abnormal Mammogram</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="abnormalmammogram"
+                        id="abnormalmammogram1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="abnormalmammogram1"
+                        >YES</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="abnormalmammogram"
+                        id="abnormalmammogram2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="abnormalmammogram2"
+                        >NO</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="abnormalmammogram"
+                        id="abnormalmammogram3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="abnormalmammogram3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label for="discharge" class="col-form-label col-12 col-md-6"
+                    >Discharge</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="discharge"
+                        id="discharge1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="discharge1"
+                        >YES</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="discharge"
+                        id="discharge2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="discharge2"
+                        >NO</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="discharge"
+                        id="discharge3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="discharge3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label for="biopsy" class="col-form-label col-12 col-md-6"
+                    >Biopsy</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="biopsy"
+                        id="biopsy1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="biopsy1">YES</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="biopsy"
+                        id="biopsy2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="biopsy2">NO</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="biopsy"
+                        id="biopsy3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="biopsy3">N/A </label>
+                    </div>
+                  </div>
+                </div>
+
+                <h6 class="card-header">Respiratory</h6>
+
+                <div class="form-group row container">
+                  <label for="cough" class="col-form-label col-12 col-md-6"
+                    >Cough</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="cough"
+                        id="cough1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="cough1">YES</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="cough"
+                        id="cough2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="cough2">NO</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="cough"
+                        id="cough3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="cough3">N/A </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label for="wheezing" class="col-form-label col-12 col-md-6"
+                    >Wheezing</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="wheezing"
+                        id="wheezing1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="wheezing1"
+                        >YES</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="wheezing"
+                        id="wheezing2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="wheezing2">NO</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="wheezing"
+                        id="wheezing3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="wheezing3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label for="copd" class="col-form-label col-12 col-md-6"
+                    >COPD</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="copd"
+                        id="copd1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="copd1">YES</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="copd"
+                        id="copd2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="copd2">NO</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="copd"
+                        id="copd3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="copd3">N/A </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label for="sputum" class="col-form-label col-12 col-md-6"
+                    >Sputum</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="sputum"
+                        id="sputum1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="sputum1">YES</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="sputum"
+                        id="sputum2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="sputum2">NO</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="sputum"
+                        id="sputum3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="sputum3">N/A </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label for="hemoptysis" class="col-form-label col-12 col-md-6"
+                    >Hemoptysis</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="hemoptysis"
+                        id="hemoptysis1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="hemoptysis1"
+                        >YES</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="hemoptysis"
+                        id="hemoptysis2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="hemoptysis2"
+                        >NO</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="hemoptysis"
+                        id="hemoptysis3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="hemoptysis3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label
+                    for="shortnessofbreath"
+                    class="col-form-label col-12 col-md-6"
+                    >Shortness of Breath</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="shortnessofbreath"
+                        id="shortnessofbreath1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="shortnessofbreath1"
+                        >YES</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="shortnessofbreath"
+                        id="shortnessofbreath2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="shortnessofbreath2"
+                        >NO</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="shortnessofbreath"
+                        id="shortnessofbreath3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="shortnessofbreath3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label for="asthma" class="col-form-label col-12 col-md-6"
+                    >Asthma</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="asthma"
+                        id="asthma1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="asthma1">YES</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="asthma"
+                        id="asthma2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="asthma2">NO</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="asthma"
+                        id="asthma3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="asthma3">N/A </label>
+                    </div>
+                  </div>
+                </div>
+
+                <h6 class="card-header">Cardiovascular</h6>
+
+                <div class="form-group row container">
+                  <label for="chestpain" class="col-form-label col-12 col-md-6"
+                    >Chest Pain</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="chestpain"
+                        id="chestpain1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="chestpain1"
+                        >YES</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="chestpain"
+                        id="chestpain2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="chestpain2"
+                        >NO</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="chestpain"
+                        id="chestpain3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="chestpain3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label for="pnd" class="col-form-label col-12 col-md-6"
+                    >PND</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="pnd"
+                        id="pnd1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="pnd1">YES</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="pnd"
+                        id="pnd2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="pnd2">NO</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="pnd"
+                        id="pnd3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="pnd3">N/A </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label
+                    for="historyofheartmurmur"
+                    class="col-form-label col-12 col-md-6"
+                    >History of Heart Murmur</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="historyofheartmurmur"
+                        id="historyofheartmurmur1"
+                        value="yes"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="historyofheartmurmur1"
+                        >YES</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="historyofheartmurmur"
+                        id="historyofheartmurmur2"
+                        value="no"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="historyofheartmurmur2"
+                        >NO</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="historyofheartmurmur"
+                        id="historyofheartmurmur3"
+                        value="0"
+                        checked
+                      />
+                      <label
+                        class="form-check-label"
+                        for="historyofheartmurmur3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label for="peripheral" class="col-form-label col-12 col-md-6"
+                    >Peripheral</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="peripheral"
+                        id="peripheral1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="peripheral1"
+                        >YES</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="peripheral"
+                        id="peripheral2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="peripheral2"
+                        >NO</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="peripheral"
+                        id="peripheral3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="peripheral3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label
+                    for="palpitation"
+                    class="col-form-label col-12 col-md-6"
+                    >Palpitation</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="palpitation"
+                        id="palpitation1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="palpitation1"
+                        >YES</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="palpitation"
+                        id="palpitation2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="palpitation2"
+                        >NO</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="palpitation"
+                        id="palpitation3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="palpitation3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label for="doe" class="col-form-label col-12 col-md-6"
+                    >DOE</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="doe"
+                        id="doe1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="doe1">YES</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="doe"
+                        id="doe2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="doe2">NO</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="doe"
+                        id="doe3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="doe3">N/A </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label for="edema" class="col-form-label col-12 col-md-6"
+                    >Edema</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="edema"
+                        id="edema1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="edema1">YES</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="edema"
+                        id="edema2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="edema2">NO</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="edema"
+                        id="edema3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="edema3">N/A </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label for="arrythmia" class="col-form-label col-12 col-md-6"
+                    >Arrythmia</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="arrythmia"
+                        id="arrythmia1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="arrythmia1"
+                        >YES</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="arrythmia"
+                        id="arrythmia2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="arrythmia2"
+                        >NO</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="arrythmia"
+                        id="arrythmia3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="arrythmia3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label for="syncope" class="col-form-label col-12 col-md-6"
+                    >Syncope</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="syncope"
+                        id="syncope1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="syncope1">YES</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="syncope"
+                        id="syncope2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="syncope2">NO</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="syncope"
+                        id="syncope3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="syncope3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label for="orthopnea" class="col-form-label col-12 col-md-6"
+                    >Orthopnea</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="orthopnea"
+                        id="orthopnea1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="orthopnea1"
+                        >YES</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="orthopnea"
+                        id="orthopnea2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="orthopnea2"
+                        >NO</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="orthopnea"
+                        id="orthopnea3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="orthopnea3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label for="legpain" class="col-form-label col-12 col-md-6"
+                    >Leg Pain/Cramping</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="legpain"
+                        id="legpain1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="legpain1">YES</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="legpain"
+                        id="legpain2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="legpain2">NO</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="legpain"
+                        id="legpain3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="legpain3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label
+                    for="heartproblem"
+                    class="col-form-label col-12 col-md-6"
+                    >Heart Problem</label
+                  >
+                  <div class="container col-12 col-md-6">
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="heartproblem"
+                        id="heartproblem1"
+                        value="yes"
+                      />
+                      <label class="form-check-label" for="heartproblem1"
+                        >YES</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="heartproblem"
+                        id="heartproblem2"
+                        value="no"
+                      />
+                      <label class="form-check-label" for="heartproblem2"
+                        >NO</label
+                      >
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="heartproblem"
+                        id="heartproblem3"
+                        value="0"
+                        checked
+                      />
+                      <label class="form-check-label" for="heartproblem3"
+                        >N/A
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- <h6>GastroIntestinal</h6> -->
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- CLINICAL NOTES -->
+
+    <div
+      class="modal fade"
+      id="clinicalnotes"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="clinicalnotes"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="clinicalnoteslabel">Clinical Notes</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form action="" method="post">
+            {% csrf_token %}
+            <div class="modal-body">
+              <div class="container">
+                <div class="row">
+                  <div class="col-12 col-md-5">
+                    <div class="form-group row container">
+                      <label for="date" class="col-form-label">Date</label>
+                      <input type="date" name="date" class="form-control" />
+                    </div>
+                    <div class="form-group row container">
+                      <label for="type" class="col-form-label"
+                        >Type</label
+                      >
+                      <select name="type" class="form-control">
+                        <option value="Mr">Mr</option>
+                        <option value="Mrs">Mrs</option>
+                        <option value="Ms">Ms</option>
+                        <option value="Dr">Dr</option>
+                      </select>
+
+                      <label for="category" class="col-form-label"
+                        >Category</label
+                      >
+
+                      <select name="category" class="form-control">
+                        <option value="">Select</option>
+                        <option value="cardiology">Cardiology</option>
+                        <option value="pathology">Pathology</option>
+                        <option value="radiology">Radiology</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="col-12 col-md-7">
+                    <div class="form-group row container">
+                      <label for="narrative" class="col-form-label"
+                        >Narrative</label
+                      >
+                      <textarea
+                        name="narrative"
+                        class="form-control"
+                        cols="30"
+                        rows="10"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="submit" class="btn btn-primary">Create</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5">
+            <h1 class="mb-4 text-white">
+              We make living <strong>better</strong>.
+            </h1>
+          </div>
+          <div data-aos-delay="50" class="col-lg-3 col-md-6 col-12">
+            <h4 class="my-4">Contact Info</h4>
+            <p class="mb-1">
+              <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAhCAYAAACbffiEAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAFlSURBVHja7NixS0JRFMfxr08fhYKCEehk4ObiEDjk5N/gHyC4uDhF81uCcHB0aY1oaXD1/QG+xb0hRVQEtUG5RCXvpqctamrxgcn9/QH38OFyzrnckNyeCwcQiwOJgRiIgRiIgRiIgQAhETmIJ0okyMOz2SbD4Stgk8lEGY0ugysmAeTtTUul8iieNxbf34jvb8TzxlKrtUWpdRAlJRAIOOL7GxERqVTupFZrfwPhOhDIzntE6y1ab4lGI9zf9+j1XgiHPykWzyiX87y/f2LbFrZt7XePTCYrBoMlrvvEYqF4eJgBsFgout0RpVKOXC5JNnuy31NL6y0fH5p4/IhWy6PfXwGQz59SrRYCu5Gd7xHbtkgkbgCo1y9QaolSS6rVAlpvicUaO0cENrWUWovjuNLpPP+aWo7jynSq/kez/0w63WQ+XwOQSh0zm12Zzf4nJNk4Mr8oBmIgBmIgBmIgBrJn+RoA0pWnbAC/lZYAAAAASUVORK5CYII="
+                width="20px"
+                alt="indiaflag"
+              /><a href="tel:+91 808 877 3805"> +91 8088773805</a>
+            </p>
+            <p class="mb-1">
+              <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAhCAYAAACbffiEAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAFlSURBVHja7NixS0JRFMfxr08fhYKCEehk4ObiEDjk5N/gHyC4uDhF81uCcHB0aY1oaXD1/QG+xb0hRVQEtUG5RCXvpqctamrxgcn9/QH38OFyzrnckNyeCwcQiwOJgRiIgRiIgRiIgQAhETmIJ0okyMOz2SbD4Stgk8lEGY0ugysmAeTtTUul8iieNxbf34jvb8TzxlKrtUWpdRAlJRAIOOL7GxERqVTupFZrfwPhOhDIzntE6y1ab4lGI9zf9+j1XgiHPykWzyiX87y/f2LbFrZt7XePTCYrBoMlrvvEYqF4eJgBsFgout0RpVKOXC5JNnuy31NL6y0fH5p4/IhWy6PfXwGQz59SrRYCu5Gd7xHbtkgkbgCo1y9QaolSS6rVAlpvicUaO0cENrWUWovjuNLpPP+aWo7jynSq/kez/0w63WQ+XwOQSh0zm12Zzf4nJNk4Mr8oBmIgBmIgBmIgBrJn+RoA0pWnbAC/lZYAAAAASUVORK5CYII="
+                width="20px"
+                alt="indiaflag"
+              /><a href="tel:+91 850 010 8567"> +91 8500108567 </a>
+            </p>
+            <p class="mb-1">
+              <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAhCAYAAACbffiEAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAWBSURBVHja7JhrbJNVHMZ/5+3t3bqtXdcWBpsIU6MOQROjMCYKijGGzC8SB4rOOAgoVFHCYGC4LCMshinKQNGJkyDzBhOmyIQBg2wj6DB4QQLxNmCDXdq1pe3a9T1+UAwR1C+Q1zQ+n57835zzz3P+73Oe5Ij8fI/kL9A0DUVRLuFqkolIOMY/oeR0M3rAKKVk9epZzJu3np4eP2PuzGH0rSOort5DWpqNmpoFTJtWjpSCmpoSHp++ivOhCGPzbmBPww+YLBJFmvm4roSiotVEOs7pJ6S9/RwWi5EVK4rYtm0fXm+Q4uIH2NN4lJMnzzB61DUkW820tZ0kTpwJ94yix+vDZFIoLp7EO283cuLEaYQQ5C6br48QAI+niptysxk//lYqKz/im29OUVU1h+aWb/F4XuWRKeNItVmoqtqGFJLsbBdNB77D7rAwevQIUm1NeDzryczM4KaSuboIEXl5c+TZc31kDLKi9ZvQtCiKMKIYDBgMcbKGOjh1xosW1ygrm86yZZsJhaJYrWYikQEUBUwmI0OHpNPR2cfehgr9JrJz50qKiiro9vehSUlh4e18+EEbDkcK1TWLmXjvs0TDcW65JQeAUChCdpad9nY/wUgIp9NJzbuLuX9SKU0PPorQQ4gQgk/qDhKLxqmtXcKMGWv45edetmxZwAvz3+KVlz8mw26lYPo4ysu3AFBbu4SSBW+QlGTi7Y0L8Xg2sGZNHQNE6dp3AA1Nn4m8VLGVYcOdRCJRTEYjrc2/EpkdQwhB25dHUTAwMBAnEulHCEEkEsPrC2GxGOnvjyFlnIaGJuIMkFv6PJqm6eORgX4Fk6rR2enD7bZhFEmcOdtBZmYGDz10G3V1bQQCYRaXFvLa2u10dPTgdqcTCvUTCIQYPDid/HGZ7G8+RevBdbp4RFEUhZmz7kNKcLudDLvWyRNPjsflsgGwffvXCCFITU2momIrmqbhctkYdm0G50MRbDYrAMePd2ISJvSCyM/3SKtVxecLUl+/ioKCRaSlJbNpUykTxi9kQIYJ+wzc92AOTQeO43Q62LFjOZMnL8LvD7NzZwWFhSsJBn3Y0tJY4e7TLxDvvnskrYeOsXnzF0yaNApVTaK+vhWzqlC5ai7znn0Try9EZeVMqqt3Ub+jhYcfvguDQdCw6zCDBqWydOljlJXV8GvdNv2E2O0pGAwKTU1HGDPmOlJSUihd8ibX5QzF4Ugl3WXmp5+6sdnsKAaNhYs3sHzp4whhYPmKGu6483qcGfbfk/2ZWfoFYm9vELvdyvp1s3mq+DXC4Sg5Nw6ipzNIX18QVVWxWAz4fXFSbQbcQ220/9iFEGaGD3dy+nQ3gUAMe7qFgwde1c/syckWFEUQi8VRVTPJyRY2rHuBaHQAi8WM1AQjc4dgViVGo4Gt75ehqhZMyRrvbCzBZDJiNkNMxvQze17eHLl27VxmznyF3Juz8QfP8fTsqXz26WFaWo9RW/siU6eWY7NZeP31+UyZspyJE2/jbOdZmg+doGDyWD7fdYj6HauYOq2MyhFSH494vQH27z+K1xtg954jZGWn0NLyPVtq95Kenkpj4xH8/iDd3T4aG4/g9QbZuPFzRuZmEQr2s2nTF6iqkd27v8LbG+THZn3MLp57rkp2dflwOtOQEuJxCASCOBxpAHR1+XC57H9yt9uOlBCNxkhSzcQ1iaIIOjp6cLrsTOs9po8QKaUkAaCQIBBfPrMwISYiNmNLCCHGrIKCxPi1Ygli9oS5tYxHF5VfRl4cpOEKHdXf7HWFe4j3SJcgL3MrSy6tX3hWkH9weVH97zgXrbl6PYyD75kAlzwWXIiXf6orF33/N65c9R4iFgr/b/b/lNmPVaxNjBz5UB2WGBNRM10JMZHfBgCca1emI6F9TQAAAABJRU5ErkJggg=="
+                width="20px"
+              /><a href="tel:+1 844 Wel Asst"> +1 844 Wel Asst </a>
+            </p>
+            <p>
+              <a href="mailto:info@welfinity.com"
+                ><i class="fa fa-envelope mr-2 footer-icon"></i>
+                info@welfinity.com
+              </a>
+            </p>
+          </div>
+          <div data-aos-delay="50" class="col-lg-3 col-md-6 col-12">
+            <h4 class="my-4">Visit Us</h4>
+            <p class="mb-1">
+              <i class="fa fa-home mr-2 footer-icon"></i> 447, CQAL Layout,
+              Sahakarnagar, Bangalore
+            </p>
+          </div>
+          <div
+            data-aos-delay="50"
+            class="col-lg-4 mx-lg-auto text-center col-md-8 col-12"
+          >
+            <p class="copyright-text">
+              © 2020-2021 Welfinity Healthcare Pvt Ltd. <br />
+            </p>
+          </div>
+          <div data-aos-delay="50" class="col-lg-4 mx-lg-auto col-md-6 col-12">
+            <ul class="footer-link">
+              <li><a href="#">Disclaimer</a></li>
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Privacy</a></li>
+            </ul>
+          </div>
+          <div data-aos-delay="60" class="col-lg-4 mx-lg-auto col-md-6 col-12">
+            <ul class="social-icon">
+              <li>
+                <a
+                  href="https://wa.me/918088773805"
+                  target="_blank"
+                  class="fa fa-whatsapp"
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/welfinity/?hl=en"
+                  target="_blank"
+                  class="fa fa-instagram"
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.facebook.com/welfinityhealthcare"
+                  target="_blank"
+                  class="fa fa-facebook"
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://twitter.com/welfinity"
+                  target="_blank"
+                  class="fa fa-twitter"
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/company/welfinity/"
+                  target="_blank"
+                  class="fa fa-linkedin"
+                ></a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-1 mx-lg-auto col-md-6 col-12">
+            <a
+              href=" https://play.google.com/store/apps/details?id=com.welfinity.www&amp;pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
+              ><img
+                alt="Get it on Google Play"
+                src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                width="140rem"
+            /></a>
+          </div>
+        </div>
+      </div>
+      <!---->
+    </footer>
+  </body>
+</html>

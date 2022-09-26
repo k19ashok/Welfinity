@@ -1,0 +1,1520 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <!-- Google Tag Manager -->
+     <script
+     type="text/javascript"
+     async=""
+     src="https://www.googletagmanager.com/gtag/js?id=G-6Q5PTWDYFM&amp;l=dataLayer&amp;cx=c"
+   ></script>
+   <script
+     async=""
+     src="https://www.googletagmanager.com/gtm.js?id=GTM-KZ9FQPX"
+   ></script>
+   <script>
+     (function (w, d, s, l, i) {
+       w[l] = w[l] || [];
+       w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+       var f = d.getElementsByTagName(s)[0],
+         j = d.createElement(s),
+         dl = l != "dataLayer" ? "&l=" + l : "";
+       j.async = true;
+       j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+       f.parentNode.insertBefore(j, f);
+     })(window, document, "script", "dataLayer", "GTM-KZ9FQPX");
+   </script>
+   <!-- End Google Tag Manager -->
+   <meta charset="utf-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="viewport" content="width=device-width,initial-scale=1" />
+   <meta
+     name="title"
+     content="Welfinity Healthcare- Care At home, Nursing Care, Elder care, Nanny Care, Critical Care"
+   />
+   <meta
+     name="description"
+     content="Welfinity Healthcare Offers Personal Care for Elders, Nursing care for Needy, Nanny Care for babies , Critical Care of Sick in  Hyderabad , Bangalore cities and in Telangana, Andhra Pradesh, Karnataka as well"
+   />
+   <meta
+     name="abstract"
+     content="Welfinity Healthcare Offers Personal Care for Elders, Nursing care for Needy, Nanny Care for babies , Critical Care of Sick in  Hyderabad , Bangalore cities and in Telangana, Andhra Pradesh, Karnataka as well"
+   />
+   <meta
+     name="keywords"
+     content="Personal Care, Nursing care, Nanny Care, Critical Care, India , Hyderabad, Telangana, Andhrapradesh, Karnakata"
+   />
+   <meta http-equiv="cache-control" content="no-cache" />
+   <meta http-equiv="expires" content="0" />
+   <meta http-equiv="pragma" content="no-cache" />
+   <link
+     rel="stylesheet"
+     href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+   />
+   <link
+     rel="stylesheet"
+     href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+   />
+   <link
+     rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+   />
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+   <title>Patient Dashboard</title>
+
+   <link href="js/app.7a158adf.js" rel="preload" as="script" />
+   <link href="js/chunk-vendors.8d040eea.js" rel="preload" as="script" />
+   <link
+     href="{% static 'css/chunk-vendors.d3feeb92.css' %}"
+     rel="stylesheet"
+   />
+   <link href="{% static 'css/app.d80733da.css' %}" rel="stylesheet" />
+   <link rel="stylesheet" 
+   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">   
+   <link rel=”stylesheet” href=”//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css”>
+  <link rel=”stylesheet” href=”https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css”>
+  <script src=”//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js”></script>
+<style>
+  .row-content
+{
+    margin: 0px auto;
+    padding: 50px 0px 50px 0px;
+}
+.nav-tabs .nav-items
+{
+  size: 80%;
+}
+
+.mycolor
+{
+background-color: pink;
+}
+
+</style>
+
+</head>
+<body>
+     <div id="nav">
+        <div>
+          <nav class="navbar navbar-expand-lg">
+            <div class="container">
+              <a href="#" class="navbar-brand"
+                ><img
+                  src="{% static 'img/nav_logo.31378e7a.png' %}"
+                  alt="nav_logo"
+                  width="200rem" /></a
+              ><button
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+                class="navbar-toggler"
+              >
+                <span class="navbar-toggler-icon"
+                  ><i id="toggler-icon" class="fa fa-navicon"></i
+                ></span>
+              </button>
+              <div id="navbarNav" class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a href="/aboutUs" class=""
+                      ><a
+                        href="#"
+                        data-toggle="collapse"
+                        data-target="#navbarNav"
+                        class="nav-link"
+                        >About</a
+                      ></a
+                    >
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a
+                      data-toggle="dropdown"
+                      href="#"
+                      role="button"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                      class="nav-link dropdown-toggle"
+                    >
+                      Services
+                    </a>
+                    <div class="dropdown-menu">
+                      <a
+                        href="/personalCare"
+                        class="dropdown-item"
+                        data-toggle="collapse"
+                        data-target="#navbarNav"
+                        >Personal Care</a
+                      >
+                      <div class="dropdown-divider"></div>
+                      <a
+                        href="/nannyCare"
+                        class="dropdown-item"
+                        data-toggle="collapse"
+                        data-target="#navbarNav"
+                        >Nanny Care</a
+                      >
+                      <div class="dropdown-divider"></div>
+                      <a
+                        href="/criticalCare"
+                        class="dropdown-item"
+                        data-toggle="collapse"
+                        data-target="#navbarNav"
+                        >Critical Care</a
+                      >
+                      <div class="dropdown-divider"></div>
+                      <a
+                        href="/nursingCare"
+                        class="dropdown-item"
+                        data-toggle="collapse"
+                        data-target="#navbarNav"
+                        >Nursing Care</a
+                      >
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="/blog"
+                      class="nav-link"
+                      data-toggle="collapse"
+                      data-target="#navbarNav"
+                      >Blog
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="/career"
+                      class="nav-link"
+                      data-toggle="collapse"
+                      data-target="#navbarNav"
+                      >Jobs
+                    </a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a
+                      data-toggle="dropdown"
+                      href="#"
+                      role="button"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                      class="nav-link dropdown-toggle"
+                    >
+                      Help
+                    </a>
+                    <div class="dropdown-menu">
+                      <a
+                        href="/faqs"
+                        class="dropdown-item"
+                        data-toggle="collapse"
+                        data-target="#navbarNav"
+                        >FAQs </a
+                      ><!----><!---->
+                      <div class="dropdown-divider"></div>
+                      <a
+                        href="/cancellationpolicy"
+                        class="dropdown-item"
+                        data-toggle="collapse"
+                        data-target="#navbarNav"
+                        >Cancellation Policy</a
+                      >
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="/login"
+                      class="nav-link contact"
+                      data-toggle="collapse"
+                      data-target="#navbarNav"
+                      >Sign In
+                    </a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <!---->
+                    <div class="dropdown-menu">
+                      <a
+                        href="/register"
+                        class="dropdown-item"
+                        data-toggle="collapse"
+                        data-target="#navbarNav"
+                        >My Profile</a
+                      ><!----><!----><!----><!---->
+                      <div class="dropdown-divider"></div>
+                      <!---->
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+
+
+      <div class="container">
+        <div class="row mt-5 row-content">
+          <div class="col-12 col-md-6">
+            <h2
+              data-v-5b94d55b=""
+              data-aos="zoom-in"
+              class="mb-4 aos-init aos-animate"
+            >
+              <strong data-v-5b94d55b="">Patient Dashboard </strong>
+            </h2>
+          </div>
+          <div class="col-12 col-md-6 conatiner">
+            <div class="row align-items-center">
+              <div class="col-3"><i class="fa-solid fa-user fa-5x"></i></div>
+              <div class="col-6">
+                <h4 class="text-dark">{{ pt.title }} {{pt.fname }} {{ pt.lname }}</h4>
+                <h6><small>{{ pt.pid }}</small></h6>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <form action="{% url 'getEnc' pt.pid %}" class="w-100" method="post">
+            {% csrf_token %}
+            <div class="form-group row container">
+              <select name="encval" class="form-control col-6">
+                {% for i in enc %}
+                  <option value="{{ i.encid }}">{{ i.dos }}</option>
+                {% endfor %}
+              </select>
+              <div class="col-6 col-md-4">
+                <button type="submit" class="btn btn-success">
+                  Get Encounter
+                </button>
+              </div>
+            </div>
+           
+          </form>
+          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#newencounter">Create Encounter</button>
+        </div>
+
+
+        <div class="row">
+
+          <div class="row-content">
+            <div class="card">
+              <div class="card-header bg-primary">
+                <h4>Demographics</h4>
+              </div>
+              <div class="card-body">
+
+                <ul class="nav nav-tabs mycolor">
+                  <li class="nav-item">
+                    <a href="#who" class="nav-link active" role="tab" data-toggle="tab">WHO</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#contact" class="nav-link" role="tab" data-toggle="tab">CONTACT</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#choices" class="nav-link" role="tab" data-toggle="tab">CHOICES</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#employer" class="nav-link" role="tab" data-toggle="tab">EMPLOYER</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#stats" class="nav-link" role="tab" data-toggle="tab">STATS</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#misc" class="nav-link" role="tab" data-toggle="tab">MISC</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#guardian" class="nav-link" role="tab" data-toggle="tab">GUARDIAN</a>
+                  </li>
+                </ul>
+
+                
+                  <div class="tab-content">
+                    <div class="tab-pane fade show active row-content" role="tabpanel" id="who">
+                      <div class="container justify-content-left">
+                        <div class="row">
+                          <div class="col-6 col-md-4">
+                            <h5>Name</h5>
+                          </div>
+                          <div class="col-6 col-md-4">
+                            <h6>{{ pt.title }} {{pt.fname }} {{ pt.lname }}</h6>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6 col-md-4">
+                            <h5>DOB</h5>
+                          </div>
+                          <div class="col-6 col-md-4">
+                            <h6>{{ pt.dob }}</h6>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6 col-md-4">
+                            <h5>Sex</h5>
+                          </div>
+                          <div class="col-6 col-md-4">
+                            <h6>{{ pt.sex }}</h6>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6 col-md-4">
+                            <h5>External ID</h5>
+                          </div>
+                          <div class="col-6 col-md-4">
+                            <h6>{{ pt.extid }}</h6>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6 col-md-4">
+                            <h5>Liscence ID</h5>
+                          </div>
+                          <div class="col-6 col-md-4">
+                            <h6>{{ pt.licid }}</h6>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6 col-md-4">
+                            <h5>Previous Names</h5>
+                          </div>
+                          <div class="col-6 col-md-4">
+                            <h6>{{ pt.prevnames }}</h6>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade row-content" role="tabpanel" id="contact">
+                      <div class="container justify-content-left">
+                        <div class="row">
+                          <div class="col-6 col-md-4">
+                            <h5>Address</h5>
+                          </div>
+                          <div class="col-6 col-md-4">
+                            <h6>{{ pt.address }} {{ pt.addressline2 }}</h6>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6 col-md-4">
+                            <h5>City</h5>
+                          </div>
+                          <div class="col-6 col-md-4">
+                            <h6>{{ pt.city }}</h6>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6 col-md-4">
+                            <h5>State</h5>
+                          </div>
+                          <div class="col-6 col-md-4">
+                            <h6>{{ pt.state }}</h6>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6 col-md-4">
+                            <h5>Postal PIN</h5>
+                          </div>
+                          <div class="col-6 col-md-4">
+                            <h6>{{ pt.pin }}</h6>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6 col-md-4">
+                            <h5>Country</h5>
+                          </div>
+                          <div class="col-6 col-md-4">
+                            <h6>{{ pt.country }}</h6>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6 col-md-4">
+                            <h5>Mobile</h5>
+                          </div>
+                          <div class="col-6 col-md-4">
+                            <h6>{{ pt.phone }}</h6>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6 col-md-4">
+                            <h5>Email</h5>
+                          </div>
+                          <div class="col-6 col-md-4">
+                            <h6>{{ pt.email }}</h6>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6 col-md-4">
+                            <h5>Alt Mobile</h5>
+                          </div>
+                          <div class="col-6 col-md-4">
+                            <h6>{{ pt.altphone }}</h6>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade row-content" id="stats" role="tabpanel" >
+                      <div class="container justify-content-left">
+                        <div class="row">
+                          <div class="col-6 col-md-4">
+                            <h5>Language</h5>
+                          </div>
+                          <div class="col-6 col-md-4">
+                            <h6>{{ pt.language }}</h6>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6 col-md-4">
+                            <h5>Ethnicity</h5>
+                          </div>
+                          <div class="col-6 col-md-4">
+                            <h6>{{ pt.ethnicity }}</h6>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6 col-md-4">
+                            <h5>Family Size</h5>
+                          </div>
+                          <div class="col-6 col-md-4">
+                            <h6>{{ pt.famsize }}</h6>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6 col-md-4">
+                            <h5>Financial Review Date</h5>
+                          </div>
+                          <div class="col-6 col-md-4">
+                            <h6>{{ pt.finreview }}</h6>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6 col-md-4">
+                            <h5>Income</h5>
+                          </div>
+                          <div class="col-6 col-md-4">
+                            <h6>{{ pt.income }}</h6>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6 col-md-4">
+                            <h5>homeless</h5>
+                          </div>
+                          <div class="col-6 col-md-4">
+                            <h6>{{ pt.homeless }}</h6>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6 col-md-4">
+                            <h5>Migrant Seasonal</h5>
+                          </div>
+                          <div class="col-6 col-md-4">
+                            <h6>{{ pt.migrant }}</h6>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6 col-md-4">
+                            <h5>religion</h5>
+                          </div>
+                          <div class="col-6 col-md-4">
+                            <h6>{{ pt.religion }}</h6>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6 col-md-4">
+                            <h5>VFC Eligible</h5>
+                          </div>
+                          <div class="col-6 col-md-4">
+                            <h6>{{ pt.vfc }}</h6>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade row-content" id="employer" role="tabpanel" >
+                      <div class="row">
+                        <div class="col-6 col-md-4">
+                          <h5>Occupation</h5>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          <h6>{{ pt.occupation }}</h6>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6 col-md-4">
+                          <h5>Industry</h5>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          <h6>{{ pt.industry }}</h6>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6 col-md-4">
+                          <h5>Employer Name</h5>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          <h6>{{ pt.empname }}</h6>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6 col-md-4">
+                          <h5>Employer Address</h5>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          <h6>{{ pt.empaddress }}</h6>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade row-content" id="choices" role="tabpanel" >
+
+                      <div class="row">
+                        <div class="col-6 col-md-4">
+                          <h5>Hipaa Notice Received</h5>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          <h6>{{ pt.hipaa }}</h6>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6 col-md-4">
+                          <h5>Allow Voice Message</h5>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          <h6>{{ pt.allowvoice }}</h6>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6 col-md-4">
+                          <h5>Allow Mail Message</h5>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          <h6>{{ pt.allowmail }}</h6>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6 col-md-4">
+                          <h5>Allow Immunization Registry Use</h5>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          <h6>{{ pt.allowimmreg }}</h6>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6 col-md-4">
+                          <h5>Allow Immunization Info Share</h5>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          <h6>{{ pt.allowimmshare }}</h6>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6 col-md-4">
+                          <h5>Leaave Message With</h5>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          <h6>{{ pt.leavemsg }}</h6>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6 col-md-4">
+                          <h5>Allow Health Info Exchange</h5>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          <h6>{{ pt.allowhie }}</h6>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6 col-md-4">
+                          <h5>Allow Patient Portal</h5>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          <h6>{{ pt.allowpp }}</h6>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6 col-md-4">
+                          <h5>Immunization registry Status</h5>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          <h6>{{ pt.immstatus }}</h6>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6 col-md-4">
+                          <h5>Immunization Status Effective Date</h5>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          <h6>{{ pt.immstatusdt }}</h6>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6 col-md-4">
+                          <h5>Publicity Code</h5>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          <h6>{{ pt.pubcode }}</h6>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6 col-md-4">
+                          <h5>Publicity Code Effective Date</h5>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          <h6>{{ pt.pubcodedate }}</h6>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6 col-md-4">
+                          <h5>Protection Indicator</h5>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          <h6>{{ pt.protind }}</h6>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6 col-md-4">
+                          <h5>Protection Indicator Date</h5>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          <h6>{{ pt.protinddate }}</h6>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6 col-md-4">
+                          <h5>Care Team Status</h5>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          <h6>{{ pt.carestatus }}</h6>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6 col-md-4">
+                          <h5>Patient Category</h5>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          <h6>{{ pt.ptcat }}</h6>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade row-content" id="misc" role="tabpanel" >
+                      <div class="row">
+                        <div class="col-6 col-md-4">
+                          <h5>Deceased</h5>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          <h6>{{ pt.deceased }}</h6>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6 col-md-4">
+                          <h5>Reason Deceased</h5>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          <h6>{{ pt.reasondeceased }}</h6>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade row-content" id="guardian" role="tabpanel" >
+                      <div class="row">
+                        <div class="col-6 col-md-4">
+                          <h5>Guardian</h5>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          <h6>{{ pt.guardian }}</h6>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6 col-md-4">
+                          <h5>Guardian Relation</h5>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          <h6>{{ pt.guardianrelation }}</h6>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6 col-md-4">
+                          <h5>Guardian Sex</h5>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          <h6>{{ pt.guardiansex }}</h6>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6 col-md-4">
+                          <h5>Guardian Address</h5>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          <h6>{{ pt.guardianaddress }} {{ pt.guardianaddressline2 }}</h6>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6 col-md-4">
+                          <h5>Guardian City</h5>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          <h6>{{ pt.guardiancity }}</h6>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6 col-md-4">
+                          <h5>Guardian State</h5>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          <h6>{{ pt.guardianstate }}</h6>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6 col-md-4">
+                          <h5>Guardian Country</h5>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          <h6>{{ pt.guardiancountry }}</h6>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6 col-md-4">
+                          <h5>Guardian PIN</h5>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          <h6>{{ pt.guardianpin }}</h6>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6 col-md-4">
+                          <h5>Guardian Mobile</h5>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          <h6>{{ pt.guardianmobile }}</h6>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6 col-md-4">
+                          <h5>Guardian Email</h5>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          <h6>{{ pt.guardianemail }}</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          
+          <div class="row">
+            <div class="col-12 col-md-5 row-content">
+              <div class="card">
+                <div class="card-header bg-primary">
+                  <a data-target="#medicalproblems" data-toggle="modal" href="">
+                    <h4>Medical Problems</h4>
+                  </a>
+                </div>
+                <div class="card-body">
+                  {% if mp %}
+                    
+                    {% for i in mp %}
+                    <div class="row">
+                      <div class="col-6 col-md-4">
+                        <h6>Problem</h6>
+                      </div>
+                      <div class="col-6 col-md-4">
+                        <h6><strong class="text-danger">{{ i.problem }}</strong></h6>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-6 col-md-4">
+                        <h6>Coding</h6>
+                      </div>
+                      <div class="col-6 col-md-4">
+                        <h6>{{ i.coding }}</h6>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-6 col-md-4">
+                        <h6>Begin Date</h6>
+                      </div>
+                      <div class="col-6 col-md-4">
+                        <h6>{{ i.begindate }}</h6>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-6 col-md-4">
+                        <h6>End Date</h6>
+                      </div>
+                      <div class="col-6 col-md-4">
+                        <h6>{{ i.enddate }}</h6>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-6 col-md-4">
+                        <h6>Classification Type</h6>
+                      </div>
+                      <div class="col-6 col-md-4">
+                        <h6>{{ i.clstype }}</h6>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-6 col-md-4">
+                        <h6>Occurence</h6>
+                      </div>
+                      <div class="col-6 col-md-4">
+                        <h6>{{ i.occurence }}</h6>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-6 col-md-4">
+                        <h6>Verification Status</h6>
+                      </div>
+                      <div class="col-6 col-md-4">
+                        <h6>{{ i.verificationstatus }}</h6>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-6 col-md-4">
+                        <h6>Referred By</h6>
+                      </div>
+                      <div class="col-6 col-md-4">
+                        <h6>{{ i.referredby }}</h6>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-6 col-md-4">
+                        <h6>Outcome</h6>
+                      </div>
+                      <div class="col-6 col-md-4">
+                        <h6>{{ i.outcome }}</h6>
+                      </div>
+                    </div>
+                    {% endfor %}
+
+                  {% else %}
+                  No Problems added.
+                  {% endif %}
+
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-12 col-md-5 row-content">
+                <div class="card">
+                  <div class="card-header bg-primary">
+                    <a href="" data-target="#prescriptions" data-toggle="modal">
+                      <h4>Prescriptions</h4>
+                    </a>
+                  </div>
+                  <div class="card-body">
+                    {% if p %}
+                    
+                    {% for i in p %}
+                    <div class="row">
+                      <div class="col-6 col-md-4">
+                        <h6>Start Date</h6>
+                      </div>
+                      <div class="col-6 col-md-4">
+                        <h6>{{ i.startdate }}</h6>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-6 col-md-4">
+                        <h6>Provider</h6>
+                      </div>
+                      <div class="col-6 col-md-4">
+                        <h6>{{ i.provider }}</h6>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-6 col-md-4">
+                        <h6>Drug</h6>
+                      </div>
+                      <div class="col-6 col-md-4">
+                        <h6><strong class="text-info">{{ i.drug }}</strong></h6>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-6 col-md-4">
+                        <h6>Quantity</h6>
+                      </div>
+                      <div class="col-6 col-md-4">
+                        <h6>{{ i.quantity }}</h6>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-6 col-md-4">
+                        <h6>Prescription Notes</h6>
+                      </div>
+                      <div class="col-6 col-md-4">
+                        <h6>{{ i.notes }}</h6>
+                      </div>
+                    </div>
+                    <hr>
+                    {% endfor %}
+
+                  {% else %}
+                  No prescriptions added.
+                  {% endif %}
+                  </div>
+                </div>
+              </div>
+          </div>
+            
+            
+      
+      
+      </div>
+
+
+
+
+      <div class="modal fade" id="newencounter" tabindex="-1" role="dialog" aria-labelledby="newencounter" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="newencounterLabel">Add New Encounter</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h2>{{ pt.pid }}</h2>
+              <form action="{% url 'encounter' pt.pid %}" method="post">
+                {% csrf_token %}
+                <div class="form-group row container">
+                  <label for="visitcat" class="col-form-label col-lg-3"
+                    >Visit Category</label
+                  >
+                  <div class="col-12 col-sm-5 col-lg-3">
+                    <select name="visitcat" class="form-control">
+                      <option value="Office Visit">Office Visit</option>
+                      <option value="Established Patient">Established</option>
+                      <option value="New Patient">New Patient</option>
+                      <option value="Health and Behavioural Assesment">Health and Behavioral Assesment</option>
+                      <option value="Preventive Care Services">Preventive Care Services</option>
+                      <option value="Opthamological Services">Opthamological Services</option>
+                    </select>
+                  </div>
+                  <label for="pclass" class="col-form-label col-lg-3"
+                    >Class</label>
+                  <div class="col-12 col-sm-5 col-lg-3">
+                    <select name="pclass" class="form-control">
+                      <option value="Emergency Dept">Emergency Dept</option>
+                      <option value="Out in Field">Out in Field</option>
+                      <option value="Home Health">Home Health</option>
+                      <option value="Inpatient Encounter">Inpatient Encounter</option>
+                      <option value="Inpatient Acute">Inpatient Acute</option>
+                      <option value="Inpatient Non-Acute">Inpatient Non-Acute</option>
+                      <option value="Observation Encounter">Observation Encounter</option>
+                      <option value="Pre Admission">Pre Admission</option>
+                      <option value="Short Stay">Short Stay</option>
+                      <option value="Virtual Encounter">Virtual Encounter</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label for="ptype" class="col-form-label col-lg-3"
+                    >Type</label>
+                  <div class="col-12 col-sm-5 col-lg-3">
+                    <select name="ptype" class="form-control">
+                      <option value="Visit out of Hours">Visit out of Hours</option>
+                      <option value="Weekend Visit">Weekend Visit</option>
+                      <option value="Evaluation and Management of Established Patient">Evaluation and Management of Established Patient</option>
+                      <option value="New Patient 10-30 mins">New Patient 10-30 mins</option>
+                      <option value="New Patient 30-60 mins">New Patient 30-60 mins</option>
+                      <option value="Established Patient 10-30 mins">Established Patient 10-30 mins</option>
+                      <option value="Established Patient 30-60 mins">Established Patient 30-60 mins</option>
+                      <option value="Post operative follo-up visit">Post operative follo-up visit</option>
+
+                    </select>
+                  </div>
+                  <label for="sensitivity" class="col-form-label col-lg-3"
+                    >Sensitivity</label>
+                  <div class="col-12 col-sm-5 col-lg-3">
+                    <select name="sensitivity" class="form-control">
+                      <option value="None">None</option>
+                      <option value="Normal">Normal</option>
+                      <option value="High">High</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label for="dos" class="col-form-label col-lg-3"
+                    >Date of Service</label>
+                  <div class="col-12 col-sm-5 col-lg-3">
+                    <input type="date" class="form-control" name="dos">
+                  </div>
+                  <label for="onsetdt" class="col-form-label col-lg-3"
+                    >Onset/Hosp Date</label>
+                    <div class="col-12 col-sm-5 col-lg-3">
+                      <input type="date" class="form-control" name="onsetdt">
+                    </div>
+                  
+                </div>
+
+                <div class="form-group row container">
+                  <label for="encprovider" class="col-form-label col-lg-3"
+                    >Encounter Provider</label>
+                  <div class="col-12 col-sm-5 col-lg-3">
+                    <input type="text" name="encprovider" class="form-control">
+                    <!-- <select name="encprovider" class="form-control">
+                      <option value="Mr">Mr</option>
+                      <option value="Mrs">Mrs</option>
+                      <option value="Ms">Ms</option>
+                      <option value="Dr">Dr</option>
+                    </select> -->
+                  </div>
+                  <label for="referprovider" class="col-form-label col-lg-3"
+                    >Referring Provider</label>
+                  <div class="col-12 col-sm-5 col-lg-3">
+                    <input type="text" name="referprovider" class="form-control" id="">
+                    <!-- <select name="referprovider" class="form-control">
+                      <option value="Mr">Mr</option>
+                      <option value="Mrs">Mrs</option>
+                      <option value="Ms">Ms</option>
+                      <option value="Dr">Dr</option>
+                    </select> -->
+                  </div>
+                </div>
+
+                <div class="form-group row container">
+                  <label for="facility" class="col-form-label col-lg-3"
+                    >Facility</label>
+                  <div class="col-12 col-sm-5 col-lg-3">
+                    <input type="text" name="facility" class="form-control" id="">
+                    <!-- <select name="facility" class="form-control">
+                      <option value="Mr">Mr</option>
+                      <option value="Mrs">Mrs</option>
+                      <option value="Ms">Ms</option>
+                      <option value="Dr">Dr</option>
+                    </select> -->
+                  </div>
+                  <label for="dischargedisposition" class="col-form-label col-lg-3"
+                    >Discharge Disposition</label>
+                  <div class="col-12 col-sm-5 col-lg-3">
+                    <select name="dischargedisposition" class="form-control">
+                      <option value="Home">Home</option>
+                      <option value="Discharge to home">Discharge to home</option>
+                      <option value="Alternative Home">Alternative Home</option>
+                      <option value="Other healthcare facility">Other healthcare facility</option>
+                      <option value="Hospice">Hospice</option>
+                      <option value="Long term care">Long term care</option>
+                      <option value="Left against advice">Left against advice</option>
+                      <option value="Patient Self Discharge against advice">Patient Self Discharge against advice</option>
+                      <option value="Expired">Expired</option>
+                      <option value="Psychiatric Hospital">Psychiatric Hospital</option>
+                      <option value="Rehabilitattion">Rehabilitattion</option>
+                      <option value="Skilled nursing facility">Skilled nursing facility</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="container col-10 row-content">
+                  <div class="card">
+                    <div class="card-header"><h5>Reason For Visit</h5></div>
+                    <div class="card-body">
+                      <textarea
+                        name="visitreason"
+                        class="form-control"
+                        rows="3"
+                      ></textarea>
+                    </div>
+                  </div>
+                </div>
+
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Create</button>
+            </div>
+          </form>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <!-- PRESCRIPTIONS -->
+
+
+
+      <div
+      class="modal fade"
+      id="prescriptions"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="prescriptions"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="prescriptionslabel">Prescriptions</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form action="{% url 'addPrescription' pt.pid %}" method="post">
+            {% csrf_token %}
+            <div class="modal-body">
+
+                <div class="row form-group container">
+                  <div class="col-12 col-md-4"><label for="startdate" class="col-form-label">Start Date</label></div>
+                  <div class="col-12 col-md-4">
+                    <input type="date" name="startdate" class="form-control">
+                  </div>
+                </div>
+
+                <div class="row form-group container">
+                  <div class="col-12 col-md-4"><label for="provider" class="col-form-label">Provider</label></div>
+                  <div class="col-12 col-md-4">
+                    <input type="text" name="provider" class="form-control">
+                  </div>
+                </div>
+
+                <div id="drug">
+                  <div class="row form-group container">
+                    <div class="col-12 col-md-4"><label for="drug" class="col-form-label">Drug</label></div>
+                    <div class="col-12 col-md-4">
+                      <input type="text" name="drug" class="form-control">
+                    </div>
+                  </div>
+                  <div class="row form-group container">
+                    <div class="col-12 col-md-4"><label for="quantity" class="col-form-label">Quantity</label></div>
+                    <div class="col-12 col-md-4">
+                      <input type="text" name="quantity"  class="form-control">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group row container justify-content-center">
+                  <div class="col-12"><button type="button" class="btn btn-primary" id="rowAdder"><i class="fa fa-plus" aria-hidden="true"></i></button></div>
+                </div>
+
+
+                <div class="row form-group container">
+                  <div class="col-12 col-md-4"><label for="clstype" class="col-form-label">Prescription Notes</label></div>
+                  <div class="col-12 col-md-4">
+                    <textarea name="notes" class="form-control" cols="30" rows="10"></textarea>
+                  </div>
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- MEDICAL PROBLEMS -->
+
+
+
+      <div
+      class="modal fade"
+      id="medicalproblems"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="medicalproblems"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="medicalproblemslabel">Medical Problems</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form action="{% url 'addMedicalProblem' pt.pid %}" method="post">
+            {% csrf_token %}
+            <div class="modal-body">
+              <div class="container">
+                <div class="row">
+                  <div class="form-group row container">
+                    <div class="col-12 col-md-2"><label for="problem" class="col-form-label">Problem</label></div>
+                    <div class="col-12 col-md-6">
+                      <select name="problem" class="form-control">
+                        <option value="Asthma">Asthma</option>
+                        <option value="BCC">BCC</option>
+                        <option value="Dermatochalasis">Dermatochalasis</option>
+                        <option value="Diabetes">Diabetes</option>
+                        <option value="Dry Eye">Dry Eye</option>
+                        <option value="HTN">HTN</option>
+                        <option value="Hyperlipidemia">Hyperlipidemia</option>
+                        <option value="IDDM w/BDR">IDDM w/BDR</option>
+                        <option value="Keratoconous">Keratoconous</option>
+                        <option value="NIDDM w/ BDR">NIDDM w/ BDR</option>
+                        <option value="NS Cataract">NS Cataract</option>
+                        <option value="POAG">POAG</option>
+                        <option value="SCC">SCC</option>
+                        <option value="Stye">Stye</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+                    <div class="col-12 col-md-4 mt-2 mt-md-0"><input type="text" class="form-control" name="other" placeholder="Specify if selected Other"></div>
+                  </div>
+                </div>
+              </div>
+
+                <div class="row form-group container">
+                  <div class="col-12 col-md-4"><label for="coding" class="col-form-label">Coding</label></div>
+                  <div class="col-12 col-md-4">
+                    <input type="text" name="coding" class="form-control">
+                  </div>
+                </div>
+
+                <div class="row form-group container">
+                  <div class="col-12 col-md-4"><label for="begindate" class="col-form-label">Begin Date</label></div>
+                  <div class="col-12 col-md-4">
+                    <input type="date" name="begindate" class="form-control">
+                  </div>
+                </div>
+
+                <div class="row form-group container">
+                  <div class="col-12 col-md-4"><label for="endddate" class="col-form-label">End Date</label></div>
+                  <div class="col-12 col-md-4">
+                    <input type="date" name="endddate" class="form-control">
+                  </div>
+                </div>
+
+                <div class="row form-group container">
+                  <div class="col-12 col-md-4"><label for="clstype" class="col-form-label">Classification type</label></div>
+                  <div class="col-12 col-md-4">
+                    <select name="clstype" class="form-control">
+                      <option value="Eye">Eye</option>
+                      <option value="Assesment">Assesment</option>
+                      <option value="Diagnosis">Diagonosis</option>
+                      <option value="Concern">Concern</option>                    
+                    </select>
+                  </div>
+                </div>
+
+                <div class="row form-group container">
+                  <div class="col-12 col-md-4"><label for="occurence" class="col-form-label">Occurence</label></div>
+                  <div class="col-12 col-md-4">
+                    <select name="occurence" class="form-control">
+                      <option value="First">First</option>
+                      <option value="Early Recurrence < 2 Months">Early Recurrence < 2 Months</option>
+                      <option value="Late Recurrence 2-12 Months">Late Recurrence 2-12 Months</option>
+                      <option value="Delayed Recurrence >12 Months">Delayed Recurrence >12 Months</option>
+                      <option value="Chronic/Recurrent">Chronic/Recurrent</option>
+                      <option value="Acute on Chronic">Acute on Chronic</option>
+                    </select>
+                  </div>
+                </div>
+
+
+                <div class="row form-group container">
+                  <div class="col-12 col-md-4"><label for="vierficationstatus" class="col-form-label">Verificattion Status</label></div>
+                  <div class="col-12 col-md-4">
+                    <select name="vierficationstatus" class="form-control">
+                      <option value="Confirmed">Confirmed</option>
+                      <option value="Unconfirmed">Unconfirmed</option>
+                      <option value="Refuted">Refuted</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="row form-group container">
+                  <div class="col-12 col-md-4"><label for="referredby" class="col-form-label">Referred By</label></div>
+                  <div class="col-12 col-md-4">
+                    <input type="text" name="referredby" class="form-control">
+                  </div>
+                </div>
+
+                <div class="row form-group container">
+                  <div class="col-12 col-md-4"><label for="comments" class="col-form-label">Comments</label></div>
+                  <div class="col-12 col-md-4">
+                    <textarea name="comments" class="form-control" cols="30" rows="5"></textarea>                  </div>
+                </div>
+
+                <div class="row form-group container">
+                  <div class="col-12 col-md-4"><label for="outcome" class="col-form-label">Outcome</label></div>
+                  <div class="col-12 col-md-4">
+                    <select name="outcome" class="form-control">
+                      <option value="Unassigned">Unassigned</option>
+                      <option value="Resolved">Resolved</option>
+                      <option value="Improved">Improved</option>
+                      <option value="Pending Followup">Pending Followup</option>
+                    </select>
+                  </div>
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+      <footer class="site-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-5">
+              <h1 class="mb-4 text-white">
+                We make living <strong>better</strong>.
+              </h1>
+            </div>
+            <div data-aos-delay="50" class="col-lg-3 col-md-6 col-12">
+              <h4 class="my-4">Contact Info</h4>
+              <p class="mb-1">
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAhCAYAAACbffiEAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAFlSURBVHja7NixS0JRFMfxr08fhYKCEehk4ObiEDjk5N/gHyC4uDhF81uCcHB0aY1oaXD1/QG+xb0hRVQEtUG5RCXvpqctamrxgcn9/QH38OFyzrnckNyeCwcQiwOJgRiIgRiIgRiIgQAhETmIJ0okyMOz2SbD4Stgk8lEGY0ugysmAeTtTUul8iieNxbf34jvb8TzxlKrtUWpdRAlJRAIOOL7GxERqVTupFZrfwPhOhDIzntE6y1ab4lGI9zf9+j1XgiHPykWzyiX87y/f2LbFrZt7XePTCYrBoMlrvvEYqF4eJgBsFgout0RpVKOXC5JNnuy31NL6y0fH5p4/IhWy6PfXwGQz59SrRYCu5Gd7xHbtkgkbgCo1y9QaolSS6rVAlpvicUaO0cENrWUWovjuNLpPP+aWo7jynSq/kez/0w63WQ+XwOQSh0zm12Zzf4nJNk4Mr8oBmIgBmIgBmIgBrJn+RoA0pWnbAC/lZYAAAAASUVORK5CYII="
+                  width="20px"
+                  alt="indiaflag"
+                /><a href="tel:+91 808 877 3805"> +91 8088773805</a>
+              </p>
+              <p class="mb-1">
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAhCAYAAACbffiEAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAFlSURBVHja7NixS0JRFMfxr08fhYKCEehk4ObiEDjk5N/gHyC4uDhF81uCcHB0aY1oaXD1/QG+xb0hRVQEtUG5RCXvpqctamrxgcn9/QH38OFyzrnckNyeCwcQiwOJgRiIgRiIgRiIgQAhETmIJ0okyMOz2SbD4Stgk8lEGY0ugysmAeTtTUul8iieNxbf34jvb8TzxlKrtUWpdRAlJRAIOOL7GxERqVTupFZrfwPhOhDIzntE6y1ab4lGI9zf9+j1XgiHPykWzyiX87y/f2LbFrZt7XePTCYrBoMlrvvEYqF4eJgBsFgout0RpVKOXC5JNnuy31NL6y0fH5p4/IhWy6PfXwGQz59SrRYCu5Gd7xHbtkgkbgCo1y9QaolSS6rVAlpvicUaO0cENrWUWovjuNLpPP+aWo7jynSq/kez/0w63WQ+XwOQSh0zm12Zzf4nJNk4Mr8oBmIgBmIgBmIgBrJn+RoA0pWnbAC/lZYAAAAASUVORK5CYII="
+                  width="20px"
+                  alt="indiaflag"
+                /><a href="tel:+91 850 010 8567"> +91 8500108567 </a>
+              </p>
+              <p class="mb-1">
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAhCAYAAACbffiEAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAWBSURBVHja7JhrbJNVHMZ/5+3t3bqtXdcWBpsIU6MOQROjMCYKijGGzC8SB4rOOAgoVFHCYGC4LCMshinKQNGJkyDzBhOmyIQBg2wj6DB4QQLxNmCDXdq1pe3a9T1+UAwR1C+Q1zQ+n57835zzz3P+73Oe5Ij8fI/kL9A0DUVRLuFqkolIOMY/oeR0M3rAKKVk9epZzJu3np4eP2PuzGH0rSOort5DWpqNmpoFTJtWjpSCmpoSHp++ivOhCGPzbmBPww+YLBJFmvm4roSiotVEOs7pJ6S9/RwWi5EVK4rYtm0fXm+Q4uIH2NN4lJMnzzB61DUkW820tZ0kTpwJ94yix+vDZFIoLp7EO283cuLEaYQQ5C6br48QAI+niptysxk//lYqKz/im29OUVU1h+aWb/F4XuWRKeNItVmoqtqGFJLsbBdNB77D7rAwevQIUm1NeDzryczM4KaSuboIEXl5c+TZc31kDLKi9ZvQtCiKMKIYDBgMcbKGOjh1xosW1ygrm86yZZsJhaJYrWYikQEUBUwmI0OHpNPR2cfehgr9JrJz50qKiiro9vehSUlh4e18+EEbDkcK1TWLmXjvs0TDcW65JQeAUChCdpad9nY/wUgIp9NJzbuLuX9SKU0PPorQQ4gQgk/qDhKLxqmtXcKMGWv45edetmxZwAvz3+KVlz8mw26lYPo4ysu3AFBbu4SSBW+QlGTi7Y0L8Xg2sGZNHQNE6dp3AA1Nn4m8VLGVYcOdRCJRTEYjrc2/EpkdQwhB25dHUTAwMBAnEulHCEEkEsPrC2GxGOnvjyFlnIaGJuIMkFv6PJqm6eORgX4Fk6rR2enD7bZhFEmcOdtBZmYGDz10G3V1bQQCYRaXFvLa2u10dPTgdqcTCvUTCIQYPDid/HGZ7G8+RevBdbp4RFEUhZmz7kNKcLudDLvWyRNPjsflsgGwffvXCCFITU2momIrmqbhctkYdm0G50MRbDYrAMePd2ISJvSCyM/3SKtVxecLUl+/ioKCRaSlJbNpUykTxi9kQIYJ+wzc92AOTQeO43Q62LFjOZMnL8LvD7NzZwWFhSsJBn3Y0tJY4e7TLxDvvnskrYeOsXnzF0yaNApVTaK+vhWzqlC5ai7znn0Try9EZeVMqqt3Ub+jhYcfvguDQdCw6zCDBqWydOljlJXV8GvdNv2E2O0pGAwKTU1HGDPmOlJSUihd8ibX5QzF4Ugl3WXmp5+6sdnsKAaNhYs3sHzp4whhYPmKGu6483qcGfbfk/2ZWfoFYm9vELvdyvp1s3mq+DXC4Sg5Nw6ipzNIX18QVVWxWAz4fXFSbQbcQ220/9iFEGaGD3dy+nQ3gUAMe7qFgwde1c/syckWFEUQi8VRVTPJyRY2rHuBaHQAi8WM1AQjc4dgViVGo4Gt75ehqhZMyRrvbCzBZDJiNkNMxvQze17eHLl27VxmznyF3Juz8QfP8fTsqXz26WFaWo9RW/siU6eWY7NZeP31+UyZspyJE2/jbOdZmg+doGDyWD7fdYj6HauYOq2MyhFSH494vQH27z+K1xtg954jZGWn0NLyPVtq95Kenkpj4xH8/iDd3T4aG4/g9QbZuPFzRuZmEQr2s2nTF6iqkd27v8LbG+THZn3MLp57rkp2dflwOtOQEuJxCASCOBxpAHR1+XC57H9yt9uOlBCNxkhSzcQ1iaIIOjp6cLrsTOs9po8QKaUkAaCQIBBfPrMwISYiNmNLCCHGrIKCxPi1Ygli9oS5tYxHF5VfRl4cpOEKHdXf7HWFe4j3SJcgL3MrSy6tX3hWkH9weVH97zgXrbl6PYyD75kAlzwWXIiXf6orF33/N65c9R4iFgr/b/b/lNmPVaxNjBz5UB2WGBNRM10JMZHfBgCca1emI6F9TQAAAABJRU5ErkJggg=="
+                  width="20px"
+                /><a href="tel:+1 844 Wel Asst"> +1 844 Wel Asst </a>
+              </p>
+              <p>
+                <a href="mailto:info@welfinity.com"
+                  ><i class="fa fa-envelope mr-2 footer-icon"></i>
+                  info@welfinity.com
+                </a>
+              </p>
+            </div>
+            <div data-aos-delay="50" class="col-lg-3 col-md-6 col-12">
+              <h4 class="my-4">Visit Us</h4>
+              <p class="mb-1">
+                <i class="fa fa-home mr-2 footer-icon"></i> 447, CQAL Layout,
+                Sahakarnagar, Bangalore
+              </p>
+            </div>
+            <div
+              data-aos-delay="50"
+              class="col-lg-4 mx-lg-auto text-center col-md-8 col-12"
+            >
+              <p class="copyright-text">
+                © 2020-2021 Welfinity Healthcare Pvt Ltd. <br />
+              </p>
+            </div>
+            <div data-aos-delay="50" class="col-lg-4 mx-lg-auto col-md-6 col-12">
+              <ul class="footer-link">
+                <li><a href="#">Disclaimer</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Privacy</a></li>
+              </ul>
+            </div>
+            <div data-aos-delay="60" class="col-lg-4 mx-lg-auto col-md-6 col-12">
+              <ul class="social-icon">
+                <li>
+                  <a
+                    href="https://wa.me/918088773805"
+                    target="_blank"
+                    class="fa fa-whatsapp"
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.instagram.com/welfinity/?hl=en"
+                    target="_blank"
+                    class="fa fa-instagram"
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.facebook.com/welfinityhealthcare"
+                    target="_blank"
+                    class="fa fa-facebook"
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://twitter.com/welfinity"
+                    target="_blank"
+                    class="fa fa-twitter"
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/company/welfinity/"
+                    target="_blank"
+                    class="fa fa-linkedin"
+                  ></a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-1 mx-lg-auto col-md-6 col-12">
+              <a
+                href=" https://play.google.com/store/apps/details?id=com.welfinity.www&amp;pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
+                ><img
+                  alt="Get it on Google Play"
+                  src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                  width="140rem"
+              /></a>
+            </div>
+          </div>
+        </div>
+        <!---->
+      </footer>
+    </div>
+
+    <script>
+      $("#rowAdder").click(function(){
+        newRowAdd='<div class="row form-group container"><div class="col-12 col-md-4"><label for="drug" class="col-form-label">Drug</label></div><div class="col-12 col-md-4"><input type="text" name="drug" class="form-control"></div></div><div class="row form-group container"><div class="col-12 col-md-4"><label for="quantity" class="col-form-label">Quantity</label></div><div class="col-12 col-md-4"><input type="text" name="quantity"  class="form-control"></div>'
+        $('#drug').append(newRowAdd);
+      });
+    </script>
+</body>
+</html>
