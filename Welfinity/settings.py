@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-0nsufm=zfsg!!c9$x5*005xh6_0deq-fzqy@fut=3ajy)v66=0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','welfinity.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -42,7 +42,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',

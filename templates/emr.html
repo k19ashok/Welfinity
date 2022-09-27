@@ -70,6 +70,12 @@
       rel="stylesheet"
     />
     <link href="{% static 'css/app.d80733da.css' %}" rel="stylesheet" />
+    <style>
+      .cp
+      {
+        cursor: pointer;
+      }
+    </style>
   </head>
 
   <body>
@@ -269,15 +275,15 @@
           data-aos="zoom-in"
           class="mb-4 aos-init aos-animate"
         >
-          <strong data-v-5b94d55b="">Create New Patient </strong>
+          <strong data-v-5b94d55b="">Create New Patient</strong>
         </h2>
       </div>
       <form action="{% url 'emr' %}" method="post">
         {% csrf_token %}
         <div class="row" id="accordion">
           <div class="card col-12 p-0">
-            <div class="card-header bg-info" data-toggle="collapse" data-target="#who">
-              <h3 class="mb-0">
+            <div class="card-header bg-info cp" data-toggle="collapse" data-target="#who">
+              <h3 class="mb-0 text-white">
                 <a href="">WHO</a>
               </h3>
             </div>
@@ -374,8 +380,8 @@
           </div>
 
           <div class="card col-12 p-0">
-            <div class="card-header bg-info" data-toggle="collapse" data-target="#contact">
-              <h3 class="mb-0">
+            <div class="card-header bg-info cp" data-toggle="collapse" data-target="#contact">
+              <h3 class="mb-0 text-white">
                 <a href="" 
                   >CONTACT</a
                 >
@@ -487,8 +493,8 @@
           </div>
 
           <div class="card col-12 p-0">
-            <div class="card-header bg-info" data-toggle="collapse" data-target="#choices">
-              <h3 class="mb-0">
+            <div class="card-header bg-info cp" data-toggle="collapse" data-target="#choices">
+              <h3 class="mb-0  text-white">
                 <a href="" 
                   >CHOICES</a
                 >
@@ -589,7 +595,7 @@
                     >Immunization Status Effective Date</label
                   >
                   <div class="col-12 col-md-5 col-lg-3">
-                    <input type="date" name="imstatusdt" />
+                    <input type="date" name="imstatusdt" class="form-control"/>
                   </div>
                 </div>
                 <div class="form-group row container">
@@ -597,13 +603,13 @@
                     >Publicity Code</label
                   >
                   <div class="col-12 col-md-5 col-lg-3">
-                    <input type="text" name="pubcode" />
+                    <input type="text" name="pubcode" class="form-control"/>
                   </div>
                   <label for="pubcodedate" class="col-form-label col-lg-3"
                     >Publicity Code Effective Date</label
                   >
                   <div class="col-12 col-md-5 col-lg-3">
-                    <input type="date" name="pubcodedate" />
+                    <input type="date" name="pubcodedate" class="form-control"/>
                   </div>
                 </div>
                 <div class="form-group row container">
@@ -611,13 +617,13 @@
                     >Protection Indicator</label
                   >
                   <div class="col-12 col-md-5 col-lg-3">
-                    <input type="text" name="protind" />
+                    <input type="text" name="protind" class="form-control"/>
                   </div>
                   <label for="protinddate" class="col-form-label col-lg-3"
                     >Protection Indicator Effective Date</label
                   >
                   <div class="col-12 col-md-5 col-lg-3">
-                    <input type="date" name="protinddate" />
+                    <input type="date" name="protinddate" class="form-control"/>
                   </div>
                 </div>
                 <div class="form-group row container">
@@ -650,8 +656,8 @@
           </div>
 
           <div class="card col-12 p-0">
-            <div class="card-header bg-info" data-toggle="collapse" data-target="#employer">
-              <h3 class="mb-0">
+            <div class="card-header bg-info cp" data-toggle="collapse" data-target="#employer">
+              <h3 class="mb-0 text-white">
                 <a href="" 
                   >EMPLOYER</a
                 >
@@ -711,8 +717,8 @@
           </div>
 
           <div class="card col-12 p-0">
-            <div class="card-header bg-info" data-toggle="collapse" data-target="#stats">
-              <h3 class="mb-0">
+            <div class="card-header bg-info cp" data-toggle="collapse" data-target="#stats">
+              <h3 class="mb-0 text-white">
                 <a href="" >STATS</a>
               </h3>
             </div>
@@ -810,8 +816,8 @@
           </div>
 
           <div class="card col-12 p-0">
-            <div class="card-header bg-info" data-toggle="collapse" data-target="#misc">
-              <h3 class="mb-0">
+            <div class="card-header bg-info cp" data-toggle="collapse" data-target="#misc">
+              <h3 class="mb-0 text-white">
                 <a href="">MISC</a>
               </h3>
             </div>
@@ -836,8 +842,8 @@
           </div>
 
           <div class="card col-12 p-0">
-            <div class="card-header bg-info">
-              <h3 class="mb-0">
+            <div class="card-header bg-info cp">
+              <h3 class="mb-0 text-white">
                 <a href="" data-toggle="collapse" data-target="#guardian"
                   >GUARDIAN</a
                 >

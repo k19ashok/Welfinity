@@ -87,7 +87,7 @@
 
 .mycolor
 {
-background-color: pink;
+background-color: rgb(217, 192, 255);
 }
 
 </style>
@@ -1185,7 +1185,7 @@ background-color: pink;
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form action="{% url 'savenotes' enc.encid pt.pid %}" method="post">
+          <form action="{% url 'savenotes' pt.pid enc.encid %}" method="post">
             {% csrf_token %}
             <div class="modal-body">
               <div class="container">
@@ -4329,7 +4329,7 @@ background-color: pink;
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <form action="{% url 'savesoap' enc.encid pt.pid %}" method="post">
+          <form action="{% url 'savesoap' pt.pid enc.encid %}" method="post">
             {% csrf_token %}
             <div class="modal-body">
               <div class="container">
