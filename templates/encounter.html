@@ -1159,7 +1159,7 @@ background-color: rgb(217, 192, 255);
                   <div class="col-12 col-md-5">
                     <div class="form-group row container">
                       <div class="col-12 col-md-6"><label for="date" class="col-form-label">Date</label></div>
-                      <div class="col-12 col-md-6">
+                      <div class="col-12 col-md-6 form-control-plaintext">
                         {% if notes.date %}
                         {{ notes.date }}
                         {% endif %}</div>
@@ -1170,7 +1170,7 @@ background-color: rgb(217, 192, 255);
                           >Type</label
                         >
                       </div>
-                      <div class="col-12 col-md-6">
+                      <div class="col-12 col-md-6 form-control-plaintext">
                         {% if notes.type %}
                         {{ notes.type }}
                         {% endif %}
@@ -1182,7 +1182,7 @@ background-color: rgb(217, 192, 255);
                           >Category</label
                         >
                       </div>
-                      <div class="col-12 col-md-6">
+                      <div class="col-12 col-md-6 form-control-plaintext">
                         {% if notes.category %}
                         {{ notes.category }}
                         {% endif %}
@@ -1197,7 +1197,7 @@ background-color: rgb(217, 192, 255);
                           >Narrative</label
                         >
                       </div>
-                      <div class="col-12 col-md-6">
+                      <div class="col-12 col-md-6 form-control-plaintext">
                         {% if notes.narrative %}
                         {{ notes.narrative }}
                         {% endif %}</div>
@@ -1358,7 +1358,7 @@ background-color: rgb(217, 192, 255);
                   class="col-form-label col-12 col-md-6"
                   >Weight Change</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.weightchange %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.weightchange }}</h6>
                   {% endif %}
@@ -1369,7 +1369,7 @@ background-color: rgb(217, 192, 255);
                 <label for="anorexia" class="col-form-label col-12 col-md-6"
                   >Anorexia</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.anorexia %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.anorexia }}</h6>
                   {% endif %}
@@ -1380,7 +1380,7 @@ background-color: rgb(217, 192, 255);
                 <label for="chestpain" class="col-form-label col-12 col-md-6"
                   >Chestpain</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.chestpain %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.chestpain }}</h6>
                   {% endif %}
@@ -1390,7 +1390,7 @@ background-color: rgb(217, 192, 255);
                 <label for="pnd" class="col-form-label col-12 col-md-6"
                   >Pnd</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.pnd %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.pnd }}</h6>
                   {% endif %}
@@ -1400,7 +1400,7 @@ background-color: rgb(217, 192, 255);
                 <label for="historyofheartmurmur" class="col-form-label col-12 col-md-6"
                   >Historyofheartmurmur</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.historyofheartmurmur %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.historyofheartmurmur }}</h6>
                   {% endif %}
@@ -1410,7 +1410,7 @@ background-color: rgb(217, 192, 255);
                 <label for="peripheral" class="col-form-label col-12 col-md-6"
                   >Peripheral</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.peripheral %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.peripheral }}</h6>
                   {% endif %}
@@ -1420,7 +1420,7 @@ background-color: rgb(217, 192, 255);
                 <label for="palpitation" class="col-form-label col-12 col-md-6"
                   >Palpitation</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.palpitation %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.palpitation }}</h6>
                   {% endif %}
@@ -1430,7 +1430,7 @@ background-color: rgb(217, 192, 255);
                 <label for="doe" class="col-form-label col-12 col-md-6"
                   >Doe</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.doe %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.doe }}</h6>
                   {% endif %}                </div>
@@ -1439,7 +1439,7 @@ background-color: rgb(217, 192, 255);
                 <label for="edema" class="col-form-label col-12 col-md-6"
                   >Edema</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.edema %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.edema }}</h6>
                   {% endif %}                </div>
@@ -1448,7 +1448,7 @@ background-color: rgb(217, 192, 255);
                 <label for="arrythmia" class="col-form-label col-12 col-md-6"
                   >Arrythmia</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.arrythmia %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.arrythmia }}</h6>
                   {% endif %}                </div>
@@ -1457,7 +1457,7 @@ background-color: rgb(217, 192, 255);
                 <label for="syncope" class="col-form-label col-12 col-md-6"
                   >Syncope</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.syncope %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.syncope }}</h6>
                   {% endif %}                </div>
@@ -1466,7 +1466,7 @@ background-color: rgb(217, 192, 255);
                 <label for="orthopnea" class="col-form-label col-12 col-md-6"
                   >Orthopnea</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.orthopnea %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.orthopnea }}</h6>
                   {% endif %}                </div>
@@ -1475,7 +1475,7 @@ background-color: rgb(217, 192, 255);
                 <label for="legpain" class="col-form-label col-12 col-md-6"
                   >Legpain</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.legpain %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.legpain }}</h6>
                   {% endif %}                </div>
@@ -1484,7 +1484,7 @@ background-color: rgb(217, 192, 255);
                 <label for="heartproblem" class="col-form-label col-12 col-md-6"
                   >Heartproblem</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.heartproblem %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.heartproblem }}</h6>
                   {% endif %}                </div>
@@ -1493,7 +1493,7 @@ background-color: rgb(217, 192, 255);
                 <label for="cough" class="col-form-label col-12 col-md-6"
                   >Cough</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.cough %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.cough }}</h6>
                   {% endif %}                </div>
@@ -1502,7 +1502,7 @@ background-color: rgb(217, 192, 255);
                 <label for="wheezing" class="col-form-label col-12 col-md-6"
                   >Wheezing</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.wheezing %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.wheezing }}</h6>
                   {% endif %}                </div>
@@ -1511,7 +1511,7 @@ background-color: rgb(217, 192, 255);
                 <label for="copd" class="col-form-label col-12 col-md-6"
                   >Copd</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.copd %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.copd }}</h6>
                   {% endif %}                </div>
@@ -1520,7 +1520,7 @@ background-color: rgb(217, 192, 255);
                 <label for="sputum" class="col-form-label col-12 col-md-6"
                   >Sputum</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.sputum %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.sputum }}</h6>
                   {% endif %}                </div>
@@ -1529,7 +1529,7 @@ background-color: rgb(217, 192, 255);
                 <label for="hemoptysis" class="col-form-label col-12 col-md-6"
                   >Hemoptysis</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.hemoptysis %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.historyofheartmurmur }}</h6>
                   {% endif %}                </div>
@@ -1538,7 +1538,7 @@ background-color: rgb(217, 192, 255);
                 <label for="shortnessofbreath" class="col-form-label col-12 col-md-6"
                   >Shortnessofbreath</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.shortnessofbreath %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.shortnessofbreath }}</h6>
                   {% endif %}                </div>
@@ -1547,7 +1547,7 @@ background-color: rgb(217, 192, 255);
                 <label for="asthma" class="col-form-label col-12 col-md-6"
                   >Asthma</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.asthma %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.asthma }}</h6>
                   {% endif %}                </div>
@@ -1556,7 +1556,7 @@ background-color: rgb(217, 192, 255);
                 <label for="breastmass" class="col-form-label col-12 col-md-6"
                   >Breastmass</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.breatmass %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.breatmass }}</h6>
                   {% endif %}                </div>
@@ -1565,7 +1565,7 @@ background-color: rgb(217, 192, 255);
                 <label for="abnormalmammogram" class="col-form-label col-12 col-md-6"
                   >Abnormalmammogram</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.abnormalmammogram %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.abnormalmammogram }}</h6>
                   {% endif %}                </div>
@@ -1574,7 +1574,7 @@ background-color: rgb(217, 192, 255);
                 <label for="discharge" class="col-form-label col-12 col-md-6"
                   >Discharge</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.discharge %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.discharge }}</h6>
                   {% endif %}                </div>
@@ -1583,7 +1583,7 @@ background-color: rgb(217, 192, 255);
                 <label for="biopsy" class="col-form-label col-12 col-md-6"
                   >Biopsy</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.biopsy %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.biopsy }}</h6>
                   {% endif %}                </div>
@@ -1592,7 +1592,7 @@ background-color: rgb(217, 192, 255);
                 <label for="hearingloss" class="col-form-label col-12 col-md-6"
                   >Hearingloss</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.hearingloss %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.hearingloss }}</h6>
                   {% endif %}                </div>
@@ -1601,7 +1601,7 @@ background-color: rgb(217, 192, 255);
                 <label for="vertigo" class="col-form-label col-12 col-md-6"
                   >Vertigo</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.vertigo %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.vertigo }}</h6>
                   {% endif %}                </div>
@@ -1610,7 +1610,7 @@ background-color: rgb(217, 192, 255);
                 <label for="sorethroat" class="col-form-label col-12 col-md-6"
                   >Sorethroat</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.sorethroat %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.sorethroat }}</h6>
                   {% endif %}                </div>
@@ -1619,7 +1619,7 @@ background-color: rgb(217, 192, 255);
                 <label for="nosebleed" class="col-form-label col-12 col-md-6"
                   >Nosebleed</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.nosebleed %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.nosebleed }}</h6>
                   {% endif %}                </div>
@@ -1629,7 +1629,7 @@ background-color: rgb(217, 192, 255);
                 <label for="tinnitus" class="col-form-label col-12 col-md-6"
                   >Tinnitus</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.tinnitus %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.tinnitus }}</h6>
                   {% endif %}                </div>
@@ -1638,7 +1638,7 @@ background-color: rgb(217, 192, 255);
                 <label for="sinusproblem" class="col-form-label col-12 col-md-6"
                   >Sinusproblem</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.sinusproblem %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.sinusproblem }}</h6>
                   {% endif %}                </div>
@@ -1647,7 +1647,7 @@ background-color: rgb(217, 192, 255);
                 <label for="snoring" class="col-form-label col-12 col-md-6"
                   >Snoring</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.snoring %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.snoring }}</h6>
                   {% endif %}                </div>
@@ -1656,7 +1656,7 @@ background-color: rgb(217, 192, 255);
                 <label for="pain" class="col-form-label col-12 col-md-6"
                   >Pain</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.pain %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.pain }}</h6>
                   {% endif %}                </div>
@@ -1665,7 +1665,7 @@ background-color: rgb(217, 192, 255);
                 <label for="frequentcolds" class="col-form-label col-12 col-md-6"
                   >Frequentcolds</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.frequentcolds %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.frequentcolds }}</h6>
                   {% endif %}                </div>
@@ -1674,7 +1674,7 @@ background-color: rgb(217, 192, 255);
                 <label for="postnasaldrip" class="col-form-label col-12 col-md-6"
                   >Postnasaldrip</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.postnasaldrip %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.postnasaldrip }}</h6>
                   {% endif %}                </div>
@@ -1683,7 +1683,7 @@ background-color: rgb(217, 192, 255);
                 <label for="apnea" class="col-form-label col-12 col-md-6"
                   >Apnea</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.apnea %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.apnea }}</h6>
                   {% endif %}                </div>
@@ -1692,7 +1692,7 @@ background-color: rgb(217, 192, 255);
                 <label for="changeinvision" class="col-form-label col-12 col-md-6"
                   >Changeinvision</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.changeinvision %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.changeinvision }}</h6>
                   {% endif %}                </div>
@@ -1701,7 +1701,7 @@ background-color: rgb(217, 192, 255);
                 <label for="irritation" class="col-form-label col-12 col-md-6"
                   >Irritation</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.irritation %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.irritation }}</h6>
                   {% endif %}                </div>
@@ -1710,7 +1710,7 @@ background-color: rgb(217, 192, 255);
                 <label for="doublevision" class="col-form-label col-12 col-md-6"
                   >Doublevision</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.doublevision %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.doublevision }}</h6>
                   {% endif %}                </div>
@@ -1719,7 +1719,7 @@ background-color: rgb(217, 192, 255);
                 <label for="familyhistoryofglaucoma" class="col-form-label col-12 col-md-6"
                   >Familyhistoryofglaucoma</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.familyhistoryofglaucoma %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.familyhistoryofglaucoma }}</h6>
                   {% endif %}                </div>
@@ -1728,7 +1728,7 @@ background-color: rgb(217, 192, 255);
                 <label for="redness" class="col-form-label col-12 col-md-6"
                   >Redness</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.redness %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.redness }}</h6>
                   {% endif %}                </div>
@@ -1737,7 +1737,7 @@ background-color: rgb(217, 192, 255);
                 <label for="blindspots" class="col-form-label col-12 col-md-6"
                   >Blindspots</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.blindspots %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.blindspots }}</h6>
                   {% endif %}                </div>
@@ -1746,7 +1746,7 @@ background-color: rgb(217, 192, 255);
                 <label for="eyepain" class="col-form-label col-12 col-md-6"
                   >Eyepain</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.eyepain %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.eyepain }}</h6>
                   {% endif %}                </div>
@@ -1755,7 +1755,7 @@ background-color: rgb(217, 192, 255);
                 <label for="excessivetearing" class="col-form-label col-12 col-md-6"
                   >Excessivetearing</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.excessivetearing %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.excessivetearing }}</h6>
                   {% endif %}                </div>
@@ -1764,7 +1764,7 @@ background-color: rgb(217, 192, 255);
                 <label for="photophobia" class="col-form-label col-12 col-md-6"
                   >Photophobia</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.photophobia %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.photophobia }}</h6>
                   {% endif %}                </div>
@@ -1773,7 +1773,7 @@ background-color: rgb(217, 192, 255);
                 <label for="nightsweats" class="col-form-label col-12 col-md-6"
                   >Nightsweats</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.nightsweats %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.nightsweats }}</h6>
                   {% endif %}                </div>
@@ -1782,7 +1782,7 @@ background-color: rgb(217, 192, 255);
                 <label for="heatorcold" class="col-form-label col-12 col-md-6"
                   >Heatorcold</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.heatorcold %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.heatorcold }}</h6>
                   {% endif %}                </div>
@@ -1791,7 +1791,7 @@ background-color: rgb(217, 192, 255);
                 <label for="weakness" class="col-form-label col-12 col-md-6"
                   >Weakness</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.weakness %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.weakness }}</h6>
                   {% endif %}                </div>
@@ -1800,7 +1800,7 @@ background-color: rgb(217, 192, 255);
                 <label for="fever" class="col-form-label col-12 col-md-6"
                   >Fever</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.fever %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.fever }}</h6>
                   {% endif %}                </div>
@@ -1809,7 +1809,7 @@ background-color: rgb(217, 192, 255);
                 <label for="insomnia" class="col-form-label col-12 col-md-6"
                   >Insomnia</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.insomnia %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.insomnia }}</h6>
                   {% endif %}                </div>
@@ -1818,7 +1818,7 @@ background-color: rgb(217, 192, 255);
                 <label for="intolerence" class="col-form-label col-12 col-md-6"
                   >Intolerence</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.intolerence %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.intolerence }}</h6>
                   {% endif %}                </div>
@@ -1827,7 +1827,7 @@ background-color: rgb(217, 192, 255);
                 <label for="fatigue" class="col-form-label col-12 col-md-6"
                   >Fatigue</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.fatigue %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.fatigue }}</h6>
                   {% endif %}                </div>
@@ -1836,7 +1836,7 @@ background-color: rgb(217, 192, 255);
                 <label for="chills" class="col-form-label col-12 col-md-6"
                   >Chills</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.chills %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.chills }}</h6>
                   {% endif %}                </div>
@@ -1845,7 +1845,7 @@ background-color: rgb(217, 192, 255);
                 <label for="irritability" class="col-form-label col-12 col-md-6"
                   >Irritability</label
                 >
-                <div class="container col-12 col-md-6">
+                <div class="container col-12 col-md-6 form-control-plaintext">
                   {% if ros.irritability %}
                   <h6 class="text-uppercase fw-bold text-danger">{{ ros.irritability }}</h6>
                   {% endif %}                </div>
