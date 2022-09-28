@@ -90,6 +90,11 @@
 background-color: rgb(217, 192, 255);
 }
 
+.col-form-label
+{
+  font-weight: bolder;
+}
+
 </style>
 </head>
 
@@ -434,10 +439,14 @@ background-color: rgb(217, 192, 255);
                       <h6>kg</h6>
                     </div>
                     <div class="col-2">
+                      {% if vitals.weight %}
                       {{ vitals.weight }}
+                      {% endif %}
                     </div>
                     <div class="col-4">
+                      {% if vitals.weightabn %}
                       {{ vitals.weightabn }}
+                      {% endif %}
                     </div>
                   </div>
 
@@ -450,10 +459,14 @@ background-color: rgb(217, 192, 255);
                       <h6>cm</h6>
                     </div>
                     <div class="col-2">
+                      {% if vitals.height %}
                       {{ vitals.height }}
+                      {% endif %}
                     </div>
                     <div class="col-4">
+                      {% if vitals.heightabn %}
                       {{ vitals.heightabn }}
+                      {% endif %}
                     </div>
                   </div>
                   <div class="row form-group">
@@ -464,10 +477,14 @@ background-color: rgb(217, 192, 255);
                       <h6>mm/Hg</h6>
                     </div>
                     <div class="col-2">
+                      {% if vitals.bpsystolic %}
                       {{ vitals.bpsystolic }}
+                      {% endif %}
                     </div>
                     <div class="col-4">
+                      {% if vitals.bpsystolicabn %}
                       {{ vitals.bpsystolicabn }}
+                      {% endif %}
                     </div>
                   </div>
                   <div class="row form-group">
@@ -478,10 +495,14 @@ background-color: rgb(217, 192, 255);
                       <h6>mm/Hg</h6>
                     </div>
                     <div class="col-2">
+                      {% if vitals.bpdiastolic %}
                       {{ vitals.bpdiastolic }}
+                      {% endif %}
                     </div>
                     <div class="col-4">
+                      {% if vitals.bpdiastolicabn %}
                       {{ vitals.bpdiastolicabn }}
+                      {% endif %}
                     </div>
                   </div>
                   <div class="row form-group">
@@ -492,10 +513,14 @@ background-color: rgb(217, 192, 255);
                       <h6>per min</h6>
                     </div>
                     <div class="col-2">
+                      {% if vitals.pulse %}
                       {{ vitals.pulse }}
+                      {% endif %}
                     </div>
                     <div class="col-4">
+                      {% if vitals.pulseabn %}
                       {{ vitals.pulseabn }}
+                      {% endif %}
                     </div>
                   </div>
                   <div class="row form-group">
@@ -506,10 +531,14 @@ background-color: rgb(217, 192, 255);
                       <h6>per min</h6>
                     </div>
                     <div class="col-2">
+                      {% if vitals.respiration %}
                       {{ vitals.respiration }}
+                      {% endif %}
                     </div>
                     <div class="col-4">
+                      {% if vitals.respirationabn %}
                       {{ vitals.respirationabn }}
+                      {% endif %}
                     </div>
                   </div>
                   <div class="row form-group">
@@ -520,10 +549,14 @@ background-color: rgb(217, 192, 255);
                       <h6>F</h6>
                     </div>
                     <div class="col-2">
+                      {% if vitals.temperature %}
                       {{ vitals.temperature }}
+                      {% endif %}
                     </div>
                     <div class="col-4">
+                      {% if vitals.temperatureabn %}
                       {{ vitals.temperatureabn }}
+                      {% endif %}
                     </div>
                   </div>
                   <div class="row form-group">
@@ -534,10 +567,14 @@ background-color: rgb(217, 192, 255);
                       <h6>%</h6>
                     </div>
                     <div class="col-2">
+                      {% if vitals.oxygensaturation %}
                       {{ vitals.oxygensaturation }}
+                      {% endif %}
                     </div>
                     <div class="col-4">
+                      {% if vitals.oxygensaturationabn %}
                       {{ vitals.oxygensaturationabn }}
+                      {% endif %}
                     </div>
                   </div>
                   <div class="row form-group">
@@ -548,10 +585,14 @@ background-color: rgb(217, 192, 255);
                       <h6>l/min</h6>
                     </div>
                     <div class="col-2">
+                      {% if vitals.oxygenflowrate %}
                       {{ vitals.oxygenflowrate }}
+                      {% endif %}
                     </div>
                     <div class="col-4">
-                      {{ vitals.oxygenflowrateabn }}
+                      {% if vitals.oxygenflowrate %}
+                      {{ vitals.oxygenflowrate }}
+                      {% endif %}
                     </div>
                   </div>
                   <div class="row form-group">
@@ -562,10 +603,14 @@ background-color: rgb(217, 192, 255);
                       <h6>%</h6>
                     </div>
                     <div class="col-2">
+                      {% if vitals.inhaledoxygenconc %}
                       {{ vitals.inhaledoxygenconc }}
+                      {% endif %}
                     </div>
                     <div class="col-4">
+                      {% if vitals.inhaledoxygenconcabn %}
                       {{ vitals.inhaledoxygenconcabn }}
+                      {% endif %}
                     </div>
                   </div>
                   <div class="row form-group">
@@ -576,10 +621,14 @@ background-color: rgb(217, 192, 255);
                       <h6>in</h6>
                     </div>
                     <div class="col-2">
+                      {% if vitals.headcircumference %}
                       {{ vitals.headcircumference }}
+                      {% endif %}
                     </div>
                     <div class="col-4">
+                      {% if vitals.headcircumferenceabn %}
                       {{ vitals.headcircumferenceabn }}
+                      {% endif %}
                     </div>
                   </div>
                   <div class="row form-group">
@@ -590,10 +639,14 @@ background-color: rgb(217, 192, 255);
                       <h6>cm</h6>
                     </div>
                     <div class="col-2">
+                      {% if vitals.waistcircumference %}
                       {{ vitals.waistcircumference }}
+                      {% endif %}
                     </div>
                     <div class="col-4">
-                      {{ vitals.waistcircumferenceabn }}
+                      {% if vitals.waistcircumference %}
+                      {{ vitals.waistcircumference }}
+                      {% endif %}
                     </div>
                   </div>
                   <div class="row form-group">
@@ -604,10 +657,14 @@ background-color: rgb(217, 192, 255);
                       <h6>kg/m^2</h6>
                     </div>
                     <div class="col-2">
+                      {% if vitals.bmi %}
                       {{ vitals.bmi }}
+                      {% endif %}
                     </div>
                     <div class="col-4">
+                      {% if vitals.bmiabn %}
                       {{ vitals.bmiabn }}
+                      {% endif %}
                     </div>
                   </div>
                   <div class="row form-group">
@@ -618,10 +675,14 @@ background-color: rgb(217, 192, 255);
                       <h6>%</h6>
                     </div>
                     <div class="col-2">
+                      {% if vitals.pediatricbmipercentile %}
                       {{ vitals.pediatricbmipercentile }}
+                      {% endif %}
                     </div>
                     <div class="col-4">
+                      {% if vitals.pediatricbmipercentileabn %}
                       {{ vitals.pediatricbmipercentileabn }}
+                      {% endif %}
                     </div>
                   </div>
                 </div>
@@ -700,41 +761,21 @@ background-color: rgb(217, 192, 255);
                         <h6>kg</h6>
                       </div>
                       <div class="col-2">
-                        <input type="text" class="form-control" name="weight" />
+                        <input type="text" class="form-control" name="weight" value="{{ vitals.weight }}"/>
                       </div>
                       <div class="col-4">
                         <select name="weightabn" class="form-control">
                           <option value="Normal">Normal</option>
-                          <option value="High">High</option>
-                          <option value="Low">Low</option>
-                          <option value="Critical Abnormal">
+                          <option value="High" {% if vitals.weightabn == 'High' %} selected {% endif %}>High</option>
+                          <option value="Low" {% if vitals.weightabn == 'Low' %} selected {% endif %}>Low</option>
+                          <option value="Critical Abnormal" {% if vitals.weightabn == 'Critical Abnormal' %} selected {% endif %}>
                             Critical Abnormal
                           </option>
                         </select>
                       </div>
                     </div>
   
-                    <div class="row form-group">
-                      <div class="col-3">
-                        <h6>Weight</h6>
-                      </div>
-                      <div class="col-2">
-                        <h6>kg</h6>
-                      </div>
-                      <div class="col-2">
-                        <input type="text" class="form-control" name="weight" />
-                      </div>
-                      <div class="col-4">
-                        <select name="weightabn" class="form-control">
-                          <option value="Normal">Normal</option>
-                          <option value="High">High</option>
-                          <option value="Low">Low</option>
-                          <option value="Critical Abnormal">
-                            Critical Abnormal
-                          </option>
-                        </select>
-                      </div>
-                    </div>
+                    
                     <div class="row form-group">
                       <div class="col-3">
                         <h6>Height</h6>
@@ -743,14 +784,14 @@ background-color: rgb(217, 192, 255);
                         <h6>cm</h6>
                       </div>
                       <div class="col-2">
-                        <input type="text" class="form-control" name="height" />
+                        <input type="text" class="form-control" name="height" value="{{ vitals.height }}"/>
                       </div>
                       <div class="col-4">
                         <select name="heightabn" class="form-control">
                           <option value="Normal">Normal</option>
-                          <option value="High">High</option>
-                          <option value="Low">Low</option>
-                          <option value="Critical Abnormal">
+                          <option value="High" {% if vitals.heightabn == 'High' %} selected {% endif %}>High</option>
+                          <option value="Low" {% if vitals.heightabn == 'Low' %} selected {% endif %}>Low</option>
+                          <option value="Critical Abnormal" {% if vitals.heightabn == 'Critical Abnormal' %} selected {% endif %}>
                             Critical Abnormal
                           </option>
                         </select>
@@ -768,14 +809,15 @@ background-color: rgb(217, 192, 255);
                           type="text"
                           class="form-control"
                           name="bpsystolic"
+                          value="{{ vitals.bpsystolic }}"
                         />
                       </div>
                       <div class="col-4">
                         <select name="bpsystolicabn" class="form-control">
                           <option value="Normal">Normal</option>
-                          <option value="High">High</option>
-                          <option value="Low">Low</option>
-                          <option value="Critical Abnormal">
+                          <option value="High" {% if vitals.bpsystolicabn == 'High' %} selected {% endif %}>High</option>
+                          <option value="Low" {% if vitals.bpsystolicabn == 'Low' %} selected {% endif %}>Low</option>
+                          <option value="Critical Abnormal" {% if vitals.bpsystolicabn == 'Critical Abnormal' %} selected {% endif %}>
                             Critical Abnormal
                           </option>
                         </select>
@@ -793,14 +835,15 @@ background-color: rgb(217, 192, 255);
                           type="text"
                           class="form-control"
                           name="bpdiastolic"
+                          value="{{ vitals.bpdiastolic }}"
                         />
                       </div>
                       <div class="col-4">
                         <select name="bpdiastolicabn" class="form-control">
                           <option value="Normal">Normal</option>
-                          <option value="High">High</option>
-                          <option value="Low">Low</option>
-                          <option value="Critical Abnormal">
+                          <option value="High" {% if vitals.bpdiastolicabn == 'High' %} selected {% endif %}>High</option>
+                          <option value="Low" {% if vitals.bpdiastolicabn == 'Low' %} selected {% endif %}>Low</option>
+                          <option value="Critical Abnormal" {% if vitals.bpdiastolicabn == 'Critical Abnormal' %} selected {% endif %}>
                             Critical Abnormal
                           </option>
                         </select>
@@ -814,14 +857,14 @@ background-color: rgb(217, 192, 255);
                         <h6>per min</h6>
                       </div>
                       <div class="col-2">
-                        <input type="text" class="form-control" name="pulse" />
+                        <input type="text" class="form-control" name="pulse" value="{{ vitals.pulse }}"/>
                       </div>
                       <div class="col-4">
                         <select name="pulseabn" class="form-control">
                           <option value="Normal">Normal</option>
-                          <option value="High">High</option>
-                          <option value="Low">Low</option>
-                          <option value="Critical Abnormal">
+                          <option value="High" {% if vitals.pulseabn == 'High' %} selected {% endif %}>High</option>
+                          <option value="Low" {% if vitals.pulseabn == 'Low' %} selected {% endif %}>Low</option>
+                          <option value="Critical Abnormal" {% if vitals.pulseabn == 'Critical Abnormal' %} selected {% endif %}>
                             Critical Abnormal
                           </option>
                         </select>
@@ -839,14 +882,15 @@ background-color: rgb(217, 192, 255);
                           type="text"
                           class="form-control"
                           name="respiration"
+                          value="{{ vitals.respiration }}"
                         />
                       </div>
                       <div class="col-4">
                         <select name="respirationabn" class="form-control">
                           <option value="Normal">Normal</option>
-                          <option value="High">High</option>
-                          <option value="Low">Low</option>
-                          <option value="Critical Abnormal">
+                          <option value="High" {% if vitals.respirationabn == 'High' %} selected {% endif %}>High</option>
+                          <option value="Low" {% if vitals.respirationabn == 'Low' %} selected {% endif %}>Low</option>
+                          <option value="Critical Abnormal" {% if vitals.respirationabn == 'Critical Abnormal' %} selected {% endif %}>
                             Critical Abnormal
                           </option>
                         </select>
@@ -864,14 +908,15 @@ background-color: rgb(217, 192, 255);
                           type="text"
                           class="form-control"
                           name="temperature"
+                          value="{{ vitals.temperature }}"
                         />
                       </div>
                       <div class="col-4">
                         <select name="temperatureabn" class="form-control">
                           <option value="Normal">Normal</option>
-                          <option value="High">High</option>
-                          <option value="Low">Low</option>
-                          <option value="Critical Abnormal">
+                          <option value="High" {% if vitals.temperatureabn == 'High' %} selected {% endif %}>High</option>
+                          <option value="Low" {% if vitals.temperatureabn == 'Low' %} selected {% endif %}>Low</option>
+                          <option value="Critical Abnormal" {% if vitals.temperatureabn == 'Critical Abnormal' %} selected {% endif %}>
                             Critical Abnormal
                           </option>
                         </select>
@@ -889,14 +934,15 @@ background-color: rgb(217, 192, 255);
                           type="text"
                           class="form-control"
                           name="oxygensaturation"
+                          value="{{ vitals.oxygensaturation }}"
                         />
                       </div>
                       <div class="col-4">
                         <select name="oxygensaturationabn" class="form-control">
                           <option value="Normal">Normal</option>
-                          <option value="High">High</option>
-                          <option value="Low">Low</option>
-                          <option value="Critical Abnormal">
+                          <option value="High" {% if vitals.oxygensaturationabn == 'High' %} selected {% endif %}>High</option>
+                          <option value="Low" {% if vitals.oxygensaturationabn == 'Low' %} selected {% endif %}>Low</option>
+                          <option value="Critical Abnormal" {% if vitals.oxygensaturationabn == 'Critical Abnormal' %} selected {% endif %}>
                             Critical Abnormal
                           </option>
                         </select>
@@ -914,14 +960,15 @@ background-color: rgb(217, 192, 255);
                           type="text"
                           class="form-control"
                           name="oxygenflowrate"
+                          value="{{ vitals.oxygenflowrate }}"
                         />
                       </div>
                       <div class="col-4">
                         <select name="oxygenflowrateabn" class="form-control">
                           <option value="Normal">Normal</option>
-                          <option value="High">High</option>
-                          <option value="Low">Low</option>
-                          <option value="Critical Abnormal">
+                          <option value="High" {% if vitals.oxygenflowrateabn == 'High' %} selected {% endif %}>High</option>
+                          <option value="Low" {% if vitals.oxygenflowrateabn == 'Low' %} selected {% endif %}>Low</option>
+                          <option value="Critical Abnormal" {% if vitals.oxygenflowrateabn == 'Critical Abnormal' %} selected {% endif %}>
                             Critical Abnormal
                           </option>
                         </select>
@@ -939,14 +986,15 @@ background-color: rgb(217, 192, 255);
                           type="text"
                           class="form-control"
                           name="inhaledoxygenconc"
+                          value="{{ vitals.inhaledoxygenconc }}"
                         />
                       </div>
                       <div class="col-4">
                         <select name="inhaledoxygenconcabn" class="form-control">
                           <option value="Normal">Normal</option>
-                          <option value="High">High</option>
-                          <option value="Low">Low</option>
-                          <option value="Critical Abnormal">
+                          <option value="High" {% if vitals.inhaledoxygenconcabn == 'High' %} selected {% endif %}>High</option>
+                          <option value="Low" {% if vitals.inhaledoxygenconcabn == 'Low' %} selected {% endif %}>Low</option>
+                          <option value="Critical Abnormal" {% if vitals.inhaledoxygenconcabn == 'Critical Abnormal' %} selected {% endif %}>
                             Critical Abnormal
                           </option>
                         </select>
@@ -964,14 +1012,15 @@ background-color: rgb(217, 192, 255);
                           type="text"
                           class="form-control"
                           name="headcircumference"
+                          value="{{ vitals.headcircumference }}"
                         />
                       </div>
                       <div class="col-4">
                         <select name="headcircumferenceabn" class="form-control">
                           <option value="Normal">Normal</option>
-                          <option value="High">High</option>
-                          <option value="Low">Low</option>
-                          <option value="Critical Abnormal">
+                          <option value="High" {% if vitals.headcircumferenceabn == 'High' %} selected {% endif %}>High</option>
+                          <option value="Low" {% if vitals.headcircumferenceabn == 'Low' %} selected {% endif %}>Low</option>
+                          <option value="Critical Abnormal" {% if vitals.headcircumferenceabn == 'Critical Abnormal' %} selected {% endif %}>
                             Critical Abnormal
                           </option>
                         </select>
@@ -989,14 +1038,15 @@ background-color: rgb(217, 192, 255);
                           type="text"
                           class="form-control"
                           name="waistcircumference"
+                          value="{{ vitals.waistcircumference }}"
                         />
                       </div>
                       <div class="col-4">
                         <select name="waistcircumferenceabn" class="form-control">
                           <option value="Normal">Normal</option>
-                          <option value="High">High</option>
-                          <option value="Low">Low</option>
-                          <option value="Critical Abnormal">
+                          <option value="High" {% if vitals.waistcircumferenceabn == 'High' %} selected {% endif %}>High</option>
+                          <option value="Low" {% if vitals.waistcircumferenceabn == 'Low' %} selected {% endif %}>Low</option>
+                          <option value="Critical Abnormal" {% if vitals.waistcircumferenceabn == 'Critical Abnormal' %} selected {% endif %}>
                             Critical Abnormal
                           </option>
                         </select>
@@ -1007,17 +1057,17 @@ background-color: rgb(217, 192, 255);
                         <h6>BMI</h6>
                       </div>
                       <div class="col-2">
-                        <h6>kg/m^2</h6>
+                        <h6>kg/m^2</h6> 
                       </div>
                       <div class="col-2">
-                        <input type="text" class="form-control" name="bmi" />
+                        <input type="text" class="form-control" name="bmi" value="{{ vitals.bmi }}"/>
                       </div>
                       <div class="col-4">
                         <select name="bmiabn" class="form-control">
                           <option value="Normal">Normal</option>
-                          <option value="High">High</option>
-                          <option value="Low">Low</option>
-                          <option value="Critical Abnormal">
+                          <option value="High" {% if vitals.bmiabn == 'High' %} selected {% endif %}>High</option>
+                          <option value="Low" {% if vitals.bmiabn == 'Low' %} selected {% endif %}>Low</option>
+                          <option value="Critical Abnormal" {% if vitals.bmiabn == 'Critical Abnormal' %} selected {% endif %}>
                             Critical Abnormal
                           </option>
                         </select>
@@ -1035,6 +1085,7 @@ background-color: rgb(217, 192, 255);
                           type="text"
                           class="form-control"
                           name="pediatricbmipercentile"
+                          value="{{ vitals.pediatricbmipercentile }}"
                         />
                       </div>
                       <div class="col-4">
@@ -1042,12 +1093,12 @@ background-color: rgb(217, 192, 255);
                           name="pediatricbmipercentileabn"
                           class="form-control"
                         >
-                          <option value="Normal">Normal</option>
-                          <option value="High">High</option>
-                          <option value="Low">Low</option>
-                          <option value="Critical Abnormal">
-                            Critical Abnormal
-                          </option>
+                        <option value="Normal">Normal</option>
+                        <option value="High" {% if vitals.pediatricbmipercentileabn == 'High' %} selected {% endif %}>High</option>
+                        <option value="Low" {% if vitals.pediatricbmipercentileabn == 'Low' %} selected {% endif %}>Low</option>
+                        <option value="Critical Abnormal" {% if vitals.pediatricbmipercentileabn == 'Critical Abnormal' %} selected {% endif %}>
+                          Critical Abnormal
+                        </option>
                         </select>
                       </div>
                     </div>
@@ -1107,8 +1158,11 @@ background-color: rgb(217, 192, 255);
                 <div class="row">
                   <div class="col-12 col-md-5">
                     <div class="form-group row container">
-                      <div class="col-md-6 col-12"><label for="date" class="col-form-label">Date</label></div>
-                      <div class="col-12 col-md-6">{{ notes.date }}</div>
+                      <div class="col-12 col-md-6"><label for="date" class="col-form-label">Date</label></div>
+                      <div class="col-12 col-md-6">
+                        {% if notes.date %}
+                        {{ notes.date }}
+                        {% endif %}</div>
                     </div>
                     <div class="form-group row container">
                       <div class="col-12 col-md-6">
@@ -1116,15 +1170,23 @@ background-color: rgb(217, 192, 255);
                           >Type</label
                         >
                       </div>
-                      <div class="col-12 col-md-6">{{ notes.type }}</div>
-
+                      <div class="col-12 col-md-6">
+                        {% if notes.type %}
+                        {{ notes.type }}
+                        {% endif %}
+                      </div>
+                    </div>
+                    <div class="form-group row container">
                       <div class="col-12 col-md-6">
                         <label for="category" class="col-form-label"
                           >Category</label
                         >
                       </div>
-
-                      <div class="col-12 col-md-6">{{ notes.category }}</div>
+                      <div class="col-12 col-md-6">
+                        {% if notes.category %}
+                        {{ notes.category }}
+                        {% endif %}
+                      </div>
                     </div>
                   </div>
 
@@ -1135,7 +1197,10 @@ background-color: rgb(217, 192, 255);
                           >Narrative</label
                         >
                       </div>
-                      <div class="col-12 col-md-6">{{ notes.narrative }}</div>
+                      <div class="col-12 col-md-6">
+                        {% if notes.narrative %}
+                        {{ notes.narrative }}
+                        {% endif %}</div>
                     </div>
                   </div>
                 </div>
@@ -1193,24 +1258,24 @@ background-color: rgb(217, 192, 255);
                   <div class="col-12 col-md-5">
                     <div class="form-group row container">
                       <label for="date" class="col-form-label">Date</label>
-                      <input type="date" name="date" class="form-control" required />
+                      <input type="date" name="date" class="form-control" required value="{{ notes.date }}" />
                     </div>
                     <div class="form-group row container">
                       <label for="type" class="col-form-label"
                         >Type</label
                       >
                       <select name="type" class="form-control">
-                        <option value="Evaluation Note">Evaluation Note</option>
-                        <option value="Progress Note">Progress Note</option>
-                        <option value="Nurse Note">Nurse Note</option>
-                        <option value="History and Physical">History and Physical</option>
-                        <option value="General Note">General Note</option>
-                        <option value="Discharge Summary Note">Discharge Summary Note</option>
-                        <option value="Procedure Summary Note">Procedure Summary Note</option>
-                        <option value="Consultation Note">Consultation Note</option>
-                        <option value="Imaging Note">Imaging Note</option>
-                        <option value="Lab Report Narrative">Lab Report Narrative</option>
-                        <option value="Pathology Report Narrative">Pathology Report Narrative</option>
+                        <option value="Evaluation Note" {% if notes.type == 'Evaluation Note' %} selected {% endif %}>Evaluation Note</option>
+                        <option value="Progress Note" {% if notes.type == 'Progress Note' %} selected {% endif %}>Progress Note</option>
+                        <option value="Nurse Note" {% if notes.type == 'Nurse Note' %} selected {% endif %}>Nurse Note</option>
+                        <option value="History and Physical" {% if notes.type == 'History and Physical' %} selected {% endif %} >History and Physical</option>
+                        <option value="General Note" {% if notes.type == 'General Note' %} selected {% endif %}>General Note</option>
+                        <option value="Discharge Summary Note" {% if notes.type == 'Discharge Summary Note' %} selected {% endif %}>Discharge Summary Note</option>
+                        <option value="Procedure Summary Note" {% if notes.type == 'Procedure Summary Note' %} selected {% endif %}>Procedure Summary Note</option>
+                        <option value="Consultation Note" {% if notes.type == 'Consultation Note' %} selected {% endif %}>Consultation Note</option>
+                        <option value="Imaging Note" {% if notes.type == 'Imaging Note' %} selected {% endif %}>Imaging Note</option>
+                        <option value="Lab Report Narrative" {% if notes.type == 'Lab Report Narrative' %} selected {% endif %}>Lab Report Narrative</option>
+                        <option value="Pathology Report Narrative" {% if notes.type == 'Pathology Report Narrative' %} selected {% endif %}>Pathology Report Narrative</option>
                       </select>
 
                       <label for="category" class="col-form-label"
@@ -1218,10 +1283,10 @@ background-color: rgb(217, 192, 255);
                       >
 
                       <select name="category" class="form-control">
-                        <option value="">Select</option>
-                        <option value="Cardiology">Cardiology</option>
-                        <option value="Pathology">Pathology</option>
-                        <option value="Radiology">Radiology</option>
+                        <option value=""  {% if ros.heartproblem == '' %} checked {% endif %}>Select</option>
+                        <option value="Cardiology" {% if notes.type == 'Cardiology' %} selected {% endif %}>Cardiology</option>
+                        <option value="Pathology" {% if notes.type == 'Pathology' %} selected {% endif %}>Pathology</option>
+                        <option value="Radiology" {% if notes.type == 'Radiology' %} selected {% endif %}>Radiology</option>
                       </select>
                     </div>
                   </div>
@@ -1236,7 +1301,7 @@ background-color: rgb(217, 192, 255);
                         class="form-control"
                         cols="30"
                         rows="10"
-                      ></textarea>
+                      >{{ notes.narrative }}</textarea>
                     </div>
                   </div>
                 </div>
@@ -1271,7 +1336,7 @@ background-color: rgb(217, 192, 255);
     aria-labelledby="getros"
     aria-hidden="true"
   >
-    <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="getroslabel">Review of Systems</h5>
@@ -1287,451 +1352,503 @@ background-color: rgb(217, 192, 255);
 
           <div class="modal-body">
             <div class="container">
-              <h6 class="card-header">CONSTITUTIONAL</h6>
-
-              <div class="form-group row container mt-4">
+              <div class="form-group border-bottom border-bottom row container mt-4">
                 <label
                   for="weightchange"
                   class="col-form-label col-12 col-md-6"
                   >Weight Change</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.weightchange }}
+                  {% if ros.weightchange %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.weightchange }}</h6>
+                  {% endif %}
                 </div>
               </div>
 
-              <div class="form-group row container">
+              <div class="form-group border-bottom border-bottom row container">
                 <label for="anorexia" class="col-form-label col-12 col-md-6"
                   >Anorexia</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.anorexia }}
+                  {% if ros.anorexia %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.anorexia }}</h6>
+                  {% endif %}
                 </div>
               </div>
 
-              <div class="form-group row container">
+              <div class="form-group border-bottom border-bottom row container">
                 <label for="chestpain" class="col-form-label col-12 col-md-6"
                   >Chestpain</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.chestpain }}
+                  {% if ros.chestpain %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.chestpain }}</h6>
+                  {% endif %}
                 </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom border-bottom row container">
                 <label for="pnd" class="col-form-label col-12 col-md-6"
                   >Pnd</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.pnd }}
+                  {% if ros.pnd %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.pnd }}</h6>
+                  {% endif %}
                 </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom border-bottom row container">
                 <label for="historyofheartmurmur" class="col-form-label col-12 col-md-6"
                   >Historyofheartmurmur</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.historyofheartmurmur }}
+                  {% if ros.historyofheartmurmur %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.historyofheartmurmur }}</h6>
+                  {% endif %}
                 </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="peripheral" class="col-form-label col-12 col-md-6"
                   >Peripheral</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.peripheral }}
+                  {% if ros.peripheral %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.peripheral }}</h6>
+                  {% endif %}
                 </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="palpitation" class="col-form-label col-12 col-md-6"
                   >Palpitation</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.palpitation }}
+                  {% if ros.palpitation %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.palpitation }}</h6>
+                  {% endif %}
                 </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="doe" class="col-form-label col-12 col-md-6"
                   >Doe</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.doe }}
-                </div>
+                  {% if ros.doe %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.doe }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="edema" class="col-form-label col-12 col-md-6"
                   >Edema</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.edema }}
-                </div>
+                  {% if ros.edema %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.edema }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="arrythmia" class="col-form-label col-12 col-md-6"
                   >Arrythmia</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.arrythmia }}
-                </div>
+                  {% if ros.arrythmia %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.arrythmia }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="syncope" class="col-form-label col-12 col-md-6"
                   >Syncope</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.syncope }}
-                </div>
+                  {% if ros.syncope %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.syncope }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="orthopnea" class="col-form-label col-12 col-md-6"
                   >Orthopnea</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.orthopnea }}
-                </div>
+                  {% if ros.orthopnea %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.orthopnea }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="legpain" class="col-form-label col-12 col-md-6"
                   >Legpain</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.legpain }}
-                </div>
+                  {% if ros.legpain %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.legpain }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="heartproblem" class="col-form-label col-12 col-md-6"
                   >Heartproblem</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.heartproblem }}
-                </div>
+                  {% if ros.heartproblem %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.heartproblem }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="cough" class="col-form-label col-12 col-md-6"
                   >Cough</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.cough }}
-                </div>
+                  {% if ros.cough %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.cough }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="wheezing" class="col-form-label col-12 col-md-6"
                   >Wheezing</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.wheezing }}
-                </div>
+                  {% if ros.wheezing %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.wheezing }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="copd" class="col-form-label col-12 col-md-6"
                   >Copd</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.copd }}
-                </div>
+                  {% if ros.copd %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.copd }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="sputum" class="col-form-label col-12 col-md-6"
                   >Sputum</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.sputum }}
-                </div>
+                  {% if ros.sputum %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.sputum }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="hemoptysis" class="col-form-label col-12 col-md-6"
                   >Hemoptysis</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.hemoptysis }}
-                </div>
+                  {% if ros.hemoptysis %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.historyofheartmurmur }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="shortnessofbreath" class="col-form-label col-12 col-md-6"
                   >Shortnessofbreath</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.shortnessofbreath }}
-                </div>
+                  {% if ros.shortnessofbreath %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.shortnessofbreath }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="asthma" class="col-form-label col-12 col-md-6"
                   >Asthma</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.asthma }}
-                </div>
+                  {% if ros.asthma %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.asthma }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="breastmass" class="col-form-label col-12 col-md-6"
                   >Breastmass</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.breastmass }}
-                </div>
+                  {% if ros.breatmass %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.breatmass }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="abnormalmammogram" class="col-form-label col-12 col-md-6"
                   >Abnormalmammogram</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.abnormalmammogram }}
-                </div>
+                  {% if ros.abnormalmammogram %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.abnormalmammogram }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="discharge" class="col-form-label col-12 col-md-6"
                   >Discharge</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.discharge }}
-                </div>
+                  {% if ros.discharge %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.discharge }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="biopsy" class="col-form-label col-12 col-md-6"
                   >Biopsy</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.biopsy }}
-                </div>
+                  {% if ros.biopsy %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.biopsy }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="hearingloss" class="col-form-label col-12 col-md-6"
                   >Hearingloss</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.hearingloss }}
-                </div>
+                  {% if ros.hearingloss %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.hearingloss }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="vertigo" class="col-form-label col-12 col-md-6"
                   >Vertigo</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.vertigo }}
-                </div>
+                  {% if ros.vertigo %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.vertigo }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
-                <label for="sorethroa" class="col-form-label col-12 col-md-6"
-                  >Sorethroa</label
+<div class="form-group border-bottom row container">
+                <label for="sorethroat" class="col-form-label col-12 col-md-6"
+                  >Sorethroat</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.sorethroa }}
-                </div>
+                  {% if ros.sorethroat %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.sorethroat }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="nosebleed" class="col-form-label col-12 col-md-6"
                   >Nosebleed</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.nosebleed }}
-                </div>
+                  {% if ros.nosebleed %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.nosebleed }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
-                <label for="discharge" class="col-form-label col-12 col-md-6"
-                  >Discharge</label
-                >
-                <div class="container col-12 col-md-6">
-                  {{ ros.discharge }}
-                </div>
-              </div>
-<div class="form-group row container">
+
+<div class="form-group border-bottom row container">
                 <label for="tinnitus" class="col-form-label col-12 col-md-6"
                   >Tinnitus</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.tinnitus }}
-                </div>
+                  {% if ros.tinnitus %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.tinnitus }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="sinusproblem" class="col-form-label col-12 col-md-6"
                   >Sinusproblem</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.sinusproblem }}
-                </div>
+                  {% if ros.sinusproblem %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.sinusproblem }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="snoring" class="col-form-label col-12 col-md-6"
                   >Snoring</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.snoring }}
-                </div>
+                  {% if ros.snoring %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.snoring }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="pain" class="col-form-label col-12 col-md-6"
                   >Pain</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.pain }}
-                </div>
+                  {% if ros.pain %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.pain }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="frequentcolds" class="col-form-label col-12 col-md-6"
                   >Frequentcolds</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.frequentcolds }}
-                </div>
+                  {% if ros.frequentcolds %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.frequentcolds }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="postnasaldrip" class="col-form-label col-12 col-md-6"
                   >Postnasaldrip</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.postnasaldrip }}
-                </div>
+                  {% if ros.postnasaldrip %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.postnasaldrip }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="apnea" class="col-form-label col-12 col-md-6"
                   >Apnea</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.apnea }}
-                </div>
+                  {% if ros.apnea %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.apnea }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="changeinvision" class="col-form-label col-12 col-md-6"
                   >Changeinvision</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.changeinvision }}
-                </div>
+                  {% if ros.changeinvision %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.changeinvision }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="irritation" class="col-form-label col-12 col-md-6"
                   >Irritation</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.irritation }}
-                </div>
+                  {% if ros.irritation %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.irritation }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="doublevision" class="col-form-label col-12 col-md-6"
                   >Doublevision</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.doublevision }}
-                </div>
+                  {% if ros.doublevision %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.doublevision }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="familyhistoryofglaucoma" class="col-form-label col-12 col-md-6"
                   >Familyhistoryofglaucoma</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.familyhistoryofglaucoma }}
-                </div>
+                  {% if ros.familyhistoryofglaucoma %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.familyhistoryofglaucoma }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="redness" class="col-form-label col-12 col-md-6"
                   >Redness</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.redness }}
-                </div>
+                  {% if ros.redness %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.redness }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="blindspots" class="col-form-label col-12 col-md-6"
                   >Blindspots</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.blindspots }}
-                </div>
+                  {% if ros.blindspots %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.blindspots }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="eyepain" class="col-form-label col-12 col-md-6"
                   >Eyepain</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.eyepain }}
-                </div>
+                  {% if ros.eyepain %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.eyepain }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="excessivetearing" class="col-form-label col-12 col-md-6"
                   >Excessivetearing</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.excessivetearing }}
-                </div>
+                  {% if ros.excessivetearing %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.excessivetearing }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="photophobia" class="col-form-label col-12 col-md-6"
                   >Photophobia</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.photophobia }}
-                </div>
+                  {% if ros.photophobia %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.photophobia }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="nightsweats" class="col-form-label col-12 col-md-6"
                   >Nightsweats</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.nightsweats }}
-                </div>
+                  {% if ros.nightsweats %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.nightsweats }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="heatorcold" class="col-form-label col-12 col-md-6"
                   >Heatorcold</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.heatorcold }}
-                </div>
+                  {% if ros.heatorcold %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.heatorcold }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="weakness" class="col-form-label col-12 col-md-6"
                   >Weakness</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.weakness }}
-                </div>
+                  {% if ros.weakness %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.weakness }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="fever" class="col-form-label col-12 col-md-6"
                   >Fever</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.fever }}
-                </div>
+                  {% if ros.fever %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.fever }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="insomnia" class="col-form-label col-12 col-md-6"
                   >Insomnia</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.insomnia }}
-                </div>
+                  {% if ros.insomnia %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.insomnia }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="intolerence" class="col-form-label col-12 col-md-6"
                   >Intolerence</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.intolerence }}
-                </div>
+                  {% if ros.intolerence %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.intolerence }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="fatigue" class="col-form-label col-12 col-md-6"
                   >Fatigue</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.fatigue }}
-                </div>
+                  {% if ros.fatigue %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.fatigue }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="chills" class="col-form-label col-12 col-md-6"
                   >Chills</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.chills }}
-                </div>
+                  {% if ros.chills %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.chills }}</h6>
+                  {% endif %}                </div>
               </div>
-<div class="form-group row container">
+<div class="form-group border-bottom row container">
                 <label for="irritability" class="col-form-label col-12 col-md-6"
                   >Irritability</label
                 >
                 <div class="container col-12 col-md-6">
-                  {{ ros.irritability }}
-                </div>
+                  {% if ros.irritability %}
+                  <h6 class="text-uppercase fw-bold text-danger">{{ ros.irritability }}</h6>
+                  {% endif %}                </div>
               </div>
 
 
@@ -1792,6 +1909,7 @@ background-color: rgb(217, 192, 255);
                               name="weightchange"
                               id="weightchange1"
                               value="Yes"
+                              {% if ros.weightchange == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="weightchange1"
                               >YES</label
@@ -1804,6 +1922,7 @@ background-color: rgb(217, 192, 255);
                               name="weightchange"
                               id="weightchange2"
                               value="No"
+                              {% if ros.weightchange == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="weightchange2"
                               >NO</label
@@ -1815,8 +1934,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="weightchange"
                               id="weightchange3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.weightchange == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="weightchange3"
                               >N/A
@@ -1837,6 +1956,7 @@ background-color: rgb(217, 192, 255);
                               name="anorexia"
                               id="anorexia1"
                               value="Yes"
+                              {% if ros.anorexia == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="anorexia1"
                               >YES</label
@@ -1848,6 +1968,7 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="anorexia"
                               id="anorexia2"
+                              {% if ros.anorexia == 'No' %} checked {% endif %}
                               value="No"
                             />
                             <label class="form-check-label" for="anorexia2">NO</label>
@@ -1858,8 +1979,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="anorexia"
                               id="anorexia3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.anorexia == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="anorexia3"
                               >N/A
@@ -1882,6 +2003,7 @@ background-color: rgb(217, 192, 255);
                               name="nightsweats"
                               id="nightsweats1"
                               value="Yes"
+                              {% if ros.nightsweats == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="nightsweats1"
                               >YES</label
@@ -1894,6 +2016,7 @@ background-color: rgb(217, 192, 255);
                               name="nightsweats"
                               id="nightsweats2"
                               value="No"
+                              {% if ros.nightsweats == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="nightsweats2"
                               >NO</label
@@ -1905,8 +2028,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="nightsweats"
                               id="nightsweats3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.nightsweats == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="nightsweats3"
                               >N/A
@@ -1927,6 +2050,7 @@ background-color: rgb(217, 192, 255);
                               name="heatorcold"
                               id="heatorcold1"
                               value="Yes"
+                              {% if ros.heatorcold == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="heatorcold1"
                               >YES</label
@@ -1939,6 +2063,7 @@ background-color: rgb(217, 192, 255);
                               name="heatorcold"
                               id="heatorcold2"
                               value="No"
+                              {% if ros.heatorcold == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="heatorcold2"
                               >NO</label
@@ -1950,8 +2075,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="heatorcold"
                               id="heatorcold3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.heatorcold == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="heatorcold3"
                               >N/A
@@ -1972,6 +2097,7 @@ background-color: rgb(217, 192, 255);
                               name="weakness"
                               id="weakness1"
                               value="Yes"
+                              {% if ros.weakness == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="weakness1"
                               >YES</label
@@ -1984,6 +2110,7 @@ background-color: rgb(217, 192, 255);
                               name="weakness"
                               id="weakness2"
                               value="No"
+                              {% if ros.weakness == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="weakness2">NO</label>
                           </div>
@@ -1993,8 +2120,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="weakness"
                               id="weakness3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.weakness == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="weakness3"
                               >N/A
@@ -2015,6 +2142,7 @@ background-color: rgb(217, 192, 255);
                               name="fever"
                               id="fever1"
                               value="Yes"
+                              {% if ros.fever == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="fever1">YES</label>
                           </div>
@@ -2025,6 +2153,7 @@ background-color: rgb(217, 192, 255);
                               name="fever"
                               id="fever2"
                               value="No"
+                              {% if ros.fever == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="fever2">NO</label>
                           </div>
@@ -2034,8 +2163,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="fever"
                               id="fever3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.fever == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="fever3">N/A </label>
                           </div>
@@ -2054,6 +2183,7 @@ background-color: rgb(217, 192, 255);
                               name="insomnia"
                               id="insomnia1"
                               value="Yes"
+                              {% if ros.insomnia == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="insomnia1"
                               >YES</label
@@ -2066,6 +2196,7 @@ background-color: rgb(217, 192, 255);
                               name="insomnia"
                               id="insomnia2"
                               value="No"
+                              {% if ros.insomnia == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="insomnia2">NO</label>
                           </div>
@@ -2075,8 +2206,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="insomnia"
                               id="insomnia3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.insomnia == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="insomnia3"
                               >N/A
@@ -2099,6 +2230,7 @@ background-color: rgb(217, 192, 255);
                               name="intolerence"
                               id="intolerence1"
                               value="Yes"
+                              {% if ros.intolerence == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="intolerence1"
                               >YES</label
@@ -2111,6 +2243,7 @@ background-color: rgb(217, 192, 255);
                               name="intolerence"
                               id="intolerence2"
                               value="No"
+                              {% if ros.intolerence == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="intolerence2"
                               >NO</label
@@ -2122,8 +2255,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="intolerence"
                               id="intolerence3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.intolerence == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="intolerence3"
                               >N/A
@@ -2144,6 +2277,7 @@ background-color: rgb(217, 192, 255);
                               name="fatigue"
                               id="fatigue1"
                               value="Yes"
+                              {% if ros.fatigue == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="fatigue1">YES</label>
                           </div>
@@ -2154,6 +2288,7 @@ background-color: rgb(217, 192, 255);
                               name="fatigue"
                               id="fatigue2"
                               value="No"
+                              {% if ros.fatigue == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="fatigue2">NO</label>
                           </div>
@@ -2163,8 +2298,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="fatigue"
                               id="fatigue3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.fatigue == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="fatigue3"
                               >N/A
@@ -2185,6 +2320,7 @@ background-color: rgb(217, 192, 255);
                               name="chills"
                               id="chills1"
                               value="Yes"
+                              {% if ros.chills == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="chills1">YES</label>
                           </div>
@@ -2195,6 +2331,7 @@ background-color: rgb(217, 192, 255);
                               name="chills"
                               id="chills2"
                               value="No"
+                              {% if ros.chills == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="chills2">NO</label>
                           </div>
@@ -2204,8 +2341,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="chills"
                               id="chills3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.chills == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="chills3">N/A </label>
                           </div>
@@ -2226,6 +2363,7 @@ background-color: rgb(217, 192, 255);
                               name="irritability"
                               id="irritability1"
                               value="Yes"
+                              {% if ros.irritability == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="irritability1"
                               >YES</label
@@ -2238,6 +2376,7 @@ background-color: rgb(217, 192, 255);
                               name="irritability"
                               id="irritability2"
                               value="No"
+                              {% if ros.irritability == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="irritability2"
                               >NO</label
@@ -2249,8 +2388,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="irritability"
                               id="irritability3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.irritability == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="irritability3"
                               >N/A
@@ -2275,6 +2414,7 @@ background-color: rgb(217, 192, 255);
                               name="changeinvision"
                               id="changeinvision1"
                               value="Yes"
+                              {% if ros.changeinvision == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="changeinvision1"
                               >YES</label
@@ -2287,6 +2427,7 @@ background-color: rgb(217, 192, 255);
                               name="changeinvision"
                               id="changeinvision2"
                               value="No"
+                              {% if ros.changeinvision == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="changeinvision2"
                               >NO</label
@@ -2298,8 +2439,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="changeinvision"
                               id="changeinvision3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.changeinvision == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="changeinvision3"
                               >N/A
@@ -2320,6 +2461,7 @@ background-color: rgb(217, 192, 255);
                               name="irritation"
                               id="irritation1"
                               value="Yes"
+                              {% if ros.irritation == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="irritation1"
                               >YES</label
@@ -2332,6 +2474,7 @@ background-color: rgb(217, 192, 255);
                               name="irritation"
                               id="irritation2"
                               value="No"
+                              {% if ros.irritation == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="irritation2"
                               >NO</label
@@ -2343,8 +2486,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="irritation"
                               id="irritation3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.irritation == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="irritation3"
                               >N/A
@@ -2367,6 +2510,7 @@ background-color: rgb(217, 192, 255);
                               name="doublevision"
                               id="doublevision1"
                               value="Yes"
+                              {% if ros.doublevision == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="doublevision1"
                               >YES</label
@@ -2379,6 +2523,7 @@ background-color: rgb(217, 192, 255);
                               name="doublevision"
                               id="doublevision2"
                               value="No"
+                              {% if ros.doublevision == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="doublevision2"
                               >NO</label
@@ -2390,8 +2535,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="doublevision"
                               id="doublevision3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.doublevision == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="doublevision3"
                               >N/A
@@ -2414,6 +2559,7 @@ background-color: rgb(217, 192, 255);
                               name="familyhistoryofglaucoma"
                               id="familyhistoryofglaucoma1"
                               value="Yes"
+                              {% if ros.familyhistoryofglaucoma == 'Yes' %} checked {% endif %}
                             />
                             <label
                               class="form-check-label"
@@ -2428,6 +2574,7 @@ background-color: rgb(217, 192, 255);
                               name="familyhistoryofglaucoma"
                               id="familyhistoryofglaucoma2"
                               value="No"
+                              {% if ros.familyhistoryofglaucoma == 'No' %} checked {% endif %}
                             />
                             <label
                               class="form-check-label"
@@ -2441,8 +2588,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="familyhistoryofglaucoma"
                               id="familyhistoryofglaucoma3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.familyhistoryofglaucoma == '' %} checked {% endif %}
+                              
                             />
                             <label
                               class="form-check-label"
@@ -2465,6 +2612,7 @@ background-color: rgb(217, 192, 255);
                               name="redness"
                               id="redness1"
                               value="Yes"
+                              {% if ros.redness == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="redness1">YES</label>
                           </div>
@@ -2475,6 +2623,7 @@ background-color: rgb(217, 192, 255);
                               name="redness"
                               id="redness2"
                               value="No"
+                              {% if ros.redness == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="redness2">NO</label>
                           </div>
@@ -2484,8 +2633,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="redness"
                               id="redness3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.redness == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="redness3"
                               >N/A
@@ -2506,6 +2655,7 @@ background-color: rgb(217, 192, 255);
                               name="blindspots"
                               id="blindspots1"
                               value="Yes"
+                              {% if ros.blindspots == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="blindspots1"
                               >YES</label
@@ -2518,6 +2668,7 @@ background-color: rgb(217, 192, 255);
                               name="blindspots"
                               id="blindspots2"
                               value="No"
+                              {% if ros.blindspots == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="blindspots2"
                               >NO</label
@@ -2529,8 +2680,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="blindspots"
                               id="blindspots3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.blindspots == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="blindspots3"
                               >N/A
@@ -2551,6 +2702,7 @@ background-color: rgb(217, 192, 255);
                               name="eyepain"
                               id="eyepain1"
                               value="Yes"
+                              {% if ros.eyepain == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="eyepain1">YES</label>
                           </div>
@@ -2561,6 +2713,7 @@ background-color: rgb(217, 192, 255);
                               name="eyepain"
                               id="eyepain2"
                               value="No"
+                              {% if ros.eyepain == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="eyepain2">NO</label>
                           </div>
@@ -2570,8 +2723,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="eyepain"
                               id="eyepain3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.eyepain == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="eyepain3"
                               >N/A
@@ -2594,6 +2747,7 @@ background-color: rgb(217, 192, 255);
                               name="excessivetearing"
                               id="excessivetearing1"
                               value="Yes"
+                              {% if ros.excessivetearing == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="excessivetearing1"
                               >YES</label
@@ -2606,6 +2760,7 @@ background-color: rgb(217, 192, 255);
                               name="excessivetearing"
                               id="excessivetearing2"
                               value="No"
+                              {% if ros.excessivetearing == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="excessivetearing2"
                               >NO</label
@@ -2617,8 +2772,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="excessivetearing"
                               id="excessivetearing3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.excessivetearing == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="excessivetearing3"
                               >N/A
@@ -2641,6 +2796,7 @@ background-color: rgb(217, 192, 255);
                               name="photophobia"
                               id="photophobia1"
                               value="Yes"
+                              {% if ros.photophobia == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="photophobia1"
                               >YES</label
@@ -2653,6 +2809,7 @@ background-color: rgb(217, 192, 255);
                               name="photophobia"
                               id="photophobia2"
                               value="No"
+                              {% if ros.photophobia == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="photophobia2"
                               >NO</label
@@ -2664,8 +2821,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="photophobia"
                               id="photophobia3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.photophobia == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="photophobia3"
                               >N/A
@@ -2690,6 +2847,7 @@ background-color: rgb(217, 192, 255);
                               name="hearingloss"
                               id="hearingloss1"
                               value="Yes"
+                              {% if ros.hearingloss == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="hearingloss1"
                               >YES</label
@@ -2702,6 +2860,7 @@ background-color: rgb(217, 192, 255);
                               name="hearingloss"
                               id="hearingloss2"
                               value="No"
+                              {% if ros.hearingloss == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="hearingloss2"
                               >NO</label
@@ -2713,8 +2872,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="hearingloss"
                               id="hearingloss3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.hearingloss == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="hearingloss3"
                               >N/A
@@ -2735,6 +2894,7 @@ background-color: rgb(217, 192, 255);
                               name="vertigo"
                               id="vertigo1"
                               value="Yes"
+                              {% if ros.vertigo == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="vertigo1">YES</label>
                           </div>
@@ -2745,6 +2905,7 @@ background-color: rgb(217, 192, 255);
                               name="vertigo"
                               id="vertigo2"
                               value="No"
+                              {% if ros.vertigo == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="vertigo2">NO</label>
                           </div>
@@ -2754,8 +2915,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="vertigo"
                               id="vertigo3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.vertigo == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="vertigo3"
                               >N/A
@@ -2776,6 +2937,7 @@ background-color: rgb(217, 192, 255);
                               name="sorethroat"
                               id="sorethroat1"
                               value="Yes"
+                              {% if ros.sorethroat == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="sorethroat1"
                               >YES</label
@@ -2788,6 +2950,7 @@ background-color: rgb(217, 192, 255);
                               name="sorethroat"
                               id="sorethroat2"
                               value="No"
+                              {% if ros.sorethroat == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="sorethroat2"
                               >NO</label
@@ -2799,8 +2962,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="sorethroat"
                               id="sorethroat3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.sorethroat == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="sorethroat3"
                               >N/A
@@ -2821,6 +2984,7 @@ background-color: rgb(217, 192, 255);
                               name="nosebleed"
                               id="nosebleed1"
                               value="Yes"
+                              {% if ros.nosebleed == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="nosebleed1"
                               >YES</label
@@ -2833,6 +2997,7 @@ background-color: rgb(217, 192, 255);
                               name="nosebleed"
                               id="nosebleed2"
                               value="No"
+                              {% if ros.nosebleed == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="nosebleed2"
                               >NO</label
@@ -2844,8 +3009,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="nosebleed"
                               id="nosebleed3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.nosebleed == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="nosebleed3"
                               >N/A
@@ -2866,6 +3031,7 @@ background-color: rgb(217, 192, 255);
                               name="discharge"
                               id="discharge1"
                               value="Yes"
+                              {% if ros.discharge == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="discharge1"
                               >YES</label
@@ -2878,6 +3044,7 @@ background-color: rgb(217, 192, 255);
                               name="discharge"
                               id="discharge2"
                               value="No"
+                              {% if ros.discharge == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="discharge2"
                               >NO</label
@@ -2889,8 +3056,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="discharge"
                               id="discharge3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.discharge == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="discharge3"
                               >N/A
@@ -2911,6 +3078,7 @@ background-color: rgb(217, 192, 255);
                               name="tinnitus"
                               id="tinnitus1"
                               value="Yes"
+                              {% if ros.tinnitus == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="tinnitus1"
                               >YES</label
@@ -2923,6 +3091,7 @@ background-color: rgb(217, 192, 255);
                               name="tinnitus"
                               id="tinnitus2"
                               value="No"
+                              {% if ros.tinnitus == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="tinnitus2">NO</label>
                           </div>
@@ -2932,8 +3101,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="tinnitus"
                               id="tinnitus3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.tinnitus == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="tinnitus3"
                               >N/A
@@ -2956,6 +3125,7 @@ background-color: rgb(217, 192, 255);
                               name="sinusproblem"
                               id="sinusproblem1"
                               value="Yes"
+                              {% if ros.sinusproblem == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="sinusproblem1"
                               >YES</label
@@ -2968,6 +3138,7 @@ background-color: rgb(217, 192, 255);
                               name="sinusproblem"
                               id="sinusproblem2"
                               value="No"
+                              {% if ros.sinusproblem == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="sinusproblem2"
                               >NO</label
@@ -2979,8 +3150,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="sinusproblem"
                               id="sinusproblem3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.sinusproblem == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="sinusproblem3"
                               >N/A
@@ -3001,6 +3172,7 @@ background-color: rgb(217, 192, 255);
                               name="snoring"
                               id="snoring1"
                               value="Yes"
+                              {% if ros.snoring == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="snoring1">YES</label>
                           </div>
@@ -3011,6 +3183,7 @@ background-color: rgb(217, 192, 255);
                               name="snoring"
                               id="snoring2"
                               value="No"
+                              {% if ros.snoring == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="snoring2">NO</label>
                           </div>
@@ -3020,8 +3193,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="snoring"
                               id="snoring3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.snoring == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="snoring3"
                               >N/A
@@ -3042,6 +3215,7 @@ background-color: rgb(217, 192, 255);
                               name="pain"
                               id="pain1"
                               value="Yes"
+                              {% if ros.pain == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="pain1">YES</label>
                           </div>
@@ -3052,6 +3226,7 @@ background-color: rgb(217, 192, 255);
                               name="pain"
                               id="pain2"
                               value="No"
+                              {% if ros.pain == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="pain2">NO</label>
                           </div>
@@ -3061,8 +3236,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="pain"
                               id="pain3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.pain == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="pain3">N/A </label>
                           </div>
@@ -3083,6 +3258,7 @@ background-color: rgb(217, 192, 255);
                               name="frequentcolds"
                               id="frequentcolds1"
                               value="Yes"
+                              {% if ros.frequentcolds == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="frequentcolds1"
                               >YES</label
@@ -3095,6 +3271,7 @@ background-color: rgb(217, 192, 255);
                               name="frequentcolds"
                               id="frequentcolds2"
                               value="No"
+                              {% if ros.frequentcolds == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="frequentcolds2"
                               >NO</label
@@ -3106,8 +3283,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="frequentcolds"
                               id="frequentcolds3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.frequentcolds == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="frequentcolds3"
                               >N/A
@@ -3130,6 +3307,7 @@ background-color: rgb(217, 192, 255);
                               name="postnasaldrip"
                               id="postnasaldrip1"
                               value="Yes"
+                              {% if ros.postnasaldrip == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="postnasaldrip1"
                               >YES</label
@@ -3142,6 +3320,7 @@ background-color: rgb(217, 192, 255);
                               name="postnasaldrip"
                               id="postnasaldrip2"
                               value="No"
+                              {% if ros.postnasaldrip == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="postnasaldrip2"
                               >NO</label
@@ -3153,8 +3332,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="postnasaldrip"
                               id="postnasaldrip3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.postnasaldrip == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="postnasaldrip3"
                               >N/A
@@ -3175,6 +3354,7 @@ background-color: rgb(217, 192, 255);
                               name="apnea"
                               id="apnea1"
                               value="Yes"
+                              {% if ros.apnea == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="apnea1">YES</label>
                           </div>
@@ -3185,6 +3365,7 @@ background-color: rgb(217, 192, 255);
                               name="apnea"
                               id="apnea2"
                               value="No"
+                              {% if ros.apnea == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="apnea2">NO</label>
                           </div>
@@ -3194,8 +3375,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="apnea"
                               id="apnea3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.apnea == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="apnea3">N/A </label>
                           </div>
@@ -3216,6 +3397,7 @@ background-color: rgb(217, 192, 255);
                               name="breastmass"
                               id="breastmass1"
                               value="Yes"
+                              {% if ros.breastmass == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="breastmass1"
                               >YES</label
@@ -3228,6 +3410,7 @@ background-color: rgb(217, 192, 255);
                               name="breastmass"
                               id="breastmass2"
                               value="No"
+                              {% if ros.breastmass == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="breastmass2"
                               >NO</label
@@ -3239,8 +3422,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="breastmass"
                               id="breastmass3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.breastmass == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="breastmass3"
                               >N/A
@@ -3263,6 +3446,7 @@ background-color: rgb(217, 192, 255);
                               name="abnormalmammogram"
                               id="abnormalmammogram1"
                               value="Yes"
+                              {% if ros.abnormalmammogram == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="abnormalmammogram1"
                               >YES</label
@@ -3275,6 +3459,7 @@ background-color: rgb(217, 192, 255);
                               name="abnormalmammogram"
                               id="abnormalmammogram2"
                               value="No"
+                              {% if ros.abnormalmammogram == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="abnormalmammogram2"
                               >NO</label
@@ -3286,8 +3471,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="abnormalmammogram"
                               id="abnormalmammogram3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.abnormalmammogram == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="abnormalmammogram3"
                               >N/A
@@ -3308,6 +3493,7 @@ background-color: rgb(217, 192, 255);
                               name="discharge"
                               id="discharge1"
                               value="Yes"
+                              {% if ros.discharge == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="discharge1"
                               >YES</label
@@ -3320,6 +3506,7 @@ background-color: rgb(217, 192, 255);
                               name="discharge"
                               id="discharge2"
                               value="No"
+                              {% if ros.discharge == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="discharge2"
                               >NO</label
@@ -3331,8 +3518,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="discharge"
                               id="discharge3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.discharge == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="discharge3"
                               >N/A
@@ -3353,6 +3540,7 @@ background-color: rgb(217, 192, 255);
                               name="biopsy"
                               id="biopsy1"
                               value="Yes"
+                              {% if ros.biopsy == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="biopsy1">YES</label>
                           </div>
@@ -3363,6 +3551,7 @@ background-color: rgb(217, 192, 255);
                               name="biopsy"
                               id="biopsy2"
                               value="No"
+                              {% if ros.biopsy == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="biopsy2">NO</label>
                           </div>
@@ -3372,8 +3561,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="biopsy"
                               id="biopsy3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.biopsy == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="biopsy3">N/A </label>
                           </div>
@@ -3394,6 +3583,7 @@ background-color: rgb(217, 192, 255);
                               name="cough"
                               id="cough1"
                               value="Yes"
+                              {% if ros.cough == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="cough1">YES</label>
                           </div>
@@ -3404,6 +3594,7 @@ background-color: rgb(217, 192, 255);
                               name="cough"
                               id="cough2"
                               value="No"
+                              {% if ros.cough == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="cough2">NO</label>
                           </div>
@@ -3413,8 +3604,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="cough"
                               id="cough3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.cough == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="cough3">N/A </label>
                           </div>
@@ -3433,6 +3624,7 @@ background-color: rgb(217, 192, 255);
                               name="wheezing"
                               id="wheezing1"
                               value="Yes"
+                              {% if ros.wheezing == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="wheezing1"
                               >YES</label
@@ -3445,6 +3637,7 @@ background-color: rgb(217, 192, 255);
                               name="wheezing"
                               id="wheezing2"
                               value="No"
+                              {% if ros.wheezing == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="wheezing2">NO</label>
                           </div>
@@ -3454,8 +3647,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="wheezing"
                               id="wheezing3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.wheezing == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="wheezing3"
                               >N/A
@@ -3476,6 +3669,7 @@ background-color: rgb(217, 192, 255);
                               name="copd"
                               id="copd1"
                               value="Yes"
+                              {% if ros.copd == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="copd1">YES</label>
                           </div>
@@ -3486,6 +3680,7 @@ background-color: rgb(217, 192, 255);
                               name="copd"
                               id="copd2"
                               value="No"
+                              {% if ros.copd == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="copd2">NO</label>
                           </div>
@@ -3495,8 +3690,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="copd"
                               id="copd3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.copd == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="copd3">N/A </label>
                           </div>
@@ -3515,6 +3710,7 @@ background-color: rgb(217, 192, 255);
                               name="sputum"
                               id="sputum1"
                               value="Yes"
+                              {% if ros.sputum == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="sputum1">YES</label>
                           </div>
@@ -3525,6 +3721,7 @@ background-color: rgb(217, 192, 255);
                               name="sputum"
                               id="sputum2"
                               value="No"
+                              {% if ros.sputum == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="sputum2">NO</label>
                           </div>
@@ -3534,8 +3731,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="sputum"
                               id="sputum3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.sputum == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="sputum3">N/A </label>
                           </div>
@@ -3554,6 +3751,7 @@ background-color: rgb(217, 192, 255);
                               name="hemoptysis"
                               id="hemoptysis1"
                               value="Yes"
+                              {% if ros.hemoptysis == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="hemoptysis1"
                               >YES</label
@@ -3566,6 +3764,7 @@ background-color: rgb(217, 192, 255);
                               name="hemoptysis"
                               id="hemoptysis2"
                               value="No"
+                              {% if ros.hemoptysis == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="hemoptysis2"
                               >NO</label
@@ -3577,8 +3776,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="hemoptysis"
                               id="hemoptysis3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.hemoptysis == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="hemoptysis3"
                               >N/A
@@ -3601,6 +3800,7 @@ background-color: rgb(217, 192, 255);
                               name="shortnessofbreath"
                               id="shortnessofbreath1"
                               value="Yes"
+                              {% if ros.shortnessofbreath == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="shortnessofbreath1"
                               >YES</label
@@ -3613,6 +3813,7 @@ background-color: rgb(217, 192, 255);
                               name="shortnessofbreath"
                               id="shortnessofbreath2"
                               value="No"
+                              {% if ros.shortnessofbreath == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="shortnessofbreath2"
                               >NO</label
@@ -3624,8 +3825,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="shortnessofbreath"
                               id="shortnessofbreath3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.shortnessofbreath == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="shortnessofbreath3"
                               >N/A
@@ -3646,6 +3847,7 @@ background-color: rgb(217, 192, 255);
                               name="asthma"
                               id="asthma1"
                               value="Yes"
+                              {% if ros.asthma == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="asthma1">YES</label>
                           </div>
@@ -3656,6 +3858,7 @@ background-color: rgb(217, 192, 255);
                               name="asthma"
                               id="asthma2"
                               value="No"
+                              {% if ros.asthma == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="asthma2">NO</label>
                           </div>
@@ -3665,8 +3868,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="asthma"
                               id="asthma3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.asthma == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="asthma3">N/A </label>
                           </div>
@@ -3687,6 +3890,7 @@ background-color: rgb(217, 192, 255);
                               name="chestpain"
                               id="chestpain1"
                               value="Yes"
+                              {% if ros.chestpain == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="chestpain1"
                               >YES</label
@@ -3699,6 +3903,7 @@ background-color: rgb(217, 192, 255);
                               name="chestpain"
                               id="chestpain2"
                               value="No"
+                              {% if ros.chestpain == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="chestpain2"
                               >NO</label
@@ -3710,8 +3915,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="chestpain"
                               id="chestpain3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.chestpain == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="chestpain3"
                               >N/A
@@ -3732,6 +3937,7 @@ background-color: rgb(217, 192, 255);
                               name="pnd"
                               id="pnd1"
                               value="Yes"
+                              {% if ros.pnd == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="pnd1">YES</label>
                           </div>
@@ -3742,6 +3948,7 @@ background-color: rgb(217, 192, 255);
                               name="pnd"
                               id="pnd2"
                               value="No"
+                              {% if ros.pnd == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="pnd2">NO</label>
                           </div>
@@ -3751,8 +3958,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="pnd"
                               id="pnd3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.pnd == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="pnd3">N/A </label>
                           </div>
@@ -3773,6 +3980,7 @@ background-color: rgb(217, 192, 255);
                               name="historyofheartmurmur"
                               id="historyofheartmurmur1"
                               value="Yes"
+                              {% if ros.historyofheartmurmur == 'Yes' %} checked {% endif %}
                             />
                             <label
                               class="form-check-label"
@@ -3787,6 +3995,7 @@ background-color: rgb(217, 192, 255);
                               name="historyofheartmurmur"
                               id="historyofheartmurmur2"
                               value="No"
+                              {% if ros.historyofheartmurmur == 'No' %} checked {% endif %}
                             />
                             <label
                               class="form-check-label"
@@ -3800,8 +4009,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="historyofheartmurmur"
                               id="historyofheartmurmur3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.historyofheartmurmur == '' %} checked {% endif %}
+                              
                             />
                             <label
                               class="form-check-label"
@@ -3824,6 +4033,7 @@ background-color: rgb(217, 192, 255);
                               name="peripheral"
                               id="peripheral1"
                               value="Yes"
+                              {% if ros.peripheral == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="peripheral1"
                               >YES</label
@@ -3836,6 +4046,7 @@ background-color: rgb(217, 192, 255);
                               name="peripheral"
                               id="peripheral2"
                               value="No"
+                              {% if ros.peripheral == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="peripheral2"
                               >NO</label
@@ -3847,8 +4058,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="peripheral"
                               id="peripheral3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.peripheral == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="peripheral3"
                               >N/A
@@ -3871,6 +4082,7 @@ background-color: rgb(217, 192, 255);
                               name="palpitation"
                               id="palpitation1"
                               value="Yes"
+                              {% if ros.palpitation == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="palpitation1"
                               >YES</label
@@ -3883,6 +4095,7 @@ background-color: rgb(217, 192, 255);
                               name="palpitation"
                               id="palpitation2"
                               value="No"
+                              {% if ros.palpitation == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="palpitation2"
                               >NO</label
@@ -3894,8 +4107,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="palpitation"
                               id="palpitation3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.palpitation == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="palpitation3"
                               >N/A
@@ -3916,6 +4129,7 @@ background-color: rgb(217, 192, 255);
                               name="doe"
                               id="doe1"
                               value="Yes"
+                              {% if ros.doe == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="doe1">YES</label>
                           </div>
@@ -3926,6 +4140,7 @@ background-color: rgb(217, 192, 255);
                               name="doe"
                               id="doe2"
                               value="No"
+                              {% if ros.doe == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="doe2">NO</label>
                           </div>
@@ -3935,8 +4150,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="doe"
                               id="doe3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.doe == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="doe3">N/A </label>
                           </div>
@@ -3955,6 +4170,7 @@ background-color: rgb(217, 192, 255);
                               name="edema"
                               id="edema1"
                               value="Yes"
+                              {% if ros.edema == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="edema1">YES</label>
                           </div>
@@ -3965,6 +4181,7 @@ background-color: rgb(217, 192, 255);
                               name="edema"
                               id="edema2"
                               value="No"
+                              {% if ros.edema == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="edema2">NO</label>
                           </div>
@@ -3974,8 +4191,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="edema"
                               id="edema3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.edema == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="edema3">N/A </label>
                           </div>
@@ -3994,6 +4211,7 @@ background-color: rgb(217, 192, 255);
                               name="arrythmia"
                               id="arrythmia1"
                               value="Yes"
+                              {% if ros.arrythmia == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="arrythmia1"
                               >YES</label
@@ -4006,6 +4224,7 @@ background-color: rgb(217, 192, 255);
                               name="arrythmia"
                               id="arrythmia2"
                               value="No"
+                              {% if ros.arrythmia == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="arrythmia2"
                               >NO</label
@@ -4017,8 +4236,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="arrythmia"
                               id="arrythmia3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.arrythmia == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="arrythmia3"
                               >N/A
@@ -4039,6 +4258,7 @@ background-color: rgb(217, 192, 255);
                               name="syncope"
                               id="syncope1"
                               value="Yes"
+                              {% if ros.syncope == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="syncope1">YES</label>
                           </div>
@@ -4049,6 +4269,7 @@ background-color: rgb(217, 192, 255);
                               name="syncope"
                               id="syncope2"
                               value="No"
+                              {% if ros.syncope == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="syncope2">NO</label>
                           </div>
@@ -4058,8 +4279,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="syncope"
                               id="syncope3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.syncope == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="syncope3"
                               >N/A
@@ -4080,6 +4301,7 @@ background-color: rgb(217, 192, 255);
                               name="orthopnea"
                               id="orthopnea1"
                               value="Yes"
+                              {% if ros.orthopnea == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="orthopnea1"
                               >YES</label
@@ -4092,6 +4314,7 @@ background-color: rgb(217, 192, 255);
                               name="orthopnea"
                               id="orthopnea2"
                               value="No"
+                              {% if ros.orthopnea == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="orthopnea2"
                               >NO</label
@@ -4103,8 +4326,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="orthopnea"
                               id="orthopnea3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.orthopnea == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="orthopnea3"
                               >N/A
@@ -4125,6 +4348,7 @@ background-color: rgb(217, 192, 255);
                               name="legpain"
                               id="legpain1"
                               value="Yes"
+                              {% if ros.legpain == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="legpain1">YES</label>
                           </div>
@@ -4135,6 +4359,7 @@ background-color: rgb(217, 192, 255);
                               name="legpain"
                               id="legpain2"
                               value="No"
+                              {% if ros.legpain == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="legpain2">NO</label>
                           </div>
@@ -4144,8 +4369,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="legpain"
                               id="legpain3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.legpain == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="legpain3"
                               >N/A
@@ -4168,6 +4393,7 @@ background-color: rgb(217, 192, 255);
                               name="heartproblem"
                               id="heartproblem1"
                               value="Yes"
+                              {% if ros.heartproblem == 'Yes' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="heartproblem1"
                               >YES</label
@@ -4180,6 +4406,7 @@ background-color: rgb(217, 192, 255);
                               name="heartproblem"
                               id="heartproblem2"
                               value="No"
+                              {% if ros.heartproblem == 'No' %} checked {% endif %}
                             />
                             <label class="form-check-label" for="heartproblem2"
                               >NO</label
@@ -4191,8 +4418,8 @@ background-color: rgb(217, 192, 255);
                               type="radio"
                               name="heartproblem"
                               id="heartproblem3"
-                              value="0"
-                              checked
+                              value=""  {% if ros.heartproblem == '' %} checked {% endif %}
+                              
                             />
                             <label class="form-check-label" for="heartproblem3"
                               >N/A
@@ -4250,38 +4477,46 @@ background-color: rgb(217, 192, 255);
 
             <div class="modal-body">
               <div class="container">
-                <div class="row">
+                <div class="row row-content">
                   <div class="card w-100">
                     <h5 class="card-header">Subjective</h5>
                     <div class="card-body">
+                      {% if soap.subjective %}
                       {{ soap.subjective }}
+                      {% endif %}
                     </div>
                   </div>
                 </div>
 
-                <div class="row">
+                <div class="row row-content">
                   <div class="card w-100">
                     <h5 class="card-header">Objective</h5>
                     <div class="card-body">
+                      {% if soap.objective %}
                       {{ soap.objective }}
+                      {% endif %}
                     </div>
                   </div>
                 </div>
 
-                <div class="row">
+                <div class="row row-content">
                   <div class="card w-100">
                     <h5 class="card-header">Assesment</h5>
                     <div class="card-body">
-                    {{ soap.assesment }}
+                      {% if soap.assesment %}
+                      {{ soap.assesment }}
+                      {% endif %}
                     </div>
                   </div>
                 </div>
 
-                <div class="row">
+                <div class="row row-content">
                   <div class="card w-100">
                     <h5 class="card-header">Plan</h5>
                     <div class="card-body">
+                      {% if soap.plan %}
                       {{ soap.plan }}
+                      {% endif %}
                     </div>
                   </div>
                 </div>
@@ -4342,7 +4577,9 @@ background-color: rgb(217, 192, 255);
                         class="form-control"
                         cols="30"
                         rows="5"
-                      ></textarea>
+                      >{% if soap.subjective %}
+                      {{ soap.subjective }}
+                      {% endif %}</textarea>
                     </div>
                   </div>
                 </div>
@@ -4356,7 +4593,9 @@ background-color: rgb(217, 192, 255);
                         class="form-control"
                         cols="30"
                         rows="5"
-                      ></textarea>
+                      >{% if soap.objective %}
+                      {{ soap.objective }}
+                      {% endif %}</textarea>
                     </div>
                   </div>
                 </div>
@@ -4370,7 +4609,9 @@ background-color: rgb(217, 192, 255);
                         class="form-control"
                         cols="30"
                         rows="5"
-                      ></textarea>
+                      >{% if soap.assesment %}
+                      {{ soap.assesment }}
+                      {% endif %}</textarea>
                     </div>
                   </div>
                 </div>
@@ -4384,7 +4625,9 @@ background-color: rgb(217, 192, 255);
                         class="form-control"
                         cols="30"
                         rows="5"
-                      ></textarea>
+                      >{% if soap.plan %}
+                      {{ soap.plan }}
+                      {% endif %}</textarea>
                     </div>
                   </div>
                 </div>
