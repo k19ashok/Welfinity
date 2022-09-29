@@ -298,7 +298,7 @@ background-color: rgb(217, 192, 255);
                 <div class="col-12 col-md-6">
                     <div class="row">
                         <div class="col-6 col-md-4">
-                            <h5>Facility</h5>
+                            <h5 class="fw-bold">Facility</h5>
                         </div>
                         <div class="col-6 col-md-4">
                             <h6>{{ enc.facility }}</h6>
@@ -306,7 +306,7 @@ background-color: rgb(217, 192, 255);
                     </div>
                     <div class="row">
                         <div class="col-6 col-md-4">
-                            <h5>Category</h5>
+                            <h5 class="fw-bold">Category</h5>
                         </div>
                         <div class="col-6 col-md-4">
                             <h6>{{ enc.visitcat }}</h6>
@@ -314,7 +314,7 @@ background-color: rgb(217, 192, 255);
                     </div>
                     <div class="row">
                         <div class="col-6 col-md-4">
-                            <h5>Reason</h5>
+                            <h5 class="fw-bold">Reason</h5>
                         </div>
                         <div class="col-6 col-md-4">
                             <h6>{{ enc.visitreason }}</h6>
@@ -322,7 +322,7 @@ background-color: rgb(217, 192, 255);
                     </div>
                     <div class="row">
                         <div class="col-6 col-md-4">
-                            <h5>Provider</h5>
+                            <h5 class="fw-bold">Provider</h5>
                         </div>
                         <div class="col-6 col-md-4">
                             <h6>{{ enc.encprovider }}</h6>
@@ -330,7 +330,7 @@ background-color: rgb(217, 192, 255);
                     </div>
                     <div class="row">
                         <div class="col-6 col-md-4">
-                            <h5>Referring Provider</h5>
+                            <h5 class="fw-bold">Referring Provider</h5>
                         </div>
                         <div class="col-6 col-md-4">
                             <h6>{{ enc.referprovider }}</h6>
@@ -419,16 +419,16 @@ background-color: rgb(217, 192, 255);
                 <div class="card-header">
                   <div class="row">
                     <div class="col-3">
-                      <h5>Name</h5>
+                      <h5 class="fw-bold">Name</h5>
                     </div>
                     <div class="col-2">
-                      <h5>Units</h5>
+                      <h5 class="fw-bold">Units</h5>
                     </div>
                     <div class="col-2">
-                      <h5>Value</h5>
+                      <h5 class="fw-bold">Value</h5>
                     </div>
                     <div class="col-3">
-                      <h5>Abnormality</h5>
+                      <h5 class="fw-bold">Abnormality</h5>
                     </div>
                   </div>
                 </div>
@@ -436,10 +436,10 @@ background-color: rgb(217, 192, 255);
                 <div class="container mt-4">
                   <div class="row form-group">
                     <div class="col-3">
-                      <h6>Weight</h6>
+                      <h6 class="fw-bold">Weight</h6>
                     </div>
                     <div class="col-2">
-                      <h6>kg</h6>
+                      <h6 class="fw-bold">kg</h6>
                     </div>
                     <div class="col-2">
                       {% if vitals.weight %}
@@ -456,10 +456,10 @@ background-color: rgb(217, 192, 255);
                   
                   <div class="row form-group">
                     <div class="col-3">
-                      <h6>Height</h6>
+                      <h6 class="fw-bold">Height</h6>
                     </div>
                     <div class="col-2">
-                      <h6>cm</h6>
+                      <h6 class="fw-bold">cm</h6>
                     </div>
                     <div class="col-2">
                       {% if vitals.height %}
@@ -474,10 +474,10 @@ background-color: rgb(217, 192, 255);
                   </div>
                   <div class="row form-group">
                     <div class="col-3">
-                      <h6>BP Systolic</h6>
+                      <h6 class="fw-bold">BP Systolic</h6>
                     </div>
                     <div class="col-2">
-                      <h6>mm/Hg</h6>
+                      <h6 class="fw-bold">mm/Hg</h6>
                     </div>
                     <div class="col-2">
                       {% if vitals.bpsystolic %}
@@ -492,10 +492,10 @@ background-color: rgb(217, 192, 255);
                   </div>
                   <div class="row form-group">
                     <div class="col-3">
-                      <h6>BP Diastolic</h6>
+                      <h6 class="fw-bold">BP Diastolic</h6>
                     </div>
                     <div class="col-2">
-                      <h6>mm/Hg</h6>
+                      <h6 class="fw-bold">mm/Hg</h6>
                     </div>
                     <div class="col-2">
                       {% if vitals.bpdiastolic %}
@@ -510,10 +510,10 @@ background-color: rgb(217, 192, 255);
                   </div>
                   <div class="row form-group">
                     <div class="col-3">
-                      <h6>Pulse</h6>
+                      <h6 class="fw-bold">Pulse</h6>
                     </div>
                     <div class="col-2">
-                      <h6>per min</h6>
+                      <h6 class="fw-bold">per min</h6>
                     </div>
                     <div class="col-2">
                       {% if vitals.pulse %}
@@ -528,10 +528,10 @@ background-color: rgb(217, 192, 255);
                   </div>
                   <div class="row form-group">
                     <div class="col-3">
-                      <h6>Respiration</h6>
+                      <h6 class="fw-bold">Respiration</h6>
                     </div>
                     <div class="col-2">
-                      <h6>per min</h6>
+                      <h6 class="fw-bold">per min</h6>
                     </div>
                     <div class="col-2">
                       {% if vitals.respiration %}
@@ -546,10 +546,10 @@ background-color: rgb(217, 192, 255);
                   </div>
                   <div class="row form-group">
                     <div class="col-3">
-                      <h6>Temperature</h6>
+                      <h6 class="fw-bold">Temperature</h6>
                     </div>
                     <div class="col-2">
-                      <h6>F</h6>
+                      <h6 class="fw-bold">F</h6>
                     </div>
                     <div class="col-2">
                       {% if vitals.temperature %}
@@ -564,10 +564,10 @@ background-color: rgb(217, 192, 255);
                   </div>
                   <div class="row form-group">
                     <div class="col-3">
-                      <h6>Oxygen Saturation</h6>
+                      <h6 class="fw-bold">Oxygen Saturation</h6>
                     </div>
                     <div class="col-2">
-                      <h6>%</h6>
+                      <h6 class="fw-bold">%</h6>
                     </div>
                     <div class="col-2">
                       {% if vitals.oxygensaturation %}
@@ -582,10 +582,10 @@ background-color: rgb(217, 192, 255);
                   </div>
                   <div class="row form-group">
                     <div class="col-3">
-                      <h6>Oxygen flow Rate</h6>
+                      <h6 class="fw-bold">Oxygen flow Rate</h6>
                     </div>
                     <div class="col-2">
-                      <h6>l/min</h6>
+                      <h6 class="fw-bold">l/min</h6>
                     </div>
                     <div class="col-2">
                       {% if vitals.oxygenflowrate %}
@@ -600,10 +600,10 @@ background-color: rgb(217, 192, 255);
                   </div>
                   <div class="row form-group">
                     <div class="col-3">
-                      <h6>Inhaled Oxygen Conc</h6>
+                      <h6 class="fw-bold">Inhaled Oxygen Conc</h6>
                     </div>
                     <div class="col-2">
-                      <h6>%</h6>
+                      <h6 class="fw-bold">%</h6>
                     </div>
                     <div class="col-2">
                       {% if vitals.inhaledoxygenconc %}
@@ -618,10 +618,10 @@ background-color: rgb(217, 192, 255);
                   </div>
                   <div class="row form-group">
                     <div class="col-3">
-                      <h6>Head Circumference</h6>
+                      <h6 class="fw-bold">Head Circumference</h6>
                     </div>
                     <div class="col-2">
-                      <h6>in</h6>
+                      <h6 class="fw-bold">in</h6>
                     </div>
                     <div class="col-2">
                       {% if vitals.headcircumference %}
@@ -636,10 +636,10 @@ background-color: rgb(217, 192, 255);
                   </div>
                   <div class="row form-group">
                     <div class="col-3">
-                      <h6>Waist Circumference</h6>
+                      <h6 class="fw-bold">Waist Circumference</h6>
                     </div>
                     <div class="col-2">
-                      <h6>cm</h6>
+                      <h6 class="fw-bold">cm</h6>
                     </div>
                     <div class="col-2">
                       {% if vitals.waistcircumference %}
@@ -654,10 +654,10 @@ background-color: rgb(217, 192, 255);
                   </div>
                   <div class="row form-group">
                     <div class="col-3">
-                      <h6>BMI</h6>
+                      <h6 class="fw-bold">BMI</h6>
                     </div>
                     <div class="col-2">
-                      <h6>kg/m^2</h6>
+                      <h6 class="fw-bold">kg/m^2</h6>
                     </div>
                     <div class="col-2">
                       {% if vitals.bmi %}
@@ -672,10 +672,10 @@ background-color: rgb(217, 192, 255);
                   </div>
                   <div class="row form-group">
                     <div class="col-3">
-                      <h6>Pediatric BMI Percentile</h6>
+                      <h6 class="fw-bold">Pediatric BMI Percentile</h6>
                     </div>
                     <div class="col-2">
-                      <h6>%</h6>
+                      <h6 class="fw-bold">%</h6>
                     </div>
                     <div class="col-2">
                       {% if vitals.pediatricbmipercentile %}
@@ -741,16 +741,16 @@ background-color: rgb(217, 192, 255);
                   <div class="card-header">
                     <div class="row">
                       <div class="col-3">
-                        <h5>Name</h5>
+                        <h5 class="fw-bold">Name</h5>
                       </div>
                       <div class="col-2">
-                        <h5>Units</h5>
+                        <h5 class="fw-bold">Units</h5>
                       </div>
                       <div class="col-2">
-                        <h5>Value</h5>
+                        <h5 class="fw-bold">Value</h5>
                       </div>
                       <div class="col-3">
-                        <h5>Abnormality</h5>
+                        <h5 class="fw-bold">Abnormality</h5>
                       </div>
                     </div>
                   </div>
@@ -758,10 +758,10 @@ background-color: rgb(217, 192, 255);
                   <div class="container mt-4">
                     <div class="row form-group">
                       <div class="col-3">
-                        <h6>Weight</h6>
+                        <h6 class="fw-bold">Weight</h6>
                       </div>
                       <div class="col-2">
-                        <h6>kg</h6>
+                        <h6 class="fw-bold">kg</h6>
                       </div>
                       <div class="col-2">
                         <input type="text" class="form-control" name="weight" value="{{ vitals.weight }}"/>
@@ -781,10 +781,10 @@ background-color: rgb(217, 192, 255);
                     
                     <div class="row form-group">
                       <div class="col-3">
-                        <h6>Height</h6>
+                        <h6 class="fw-bold">Height</h6>
                       </div>
                       <div class="col-2">
-                        <h6>cm</h6>
+                        <h6 class="fw-bold">cm</h6>
                       </div>
                       <div class="col-2">
                         <input type="text" class="form-control" name="height" value="{{ vitals.height }}"/>
@@ -802,10 +802,10 @@ background-color: rgb(217, 192, 255);
                     </div>
                     <div class="row form-group">
                       <div class="col-3">
-                        <h6>BP Systolic</h6>
+                        <h6 class="fw-bold">BP Systolic</h6>
                       </div>
                       <div class="col-2">
-                        <h6>mm/Hg</h6>
+                        <h6 class="fw-bold">mm/Hg</h6>
                       </div>
                       <div class="col-2">
                         <input
@@ -828,10 +828,10 @@ background-color: rgb(217, 192, 255);
                     </div>
                     <div class="row form-group">
                       <div class="col-3">
-                        <h6>BP Diastolic</h6>
+                        <h6 class="fw-bold">BP Diastolic</h6>
                       </div>
                       <div class="col-2">
-                        <h6>mm/Hg</h6>
+                        <h6 class="fw-bold">mm/Hg</h6>
                       </div>
                       <div class="col-2">
                         <input
@@ -854,10 +854,10 @@ background-color: rgb(217, 192, 255);
                     </div>
                     <div class="row form-group">
                       <div class="col-3">
-                        <h6>Pulse</h6>
+                        <h6 class="fw-bold">Pulse</h6>
                       </div>
                       <div class="col-2">
-                        <h6>per min</h6>
+                        <h6 class="fw-bold">per min</h6>
                       </div>
                       <div class="col-2">
                         <input type="text" class="form-control" name="pulse" value="{{ vitals.pulse }}"/>
@@ -875,10 +875,10 @@ background-color: rgb(217, 192, 255);
                     </div>
                     <div class="row form-group">
                       <div class="col-3">
-                        <h6>Respiration</h6>
+                        <h6 class="fw-bold">Respiration</h6>
                       </div>
                       <div class="col-2">
-                        <h6>per min</h6>
+                        <h6 class="fw-bold">per min</h6>
                       </div>
                       <div class="col-2">
                         <input
@@ -901,10 +901,10 @@ background-color: rgb(217, 192, 255);
                     </div>
                     <div class="row form-group">
                       <div class="col-3">
-                        <h6>Temperature</h6>
+                        <h6 class="fw-bold">Temperature</h6>
                       </div>
                       <div class="col-2">
-                        <h6>F</h6>
+                        <h6 class="fw-bold">F</h6>
                       </div>
                       <div class="col-2">
                         <input
@@ -927,10 +927,10 @@ background-color: rgb(217, 192, 255);
                     </div>
                     <div class="row form-group">
                       <div class="col-3">
-                        <h6>Oxygen Saturation</h6>
+                        <h6 class="fw-bold">Oxygen Saturation</h6>
                       </div>
                       <div class="col-2">
-                        <h6>%</h6>
+                        <h6 class="fw-bold">%</h6>
                       </div>
                       <div class="col-2">
                         <input
@@ -953,10 +953,10 @@ background-color: rgb(217, 192, 255);
                     </div>
                     <div class="row form-group">
                       <div class="col-3">
-                        <h6>Oxygen flow Rate</h6>
+                        <h6 class="fw-bold">Oxygen flow Rate</h6>
                       </div>
                       <div class="col-2">
-                        <h6>l/min</h6>
+                        <h6 class="fw-bold">l/min</h6>
                       </div>
                       <div class="col-2">
                         <input
@@ -979,10 +979,10 @@ background-color: rgb(217, 192, 255);
                     </div>
                     <div class="row form-group">
                       <div class="col-3">
-                        <h6>Inhaled Oxygen Conc</h6>
+                        <h6 class="fw-bold">Inhaled Oxygen Conc</h6>
                       </div>
                       <div class="col-2">
-                        <h6>%</h6>
+                        <h6 class="fw-bold">%</h6>
                       </div>
                       <div class="col-2">
                         <input
@@ -1005,10 +1005,10 @@ background-color: rgb(217, 192, 255);
                     </div>
                     <div class="row form-group">
                       <div class="col-3">
-                        <h6>Head Circumference</h6>
+                        <h6 class="fw-bold">Head Circumference</h6>
                       </div>
                       <div class="col-2">
-                        <h6>in</h6>
+                        <h6 class="fw-bold">in</h6>
                       </div>
                       <div class="col-2">
                         <input
@@ -1031,10 +1031,10 @@ background-color: rgb(217, 192, 255);
                     </div>
                     <div class="row form-group">
                       <div class="col-3">
-                        <h6>Waist Circumference</h6>
+                        <h6 class="fw-bold">Waist Circumference</h6>
                       </div>
                       <div class="col-2">
-                        <h6>cm</h6>
+                        <h6 class="fw-bold">cm</h6>
                       </div>
                       <div class="col-2">
                         <input
@@ -1057,10 +1057,10 @@ background-color: rgb(217, 192, 255);
                     </div>
                     <div class="row form-group">
                       <div class="col-3">
-                        <h6>BMI</h6>
+                        <h6 class="fw-bold">BMI</h6>
                       </div>
                       <div class="col-2">
-                        <h6>kg/m^2</h6> 
+                        <h6 class="fw-bold">kg/m^2</h6> 
                       </div>
                       <div class="col-2">
                         <input type="text" class="form-control" name="bmi" value="{{ vitals.bmi }}"/>
@@ -1078,10 +1078,10 @@ background-color: rgb(217, 192, 255);
                     </div>
                     <div class="row form-group">
                       <div class="col-3">
-                        <h6>Pediatric BMI Percentile</h6>
+                        <h6 class="fw-bold">Pediatric BMI Percentile</h6>
                       </div>
                       <div class="col-2">
-                        <h6>%</h6>
+                        <h6 class="fw-bold">%</h6>
                       </div>
                       <div class="col-2">
                         <input
