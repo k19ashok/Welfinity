@@ -183,61 +183,64 @@ body{
 
 
       <div class="container">
-        <div class="row">
-          <h1>{% if request.user.firstname %}Hello {{ request.user.firstname }}{% endif %}</h1>
-            </div>
-      </div>
-      <div class="container my-4">
-        <div class="row row-content">
-            <h2><strong>DOCTORS</strong> <span class="float-right"><button data-toggle="modal" data-target="#addDoctor" class="btn btn-primary">Add doctor</button>
-            </span></h2>
-            <hr>
+        <div class="container">
+          <div class="row">
+            <h1>{% if request.user.firstname %}Hello {{ request.user.firstname }}{% endif %}</h1>
+              </div>
         </div>
-        <div class="row mb-5">
-            <div class="row">
-              <h5 class="col-5 fw-bold">Name</h5>
-              <h5 class="col-5 fw-bold">Specialization</h5>
-            </div>
-            <hr>
-            {% for i in doct %}
-                <div class="row my-2">
-                  <h6 class="col-5">{{ i.name }}</h6>
-                  <h6 class="col-5">{{ i.specialization }}</h6>
-                  <button class="btn btn-info btn-sm col-2" data-toggle="modal" data-target="#modal{{ i.registrationID }}">
-                    EDIT
-                  </button>
-                </div>
-                
-            {% endfor %}
-        </div>
-      </div>
-    <div class="container">
-      <div class="row row-content">
-          <h2><strong>PATIENTS</strong> <span class="float-right"><a href="{% url 'emr' %}"><button class="btn btn-primary">Add/Search Patient</button></a>
-          </span></h2>
+        <div class="container my-4">
+          <div class="row ">
+              <h2><strong>DOCTORS</strong> <span class="float-right"><button data-toggle="modal" data-target="#addDoctor" class="btn btn-primary">Add doctor</button>
+              </span></h2>
+          </div>
           <hr>
-      </div>
-      <div class="row mb-5 mx-0">
+
+              <div class="row">
+                <h5 class="col-5 fw-bold">Name</h5>
+                <h5 class="col-5 fw-bold">Specialization</h5>
+              </div>
+              <hr>
+              {% for i in doct %}
+              <div class="row my-2">
+                <h6 class="col-5">{{ i.name }}</h6>
+                <h6 class="col-5">{{ i.specialization }}</h6>
+                <button class="btn btn-info btn-sm col-1" data-toggle="modal" data-target="#modal{{ i.registrationID }}">
+                  EDIT
+                </button>
+              </div>
+              
+              {% endfor %}
+          </div>
+        <div class="container">
+        <div class="row">
+            <div class="">
+              <h2><strong>PATIENTS</strong> <span class="float-right"><a href="{% url 'emr' %}"><button class="btn btn-primary">Add/Search Patient</button></a>
+              </span></h2>
+            </div>
+        </div>
+        <hr>
           <div class="row">
             <h5 class="col-5 fw-bold">NAME</h5>
             <h5 class="col-5 fw-bold">PATIENT ID</h5>
             <h5 class="col-2 fw-bold">DOCTOR</h5>
           </div>
           <hr>
-          {% for i in patients %}
-              <div class="row my-2">
-                <h6 class="col-5">{{ i.fname }}</h6>
-                <h6 class="col-5">{{ i.pid }}</h6>
-                <a href="{% url 'dash' i.pid %}" class="col-2">
-                    <button class="btn btn-info btn-sm">
-                      View Dashboard
-                    </button>
-                </a>
-              </div>
-      
-          {% endfor %}
+
+            {% for i in patients %}
+            <div class="row my-2">
+              <h6 class="col-5">{{ i.fname }}</h6>
+              <h6 class="col-5">{{ i.pid }}</h6>
+              <a href="{% url 'dash' i.pid %}" class="col-2">
+                  <button class="btn btn-info btn-sm">
+                    View Dashboard
+                  </button>
+              </a>
+            </div>
+        
+            {% endfor %}
+        </div>
+            </div>
       </div>
-    </div>
 
 
 
