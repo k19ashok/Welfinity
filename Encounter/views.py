@@ -10,7 +10,6 @@ from django.contrib.auth.models import User
 from django.contrib.auth import login,logout,authenticate
 from django.contrib.auth.decorators import login_required,user_passes_test
 from django.contrib.admin.views.decorators import staff_member_required
-from regex import P
 
 from Encounter.models import *
 
