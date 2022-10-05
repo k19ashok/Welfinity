@@ -4,6 +4,18 @@ from django.db import models
 
 
 
+class Doctors(models.Model):
+    doctorID=models.BigAutoField(primary_key=True)
+    name=models.CharField(max_length=255)
+    qualification=models.CharField(max_length=255)
+    specialization=models.CharField(max_length=255)
+    doj=models.DateField(blank=True, null=True)
+    registrationID=models.CharField(max_length=20)
+    address=models.CharField(max_length=255)
+
+
+
+
 
 class PatientData(models.Model):
 

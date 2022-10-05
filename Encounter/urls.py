@@ -19,12 +19,28 @@ from django.urls import path,re_path
 
 
 urlpatterns = [
-    path('', views.emr,name='emr'),
+
+    path('',views.home,name='home'),
+
+    path('log',views.log,name='log'),
+
+    path('logoff',views.logoff,name='logoff'),
+
+    path('emr/', views.emr,name='emr'),
+
+    path('adm/',views.adm,name='adm'),
+
+    path('doc',views.doc,name='doc'),
+
+    path('adm/<int:registrationID>/',views.editDoctor,name='editDoctor'),
+
+    path('dash/<int:pid>/editPatient/',views.editPatient,name='editPatient'),
+
     
     path('dash/<int:pid>/addMedicalProblem/',views.addMedicalProblem,name='addMedicalProblem'),
 
     path('dash/<int:pid>/addPrescription/',views.addPrescription,name='addPrescription'),
-    
+   
     path('dash/<int:pid>/',views.dash,name='dash'),
     
     path('dash/<int:pid>/encounter/', views.encounter,name='encounter'),
@@ -32,6 +48,8 @@ urlpatterns = [
     path('dash/<int:pid>/getEnc/',views.getEnc,name='getEnc'),
     
     path('dash/<int:pid>/encounter/<int:encid>/',views.encSummary,name='encSummary'),
+
+    path('dash/<int:pid>/encounter/<int:encid>/delPrescription/<int:prescid>',views.delPrescription,name='delPrescription'),
     
     path('dash/<int:pid>/encounter/<int:encid>/savevitals/',views.savevitals,name='savevitals'),
     
@@ -40,5 +58,7 @@ urlpatterns = [
     path('dash/<int:pid>/encounter/<int:encid>/savesoap/',views.savesoap,name='savesoap'),
     
     path('dash/<int:pid>/encounter/<int:encid>/saveros/',views.saveros,name='saveros'),
+
+    path('addDoctor',views.addDoctor,name='addDoctor'),
 
 ]

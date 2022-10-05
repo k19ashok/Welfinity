@@ -100,6 +100,12 @@ background-color: rgb(217, 192, 255);
 {
   cursor: pointer;
 }
+body{
+  background-color: rgb(227, 237, 245);
+}
+.navbar{
+  background-color: rgb(177, 218, 226);
+}
 </style>
 </head>
 
@@ -124,137 +130,37 @@ background-color: rgb(217, 192, 255);
                 class="navbar-toggler"
               >
                 <span class="navbar-toggler-icon"
-                  ><i id="toggler-icon" class="fa fa-navicon"></i
-                ></span>
+                  ></span>
+                  <!-- <i id="toggler-icon" class="fa fa-navicon"></i> -->
               </button>
               <div id="navbarNav" class="collapse navbar-collapse">
                 <ul class="navbar-nav ml-auto">
-                  <li class="nav-item">
-                    <a href="/aboutUs" class=""
-                      ><a
-                        href="#"
-                        data-toggle="collapse"
-                        data-target="#navbarNav"
-                        class="nav-link"
-                        >About</a
-                      ></a
-                    >
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a
-                      data-toggle="dropdown"
-                      href="#"
-                      role="button"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                      class="nav-link dropdown-toggle"
-                    >
-                      Services
-                    </a>
-                    <div class="dropdown-menu">
-                      <a
-                        href="/personalCare"
-                        class="dropdown-item"
-                        data-toggle="collapse"
-                        data-target="#navbarNav"
-                        >Personal Care</a
-                      >
-                      <div class="dropdown-divider"></div>
-                      <a
-                        href="/nannyCare"
-                        class="dropdown-item"
-                        data-toggle="collapse"
-                        data-target="#navbarNav"
-                        >Nanny Care</a
-                      >
-                      <div class="dropdown-divider"></div>
-                      <a
-                        href="/criticalCare"
-                        class="dropdown-item"
-                        data-toggle="collapse"
-                        data-target="#navbarNav"
-                        >Critical Care</a
-                      >
-                      <div class="dropdown-divider"></div>
-                      <a
-                        href="/nursingCare"
-                        class="dropdown-item"
-                        data-toggle="collapse"
-                        data-target="#navbarNav"
-                        >Nursing Care</a
-                      >
-                    </div>
+                  
+
+                  {% if request.user.is_authenticated %}
+                  <li class="nav-item nav-link">
+                  {{ request.user.first_name }}
                   </li>
                   <li class="nav-item">
                     <a
-                      href="/blog"
-                      class="nav-link"
-                      data-toggle="collapse"
-                      data-target="#navbarNav"
-                      >Blog
+                      href="{% url 'logoff' %}"
+                      class="nav-link contact"
+                      
+                      >Log Out
                     </a>
                   </li>
+                  {% else %}
                   <li class="nav-item">
                     <a
-                      href="/career"
-                      class="nav-link"
-                      data-toggle="collapse"
-                      data-target="#navbarNav"
-                      >Jobs
-                    </a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a
-                      data-toggle="dropdown"
-                      href="#"
-                      role="button"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                      class="nav-link dropdown-toggle"
-                    >
-                      Help
-                    </a>
-                    <div class="dropdown-menu">
-                      <a
-                        href="/faqs"
-                        class="dropdown-item"
-                        data-toggle="collapse"
-                        data-target="#navbarNav"
-                        >FAQs </a
-                      ><!----><!---->
-                      <div class="dropdown-divider"></div>
-                      <a
-                        href="/cancellationpolicy"
-                        class="dropdown-item"
-                        data-toggle="collapse"
-                        data-target="#navbarNav"
-                        >Cancellation Policy</a
-                      >
-                    </div>
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      href="/login"
+                      href="{% url 'log' %}"
                       class="nav-link contact"
                       data-toggle="collapse"
                       data-target="#navbarNav"
-                      >Sign In
+                      >Log In
                     </a>
                   </li>
-                  <li class="nav-item dropdown">
-                    <!---->
-                    <div class="dropdown-menu">
-                      <a
-                        href="/register"
-                        class="dropdown-item"
-                        data-toggle="collapse"
-                        data-target="#navbarNav"
-                        >My Profile</a
-                      ><!----><!----><!----><!---->
-                      <div class="dropdown-divider"></div>
-                      <!---->
-                    </div>
-                  </li>
+                  {% endif %}
+                  
                 </ul>
               </div>
             </div>
@@ -351,7 +257,9 @@ background-color: rgb(217, 192, 255);
                                     <h5>Vitals</h5>
                                 </a>
                               </div>
+                              {% if request.user.is_staff %}
                               <div class="col-4"><button class="btn btn-info btn-sm" data-target="#vitals" data-toggle="modal">EDIT</button></div>
+                              {% endif %}
                             </div>
 
                             <div class="row">
@@ -360,7 +268,9 @@ background-color: rgb(217, 192, 255);
                                   <h5>Clinical Notes</h5>
                               </a>
                               </div>
+                              {% if request.user.is_staff %}
                               <div class="col-4"><button class="btn btn-info btn-sm" data-target="#clinicalnotes" data-toggle="modal">EDIT</button></div>
+                              {% endif %}
                             </div>
                             
                             <div class="row">
@@ -369,7 +279,9 @@ background-color: rgb(217, 192, 255);
                                   <h5>Review Of Systems</h5>
                               </a>
                               </div>
+                              {% if request.user.is_staff %}
                               <div class="col-4"><button class="btn btn-info btn-sm" data-target="#ros" data-toggle="modal">EDIT</button></div>
+                              {% endif %}
                             </div>
 
                             <div class="row">
@@ -378,12 +290,82 @@ background-color: rgb(217, 192, 255);
                                   <h5>SOAP</h5>
                               </a>
                               </div>
+                              {% if request.user.is_staff %}
                               <div class="col-4"><button class="btn btn-info btn-sm" data-target="#soap" data-toggle="modal">EDIT</button></div>
+                              {% endif %}
                             </div>
                             
                         </div>
                     </div>
                 </div>
+
+
+
+                <div class="col-12 col-md-5 row-content">
+                  <div class="card">
+                    <div class="card-header bg-primary cp" data-target="#prescriptions" data-toggle="modal">
+                        <h4>Prescriptions</h4>
+                    </div>
+                    <div class="card-body">
+                      {% if p %}
+                      
+                      {% for i in p %}
+                      <div class="container w-100">
+                        <form action="{% url 'delPrescription' pt.pid enc.encid i.prescid %}"><button type="submit" class="btn btn-danger btn-sm float-right">DEL</button></form>
+                      </div>
+                      <div class="row w-100">
+                        <div class="col-6 col-md-4">
+                          <h6>Start Date</h6>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          <h6>{{ i.startdate }}</h6>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6 col-md-4">
+                          <h6>Provider</h6>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          <h6>{{ i.provider }}</h6>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6 col-md-4">
+                          <h6>Drug</h6>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          <h6><strong class="text-info">{{ i.drug }}</strong></h6>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6 col-md-4">
+                          <h6>Quantity</h6>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          <h6>{{ i.quantity }}</h6>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-6 col-md-4">
+                          <h6>Prescription Notes</h6>
+                        </div>
+                        <div class="col-6 col-md-4">
+                          <h6>{{ i.notes }}</h6>
+                        </div>
+                      </div>
+                      <hr>
+                      {% endfor %}
+  
+                    {% else %}
+                    No prescriptions added.
+                    {% endif %}
+                    </div>
+                  </div>
+                </div>
+
+
+
+
             </div>
         </div>
 
@@ -1226,6 +1208,93 @@ background-color: rgb(217, 192, 255);
     </div>
 
 
+
+      <!-- PRESCRIPTIONS -->
+      <div
+      class="modal fade"
+      id="prescriptions"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="prescriptions"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="prescriptionslabel">Prescriptions</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form action="{% url 'addPrescription' pt.pid %}" method="post">
+            {% csrf_token %}
+            <div class="modal-body">
+
+                <div class="row form-group container">
+                  <div class="col-12 col-md-4"><label for="startdate" class="col-form-label">Start Date</label></div>
+                  <div class="col-12 col-md-4">
+                    <input type="date" name="startdate" class="form-control" required>
+                  </div>
+                </div>
+
+                <div class="row form-group container">
+                  <div class="col-12 col-md-4"><label for="provider" class="col-form-label">Provider</label></div>
+                  <div class="col-12 col-md-4">
+                    <select name="provider"  class="form-control">
+                      {% for i in doct %}
+                      <option value="{{ i.registrationID }}">{{ i.name }}</option>
+                      {% endfor %}
+                    </select>
+                  </div>
+                </div>
+
+                <div id="drug">
+                  <div class="row form-group container">
+                    <div class="col-12 col-md-4"><label for="drug" class="col-form-label">Drug</label></div>
+                    <div class="col-12 col-md-4">
+                      <input type="text" name="drug" class="form-control" required>
+                    </div>
+                  </div>
+                  <div class="row form-group container">
+                    <div class="col-12 col-md-4"><label for="quantity" class="col-form-label">Quantity</label></div>
+                    <div class="col-12 col-md-4">
+                      <input type="text" name="quantity"  class="form-control">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group row container justify-content-center">
+                  <div class="col-12"><button type="button" class="btn btn-primary" id="rowAdder" disabled><i class="fa fa-plus" aria-hidden="true"></i></button></div>
+                </div>
+
+
+                <div class="row form-group container">
+                  <div class="col-12 col-md-4"><label for="clstype" class="col-form-label">Prescription Notes</label></div>
+                  <div class="col-12 col-md-4">
+                    <textarea name="notes" class="form-control" cols="30" rows="10"></textarea>
+                  </div>
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
 
 
 

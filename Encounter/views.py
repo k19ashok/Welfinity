@@ -1,14 +1,137 @@
-import re
-from django.http import HttpResponse
+import datetime
+from unicodedata import name
+from django.http import HttpResponse, HttpResponseRedirect
 from random import random
 from django.shortcuts import render,redirect
 from django.http import request
 from django.contrib import messages
 import random
+from django.contrib.auth.models import User
+from django.contrib.auth import login,logout,authenticate
+from django.contrib.auth.decorators import login_required,user_passes_test
+from django.contrib.admin.views.decorators import staff_member_required
+from regex import P
 
 from Encounter.models import *
-# Create your views here.
 
+
+
+
+def home(request):
+    user=request.user
+    if user.is_authenticated:
+        if user.is_superuser:
+            print("TRUE")
+            return redirect('adm')
+        if user.is_staff:
+            return redirect('doc')
+        else:
+            print(user.username)
+            pt=PatientData.objects.get(phone=user.username)
+            return redirect('dash',pt.pid)
+    return render(request,'home.html')
+
+
+@user_passes_test(lambda u: u.is_superuser)
+def adm(request):
+    doct=Doctors.objects.all()
+    patients=PatientData.objects.all()
+    return render(request,'admin.html',{'doct':doct,'patients':patients})
+
+
+@user_passes_test(lambda u: u.is_staff)
+def doc(request):
+    encounter=Encounter.objects.filter(encprovider=request.user.username)
+    ids=[i.pid for i in encounter]
+    patients=PatientData.objects.filter(pid__in=ids)
+    patients=list(zip(patients,encounter))
+    return render(request,'doctor.html',{'patients':patients})
+
+
+def logoff(request):
+    logout(request)
+    return redirect('home')
+
+def log(request):
+    if request.method=='POST':
+        username=request.POST.get('username')
+        password=request.POST.get('password')
+
+        try:
+            user=User.objects.get(username=username)
+        except:
+            messages.info(request,"WRONG USERNAME")
+            return redirect('home')
+        user=authenticate(request,username=username,password=password)
+        print("USER AUTHENTICATED")
+        if user:
+            login(request,user)
+            if user.is_superuser:
+                print("TRUE")
+                return redirect('adm')
+            if user.is_staff:
+                return redirect('doc')
+            else:
+                pt=PatientData.objects.get(phone=username)
+                return redirect('dash',pt.pid)
+        else:
+            messages.info(request,"WRONG PASSWORD")
+            return redirect('home')
+    return redirect('home')
+
+@user_passes_test(lambda u: u.is_superuser)
+def addDoctor(request):
+    if request.method=='POST':
+        name=request.POST.get('name')
+        qualification=request.POST.get('qualification')
+        specialization=request.POST.get('specialization')
+        doj=request.POST.get('doj')
+        address=request.POST.get('address')
+        registrationID=request.POST.get('registrationID')
+        
+        try:
+            Doctors.objects.get(registrationID=registrationID)
+            messages.info(request,"DOCTOR ID ALREADY PRESENT")
+            return redirect('adm')
+        except:
+            nums=list(range(10))
+            
+            while True:
+                id=random.choices(nums,k=8)
+                id=''.join(list(map(str,id)))
+                try:
+                    Doctors.objects.get(doctorID=id)
+                except:
+                    break
+            doc=Doctors(doctorID=registrationID,name=name,qualification=qualification,specialization=specialization,doj=doj,address=address,registrationID=registrationID)
+            doc.save()
+            doctor=User.objects.create_user(username=registrationID,password=registrationID,is_staff=True,first_name=name)
+            doctor.save()
+            return redirect('adm')
+    return redirect('adm')
+        
+
+
+def editDoctor(request,registrationID):
+    doc=Doctors.objects.filter(registrationID=registrationID)
+    doctor=User.objects.get(username=registrationID)
+    name=request.POST.get('name')
+    qualification=request.POST.get('qualification')
+    specialization=request.POST.get('specialization')
+    doj=request.POST.get('doj')
+    address=request.POST.get('address')
+    registrationID=request.POST.get('registrationID')
+    doc.update(name=name,qualification=qualification,specialization=specialization,doj=doj,address=address,registrationID=registrationID)
+    doctor.username=registrationID
+    doctor.save()
+
+    return redirect('adm')
+
+    
+
+
+        
+@user_passes_test(lambda u: u.is_staff)
 def emr(request):
     if request.method=='POST':
         searchid=request.POST.get('searchid')
@@ -108,39 +231,139 @@ def emr(request):
             except:
                 break
 
+        try:
+            ptuser=User.objects.create_user(username=phone,password=phone,first_name=firstname,email=email)
+        except:
+            messages.info(request,"Phone Number is already taken")
+            return render(request,'emr.html')
 
+        try:
+            guard=User.objects.create_user(username=guardphone,password=guardphone,first_name=guardian,email=guardemail)
+        except:
+            messages.info(request,"Guardian Phone Number is already taken")
+            return render(request,'emr.html')
+
+        ptuser.save()
+        guard.save()
 
         pt=PatientData(id=id,pid=id,title = title, fname = firstname, lname = lastname, dob = dob, sex = sex, extid = extid, licid = licid, prevnames = prevnames, address = address, addressline2 = addressline2, city = city, state = state, pin = pin, country = country, phone = phone, email = email, altphone = altphone, careteam = careteam, carefacility = carefacility, hipaa = hipaa, allowvoice = allowvoice, allowmail = allowmail, leavemsg = leavemsg, allowimmreg = allowimmreg, allowimmshare = allowimmshare, allowhie = allowhie, allowpp = allowpp, immstatus = imstatus, immstatusdt = imstatusdt, pubcode = pubcode, pubcodedate = pubcodedate, protind = protind, protinddate = protinddate, carestatus = carestatus, ptcat = ptcat, occupation = occupation, industry = industry, empname = empname, empaddress = empaddress, language = language, ethnicity = ethnicity, famsize = famsize, finreview = finreview, income = income, homeless = homeless, migrant = migrant, religion = religion, vfc = vfc, deceased = deceased, reasondeceased = reasondeceased, guardian = guardian, guardianrelation = guardianrelation, guardiansex = guardiansex, guardianaddress = guardaddress, guardianaddressline2 = guardaddressline2, guardiancity = guardcity, guardianstate = guardstate, guardianpin = guardpin, guardiancountry = guardcountry, guardianphone = guardphone, guardianemail = guardemail)
         print(pt)
         pt.save()
 
-        
+       
+        print("Patient Added")
+
+
         return redirect('dash',pt.pid)
     else:
-        return render(request,'emr.html')
+        doct=Doctors.objects.all()
+        return render(request,'emr.html',{'doct':doct})
 
+
+
+def editPatient(request,pid):
+    title = request.POST.get('title')
+    firstname = request.POST.get('firstname')
+    lastname = request.POST.get('lastname')
+    dob = request.POST.get('dob') or None
+    if not dob:
+        dob=None
+    sex = request.POST.get('sex')
+    extid = request.POST.get('extid')
+    licid = request.POST.get('licid')
+    prevnames = request.POST.get('prevnames')
+    address = request.POST.get('address')
+    addressline2 = request.POST.get('addressline2')
+    city = request.POST.get('city')
+    state = request.POST.get('state')
+    pin = request.POST.get('pin')
+    country = request.POST.get('country')
+    phone = request.POST.get('phone')
+    email = request.POST.get('email')
+    altphone = request.POST.get('altphone')
+    careteam = request.POST.get('careteam')
+    carefacility = request.POST.get('carefacility')
+    hipaa = request.POST.get('hipaa')
+    allowvoice = request.POST.get('allowvoice')
+    allowmail = request.POST.get('allowmail')
+    leavemsg = request.POST.get('leavemsg')
+    allowimmreg = request.POST.get('allowimmreg')
+    allowimmshare = request.POST.get('allowimmshare')
+    allowhie = request.POST.get('allowhie')
+    allowpp = request.POST.get('allowpp')
+    imstatus = request.POST.get('immstatus')
+    imstatusdt = request.POST.get('immstatusdt')
+    if not imstatusdt:
+        imstatusdt=None
+    pubcode = request.POST.get('pubcode')
+    pubcodedate = request.POST.get('pubcodedate') or None
+    if not pubcodedate:
+        pubcodedate=None
+    protind = request.POST.get('protind')
+    protinddate = request.POST.get('protinddate') or None
+    if not protinddate:
+        protinddate=None
+    carestatus = request.POST.get('carestatus')
+    ptcat = request.POST.get('ptcat')
+    occupation = request.POST.get('occupation')
+    industry = request.POST.get('industry')
+    empname = request.POST.get('empname')
+    empaddress = request.POST.get('empaddress')
+    language = request.POST.get('language')
+    ethnicity = request.POST.get('ethnicity')
+    famsize = request.POST.get('famsize')
+    finreview = request.POST.get('finreview')
+    if not finreview:
+        finreview=None
+    income = request.POST.get('income')
+    homeless = request.POST.get('homeless')
+    migrant = request.POST.get('migrant')
+    religion = request.POST.get('religion')
+    vfc = request.POST.get('vfc')
+    deceased = request.POST.get('deceased') or None
+    if not deceased:
+        deceased=None
+    reasondeceased = request.POST.get('reasondeceased')
+    guardian = request.POST.get('guardian')
+    guardianrelation = request.POST.get('guardianrelation')
+    guardiansex = request.POST.get('guardiansex')
+    guardaddress = request.POST.get('guardaddress')
+    guardaddressline2 = request.POST.get('guardaddressline2')
+    guardcity = request.POST.get('guardcity')
+    guardstate = request.POST.get('guardstate')
+    guardpin = request.POST.get('guardpin')
+    guardcountry = request.POST.get('guardcountry')
+    guardphone = request.POST.get('guardphone')
+    guardemail = request.POST.get('guardemail')
+
+    pt=PatientData.objects.filter(pid=pid)
+    pt.update(pid=pid,title = title, fname = firstname, lname = lastname, dob = dob, sex = sex, extid = extid, licid = licid, prevnames = prevnames, address = address, addressline2 = addressline2, city = city, state = state, pin = pin, country = country, phone = phone, email = email, altphone = altphone, careteam = careteam, carefacility = carefacility, hipaa = hipaa, allowvoice = allowvoice, allowmail = allowmail, leavemsg = leavemsg, allowimmreg = allowimmreg, allowimmshare = allowimmshare, allowhie = allowhie, allowpp = allowpp, immstatus = imstatus, immstatusdt = imstatusdt, pubcode = pubcode, pubcodedate = pubcodedate, protind = protind, protinddate = protinddate, carestatus = carestatus, ptcat = ptcat, occupation = occupation, industry = industry, empname = empname, empaddress = empaddress, language = language, ethnicity = ethnicity, famsize = famsize, finreview = finreview, income = income, homeless = homeless, migrant = migrant, religion = religion, vfc = vfc, deceased = deceased, reasondeceased = reasondeceased, guardian = guardian, guardianrelation = guardianrelation, guardiansex = guardiansex, guardianaddress = guardaddress, guardianaddressline2 = guardaddressline2, guardiancity = guardcity, guardianstate = guardstate, guardianpin = guardpin, guardiancountry = guardcountry, guardianphone = guardphone, guardianemail = guardemail)
+
+    return redirect('dash',pid)
+
+
+
+@login_required
 def dash(request,pid=None):
     if pid:
-        x=PatientData.objects.all()
-        print(x)
         pt=PatientData.objects.get(pid=pid)
         enc=Encounter.objects.filter(pid=pid)
         print(enc)
-
+        doct=Doctors.objects.all()
         try:
             mp=MedicalProblems.objects.filter(pid=pid)
             try:
                 p=Prescription.objects.filter(pid=pid)
-                return render(request,'dashboard.html',{'pt':pt,'enc':enc,'p':p,'mp':mp})
+                return render(request,'dashboard.html',{'pt':pt,'enc':enc,'p':p,'mp':mp,'doct':doct})
             except:
-                return render(request,'dashboard.html',{'pt':pt,'enc':enc,'mp':mp})
+                return render(request,'dashboard.html',{'pt':pt,'enc':enc,'mp':mp,'doct':doct})
         except:
-            return render(request,'dashboard.html',{'pt':pt,'enc':enc})
+            return render(request,'dashboard.html',{'pt':pt,'enc':enc,'doct':doct})
     
     return render(request,'dashboard.html')
 
-import datetime
 
+@login_required
 def encounter(request,pid):
     if request.method=='POST':
         encid=''
@@ -175,12 +398,13 @@ def encounter(request,pid):
         ros.save()
         ec.save()
 
+
         return redirect('encSummary',pid,encid)
     else:
         return redirect('dash',pid)
 
 
-
+@login_required
 def encSummary(request,pid,encid):
     pt=PatientData.objects.get(pid=pid)
     enc=Encounter.objects.get(encid=encid)
@@ -188,9 +412,14 @@ def encSummary(request,pid,encid):
     notes=ClinicalNotes.objects.get(encid=encid)
     ros=ROS.objects.get(encid=encid)
     soap=SOAP.objects.get(encid=encid)
-    return render(request,'encounter.html',{'enc':enc,'pt':pt,'vitals':vitals,'notes':notes,'ros':ros,'soap':soap})
+    try:
+        p=Prescription.objects.filter(pid=pid)
+        return render(request,'encounter.html',{'enc':enc,'pt':pt,'vitals':vitals,'notes':notes,'ros':ros,'soap':soap,'p':p})
 
+    except:
+        return render(request,'encounter.html',{'enc':enc,'pt':pt,'vitals':vitals,'notes':notes,'ros':ros,'soap':soap})
 
+@login_required
 def getEnc(request,pid):
     if request.method=='POST':
         encid=request.POST.get('encval')
@@ -202,7 +431,7 @@ def getEnc(request,pid):
 def form(request):
     return render(request,'Forms.html')
 
-
+@user_passes_test(lambda u: u.is_staff)
 def saveros(request,encid,pid):
     if request.method=='POST':
         chestpain = request.POST.get('chestpain')
@@ -259,12 +488,7 @@ def saveros(request,encid,pid):
         intolerence = request.POST.get('intolerence')
         fatigue = request.POST.get('fatigue')
         chills = request.POST.get('chills')
-        irritability = request.POST.get('irritability')
-
-
-
-
-        
+        irritability = request.POST.get('irritability')        
 
         try:
             ros=ROS.objects.filter(encid=encid)
@@ -277,7 +501,7 @@ def saveros(request,encid,pid):
 
     return redirect('encSummary',pid,encid)
 
-
+@user_passes_test(lambda u: u.is_staff)
 def savesoap(request,pid,encid):
 
     if request.method=='POST':
@@ -296,7 +520,7 @@ def savesoap(request,pid,encid):
 
     return redirect('encSummary',pid,encid)
 
-
+@user_passes_test(lambda u: u.is_staff)
 def savevitals(request,pid,encid):
 
     if request.method=='POST':
@@ -343,7 +567,7 @@ def savevitals(request,pid,encid):
     return redirect('encSummary',pid,encid)
 
 
-
+@user_passes_test(lambda u: u.is_staff)
 def savenotes(request,pid,encid):
     if request.method=='POST':
 
@@ -361,7 +585,7 @@ def savenotes(request,pid,encid):
 
     return redirect('encSummary',pid,encid)
 
-
+@user_passes_test(lambda u: u.is_staff)
 def addMedicalProblem(request,pid):
     if request.method=='POST':
         nums=list(range(10))
@@ -390,6 +614,7 @@ def addMedicalProblem(request,pid):
 
     return redirect('dash',pid)
 
+@user_passes_test(lambda u: u.is_staff)
 def addPrescription(request,pid):
     if request.method=='POST':
         nums=list(range(10))
@@ -411,6 +636,10 @@ def addPrescription(request,pid):
         p.save()
     return redirect('dash',pid)
 
-        
+@user_passes_test(lambda u: u.is_staff)
+def delPrescription(request,pid,encid,prescid):
+    presc=Prescription.objects.get(prescid=prescid)
+    presc.delete()
+    return redirect('encSummary',pid,encid)
 
 

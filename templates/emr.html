@@ -96,6 +96,13 @@
       {
         cursor: pointer;
       }
+      body{
+  background-color: rgb(227, 237, 245);
+}
+
+.navbar{
+  background-color: rgb(177, 218, 226);
+}
     </style>
   </head>
 
@@ -119,137 +126,35 @@
               class="navbar-toggler"
             >
               <span class="navbar-toggler-icon"
-                ><i id="toggler-icon" class="fa fa-navicon"></i
-              ></span>
+                ></span>
             </button>
             <div id="navbarNav" class="collapse navbar-collapse">
               <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                  <a href="/aboutUs" class=""
-                    ><a
-                      href="#"
-                      data-toggle="collapse"
-                      data-target="#navbarNav"
-                      class="nav-link"
-                      >About</a
-                    ></a
-                  >
-                </li>
-                <li class="nav-item dropdown">
-                  <a
-                    data-toggle="dropdown"
-                    href="#"
-                    role="button"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                    class="nav-link dropdown-toggle"
-                  >
-                    Services
-                  </a>
-                  <div class="dropdown-menu">
-                    <a
-                      href="/personalCare"
-                      class="dropdown-item"
-                      data-toggle="collapse"
-                      data-target="#navbarNav"
-                      >Personal Care</a
-                    >
-                    <div class="dropdown-divider"></div>
-                    <a
-                      href="/nannyCare"
-                      class="dropdown-item"
-                      data-toggle="collapse"
-                      data-target="#navbarNav"
-                      >Nanny Care</a
-                    >
-                    <div class="dropdown-divider"></div>
-                    <a
-                      href="/criticalCare"
-                      class="dropdown-item"
-                      data-toggle="collapse"
-                      data-target="#navbarNav"
-                      >Critical Care</a
-                    >
-                    <div class="dropdown-divider"></div>
-                    <a
-                      href="/nursingCare"
-                      class="dropdown-item"
-                      data-toggle="collapse"
-                      data-target="#navbarNav"
-                      >Nursing Care</a
-                    >
-                  </div>
+                
+                {% if request.user.is_authenticated %}
+                <li class="nav-item nav-link">
+                {{ request.user.first_name }}
                 </li>
                 <li class="nav-item">
                   <a
-                    href="/blog"
-                    class="nav-link"
-                    data-toggle="collapse"
-                    data-target="#navbarNav"
-                    >Blog
+                    href="{% url 'logoff' %}"
+                    class="nav-link contact"
+                    
+                    >Log Out
                   </a>
                 </li>
+                {% else %}
                 <li class="nav-item">
                   <a
-                    href="/career"
-                    class="nav-link"
-                    data-toggle="collapse"
-                    data-target="#navbarNav"
-                    >Jobs
-                  </a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a
-                    data-toggle="dropdown"
-                    href="#"
-                    role="button"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                    class="nav-link dropdown-toggle"
-                  >
-                    Help
-                  </a>
-                  <div class="dropdown-menu">
-                    <a
-                      href="/faqs"
-                      class="dropdown-item"
-                      data-toggle="collapse"
-                      data-target="#navbarNav"
-                      >FAQs </a
-                    ><!----><!---->
-                    <div class="dropdown-divider"></div>
-                    <a
-                      href="/cancellationpolicy"
-                      class="dropdown-item"
-                      data-toggle="collapse"
-                      data-target="#navbarNav"
-                      >Cancellation Policy</a
-                    >
-                  </div>
-                </li>
-                <li class="nav-item">
-                  <a
-                    href="/login"
+                    href="{% url 'log' %}"
                     class="nav-link contact"
                     data-toggle="collapse"
                     data-target="#navbarNav"
-                    >Sign In
+                    >Log In
                   </a>
                 </li>
-                <li class="nav-item dropdown">
-                  <!---->
-                  <div class="dropdown-menu">
-                    <a
-                      href="/register"
-                      class="dropdown-item"
-                      data-toggle="collapse"
-                      data-target="#navbarNav"
-                      >My Profile</a
-                    ><!----><!----><!----><!---->
-                    <div class="dropdown-divider"></div>
-                    <!---->
-                  </div>
-                </li>
+                {% endif %}
+                
               </ul>
             </div>
           </div>
@@ -677,9 +582,9 @@
                     </select>
                   </div>
                 </div>
+                </div>
               </div>
             </div>
-          </div>
 
           <div class="card col-12 p-0">
             <div class="card-header bg-info cp" data-toggle="collapse" data-target="#employer">
@@ -882,7 +787,7 @@
                     >Guardian Name</label
                   >
                   <div class="col-12 col-sm-5 col-lg-3">
-                    <input type="text" name="guardian" class="form-control" />
+                    <input type="text" name="guardian" class="form-control" required/>
                   </div>
                   <label for="relationship" class="col-form-label col-lg-3"
                     >Relationship</label
@@ -892,6 +797,7 @@
                       type="text"
                       name="guardianrelation"
                       class="form-control"
+                      required
                     />
                   </div>
                 </div>
@@ -982,6 +888,7 @@
                       name="guardphone"
                       placeholder="10 digit Mobile"
                       class="form-control"
+                      required
                     />
                   </div>
                   <label for="guardemail" class="col-form-label col-12"

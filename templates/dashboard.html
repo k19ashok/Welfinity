@@ -102,6 +102,12 @@ background-color: rgb(217, 192, 255);
 {
   cursor: pointer;
 }
+body{
+  background-color: rgb(227, 237, 245);
+}
+.navbar{
+  background-color: rgb(177, 218, 226);
+}
 </style>
 
 </head>
@@ -125,137 +131,36 @@ background-color: rgb(217, 192, 255);
                 class="navbar-toggler"
               >
                 <span class="navbar-toggler-icon"
-                  ><i id="toggler-icon" class="fa fa-navicon"></i
-                ></span>
-              </button>
+                  ></span>
+                  <!-- <i id="toggler-icon" class="fa fa-navicon"></i> -->
+                </button>
               <div id="navbarNav" class="collapse navbar-collapse">
                 <ul class="navbar-nav ml-auto">
-                  <li class="nav-item">
-                    <a href="/aboutUs" class=""
-                      ><a
-                        href="#"
-                        data-toggle="collapse"
-                        data-target="#navbarNav"
-                        class="nav-link"
-                        >About</a
-                      ></a
-                    >
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a
-                      data-toggle="dropdown"
-                      href="#"
-                      role="button"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                      class="nav-link dropdown-toggle"
-                    >
-                      Services
-                    </a>
-                    <div class="dropdown-menu">
-                      <a
-                        href="/personalCare"
-                        class="dropdown-item"
-                        data-toggle="collapse"
-                        data-target="#navbarNav"
-                        >Personal Care</a
-                      >
-                      <div class="dropdown-divider"></div>
-                      <a
-                        href="/nannyCare"
-                        class="dropdown-item"
-                        data-toggle="collapse"
-                        data-target="#navbarNav"
-                        >Nanny Care</a
-                      >
-                      <div class="dropdown-divider"></div>
-                      <a
-                        href="/criticalCare"
-                        class="dropdown-item"
-                        data-toggle="collapse"
-                        data-target="#navbarNav"
-                        >Critical Care</a
-                      >
-                      <div class="dropdown-divider"></div>
-                      <a
-                        href="/nursingCare"
-                        class="dropdown-item"
-                        data-toggle="collapse"
-                        data-target="#navbarNav"
-                        >Nursing Care</a
-                      >
-                    </div>
+                  
+                  {% if request.user.is_authenticated %}
+                  <li class="nav-item nav-link">
+                  {{ request.user.first_name }}
                   </li>
                   <li class="nav-item">
                     <a
-                      href="/blog"
-                      class="nav-link"
-                      data-toggle="collapse"
-                      data-target="#navbarNav"
-                      >Blog
+                      href="{% url 'logoff' %}"
+                      class="nav-link contact"
+                      
+                      >Log Out
                     </a>
                   </li>
+                  {% else %}
                   <li class="nav-item">
                     <a
-                      href="/career"
-                      class="nav-link"
-                      data-toggle="collapse"
-                      data-target="#navbarNav"
-                      >Jobs
-                    </a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a
-                      data-toggle="dropdown"
-                      href="#"
-                      role="button"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                      class="nav-link dropdown-toggle"
-                    >
-                      Help
-                    </a>
-                    <div class="dropdown-menu">
-                      <a
-                        href="/faqs"
-                        class="dropdown-item"
-                        data-toggle="collapse"
-                        data-target="#navbarNav"
-                        >FAQs </a
-                      ><!----><!---->
-                      <div class="dropdown-divider"></div>
-                      <a
-                        href="/cancellationpolicy"
-                        class="dropdown-item"
-                        data-toggle="collapse"
-                        data-target="#navbarNav"
-                        >Cancellation Policy</a
-                      >
-                    </div>
-                  </li>
-                  <li class="nav-item">
-                    <a
-                      href="/login"
+                      href="{% url 'log' %}"
                       class="nav-link contact"
                       data-toggle="collapse"
                       data-target="#navbarNav"
-                      >Sign In
+                      >Log In
                     </a>
                   </li>
-                  <li class="nav-item dropdown">
-                    <!---->
-                    <div class="dropdown-menu">
-                      <a
-                        href="/register"
-                        class="dropdown-item"
-                        data-toggle="collapse"
-                        data-target="#navbarNav"
-                        >My Profile</a
-                      ><!----><!----><!----><!---->
-                      <div class="dropdown-divider"></div>
-                      <!---->
-                    </div>
-                  </li>
+                  {% endif %}
+                  
                 </ul>
               </div>
             </div>
@@ -287,6 +192,7 @@ background-color: rgb(217, 192, 255);
           </div>
         </div>
 
+
         <div class="container">
           <form action="{% url 'getEnc' pt.pid %}" class="w-100" method="post">
             {% csrf_token %}
@@ -304,8 +210,11 @@ background-color: rgb(217, 192, 255);
             </div>
            
           </form>
+          {% if request.user.is_staff %}
           <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#newencounter">Create Encounter</button>
+          {% endif %}
         </div>
+
 
 
         <div class="row">
@@ -313,7 +222,7 @@ background-color: rgb(217, 192, 255);
           <div class="row-content">
             <div class="card">
               <div class="card-header bg-primary">
-                <h4>Demographics</h4>
+                <h4>Demographics <span><button class="btn btn-info btn-sm float-right" data-toggle="modal" data-target="#editPatient">EDIT</button></span></h4>
               </div>
               <div class="card-body">
 
@@ -347,10 +256,10 @@ background-color: rgb(217, 192, 255);
                       <div class="container justify-content-left">
                         <div class="row">
                           <div class="col-6 col-md-4">
-                            <h5>Name</h5>
+                            <h5><b>Name</b></h5>
                           </div>
                           <div class="col-6 col-md-4">
-                            <h6>{{ pt.title }} {{pt.fname }} {{ pt.lname }}</h6>
+                            <h6><b class="text-info">{{ pt.title }} {{pt.fname }} {{ pt.lname }}</b></h6>
                           </div>
                         </div>
                         <div class="row">
@@ -575,6 +484,7 @@ background-color: rgb(217, 192, 255);
                     </div>
                     <div class="tab-pane fade row-content" id="choices" role="tabpanel" >
 
+                      
                       <div class="row">
                         <div class="col-6 col-md-4">
                           <h5>Hipaa Notice Received</h5>
@@ -972,6 +882,776 @@ background-color: rgb(217, 192, 255);
 
 
 
+
+      <!-- EDIT PATIENT -->
+
+      <div class="modal fade" id="editPatient" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Edit Patient</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form action="{% url 'editPatient' pt.pid %}" method="post">
+                {% csrf_token %}
+                <div class="row" id="accordion">
+                  <div class="card col-12 p-0">
+                    <div class="card-header bg-info cp" data-toggle="collapse" data-target="#who">
+                      <h3 class="mb-0 text-white">
+                        WHO
+                      </h3>
+                    </div>
+                    <div id="who" data-parent="#accordion" class="collapse show">
+                      <div class="card-body">
+                        <div class="form-group row container">
+                          <label for="title" class="col-form-label col-lg-3"
+                            >Title</label
+                          >
+                          <div class="col-12 col-sm-5 col-lg-3">
+                            <select name="title" class="form-control" required>
+                              <option value="Mr" {% if pt.title == 'Mr' %} selected {% endif %}>Mr</option>
+                              <option value="Mrs" {% if pt.title == 'Mrs' %} selected {% endif %}>Mrs</option>
+                              <option value="Ms" {% if pt.title == 'Ms' %} selected {% endif %}>Ms</option>
+                              <option value="Dr" {% if pt.title == 'Dr' %} selected {% endif %}>Dr</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-group row container">
+                          <label for="name" class="col-form-label col-lg-3">Name</label>
+                          <div class="col-12 col-sm-5 col-lg-3">
+                            <input
+                              type="text"
+                              name="firstname"
+                              placeholder="First Name"
+                              class="form-control"
+                              required
+                              value="{{ pt.fname }}"
+                            />
+                          </div>
+                          <div class="col-12 col-sm-5 col-lg-3 mt-1 mt-sm-0">
+                            <input
+                              type="text"
+                              name="lastname"
+                              placeholder="Last Name"
+                              class="form-control"
+                              value="{{ pt.lname }}"
+                            />
+                          </div>
+                        </div>
+                        <div class="form-group row container">
+                          <label for="dob" class="col-form-label col-lg-3">DOB</label>
+                          <div class="col-12 col-sm-5 col-lg-3">
+                            <input type="date" name="dob" class="form-control" required value="{{ pt.dob|date:'Y-m-d' }}"/>
+                          </div>
+                        </div>
+                        <div class="form-group row container">
+                          <label for="sex" class="col-form-label col-lg-3">Sex</label>
+                          <div class="col-12 col-sm-5 col-lg-3">
+                            <select name="sex" class="form-control" required>
+                              <option value="Male" {% if pt.sex == 'Male' %} selected {% endif %}>Male</option>
+                              <option value="Femail" {% if pt.sex == 'Female' %} selected {% endif %}>Female</option>
+                              <option value="Other" {% if pt.sex == 'Other' %} selected {% endif %}>Other</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-group row container">
+                          <label for="extid" class="col-form-label col-lg-3"
+                            >Aadhar ID</label
+                          >
+                          <div class="col-12 col-sm-5 col-lg-3">
+                            <input
+                              type="text"
+                              name="extid"
+                              placeholder="External ID"
+                              class="form-control"
+                              value="{{ pt.extid }}"
+                            />
+                          </div>
+                          <label for="license" class="col-form-label col-lg-3"
+                            >Alternate ID</label
+                          >
+                          <div class="col-12 col-sm-5 col-lg-3 mt-1 mt-sm-0">
+                            <input
+                              type="text"
+                              name="licid"
+                              placeholder="License ID"
+                              class="form-control"
+                              value="{{ pt.licid }}"
+                            />
+                          </div>
+                        </div>
+                        <div class="form-group row container">
+                          <label for="prevnames" class="col-form-label col-lg-3"
+                            >Previous Names</label
+                          >
+                          <div class="col-12 col-sm-9 col-lg-5">
+                            <input
+                              type="text"
+                              name="prevnames"
+                              placeholder="Previous Names"
+                              class="form-control"
+                              value="{{ pt.prevnames }}"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="card col-12 p-0">
+                    <div class="card-header bg-info cp" data-toggle="collapse" data-target="#contact">
+                      <h3 class="mb-0 text-white">
+                        CONTACT
+                      </h3>
+                    </div>
+                    <div id="contact" data-parent="#accordion" class="collapse">
+                      <div class="card-body">
+                        <div class="form-group row container">
+                          <label for="address" class="col-form-label col-lg-3"
+                            >Address</label
+                          >
+                          <div class="col-12 col-sm-5 col-lg-3">
+                            <input
+                              type="text"
+                              name="address"
+                              placeholder="Address Line 1"
+                              class="form-control"
+                              value="{{ pt.address }}"
+                            />
+                          </div>
+                          <div class="col-12 col-sm-5 col-lg-3">
+                            <input
+                              type="text"
+                              name="addressline2"
+                              placeholder="Address Line 2"
+                              class="form-control"
+                              value="{{ pt.addressline2 }}"
+                            />
+                          </div>
+                        </div>
+                        <div class="form-group row container">
+                          <label for="city" class="col-form-label col-lg-3">City</label>
+                          <div class="col-12 col-sm-5 col-lg-3">
+                            <input
+                              type="text"
+                              name="city"
+                              placeholder="City"
+                              class="form-control"
+                              value="{{ pt.city }}"
+                            />
+                          </div>
+                          <div class="col-12 col-sm-5 col-lg-3">
+                            <input
+                              type="text"
+                              name="state"
+                              placeholder="State"
+                              class="form-control"
+                              value="{{ pt.state }}"
+                            />
+                          </div>
+                        </div>
+                        <div class="form-group row container">
+                          <label for="pin" class="col-form-label col-lg-3"
+                            >Pincode</label
+                          >
+                          <div class="col-12 col-sm-5 col-lg-3">
+                            <input
+                              type="text"
+                              name="pin"
+                              placeholder="Postal PIN"
+                              class="form-control"
+                              value="{{ pt.pin }}"
+                            />
+                          </div>
+                          <div class="col-12 col-sm-5 col-lg-3">
+                            <input
+                              type="country"
+                              name="country"
+                              placeholder="Country"
+                              class="form-control"
+                              value="{{ pt.country }}"
+                            />
+                          </div>
+                        </div>
+                        <div class="form-group row container">
+                          <label for="phone" class="col-form-label col-12"
+                            >Mobile</label
+                          >
+                          <div class="col-12 col-sm-7 col-lg-4">
+                            <input
+                              type="text"
+                              name="phone"
+                              placeholder="10 digit Mobile"
+                              class="form-control"
+                              value="{{ pt.phone }}"
+                              required
+                            />
+                          </div>
+                          <label for="email" class="col-form-label col-12"
+                            >Email ID</label
+                          >
+                          <div class="col-12 col-sm-7 col-lg-4">
+                            <input
+                              type="email"
+                              name="email"
+                              placeholder="abc@domain.com"
+                              class="form-control"
+                              value="{{ pt.email }}"
+                            />
+                          </div>
+                        </div>
+                        <div class="form-group row container">
+                          <label for="altphone" class="col-form-label col-lg-3"
+                            >Alternate Mobile</label
+                          >
+                          <div class="col-12 col-sm-5 col-lg-3">
+                            <input
+                              type="text"
+                              name="altphone"
+                              placeholder="10 digit Mobile"
+                              class="form-control"
+                              value="{{ pt.altphone }}"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="card col-12 p-0">
+                    <div class="card-header bg-info cp" data-toggle="collapse" data-target="#choices">
+                      <h3 class="mb-0  text-white">
+                        CHOICES
+                      </h3>
+                    </div>
+                    <div id="choices" data-parent="#accordion" class="collapse">
+                      <div class="card-body">
+                        <div class="form-group row container">
+                          <label for="hipaa" class="col-form-label col-lg-3"
+                            >Hipaa Notice Received</label
+                          >
+                          <div class="col-12 col-md-5 col-lg-3">
+                            <select name="hipaa" class="form-control">
+                              <option value="" {% if pt.hipaa == '' %} selected {% endif %}>Select</option>
+                              <option value="Yes" {% if pt.hipaa == 'Yes' %} selected {% endif %}>Yes</option>
+                              <option value="No" {% if pt.hipaa == 'No' %} selected {% endif %}>No</option>
+                            </select>
+                          </div>
+                          <label for="allowvoice" class="col-form-label col-lg-3"
+                            >Allow Voice Messsage</label
+                          >
+                          <div class="col-12 col-md-5 col-lg-3">
+                            <select name="allowvoice" class="form-control">
+                              <option value="" {% if pt.allovoice == '' %} selected {% endif %}>Select</option>
+                              <option value="Yes" {% if pt.allovoice == 'Yes' %} selected {% endif %}>Yes</option>
+                              <option value="No" {% if pt.allovoice == 'No' %} selected {% endif %}>No</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-group row container">
+                          <label for="allowmail" class="col-form-label col-lg-3"
+                            >Allow Mail Messsage</label
+                          >
+                          <div class="col-12 col-md-5 col-lg-3">
+                            <select name="allowmail" class="form-control">
+                              <option value="" {% if pt.allowmail == '' %} selected {% endif %}>Select</option>
+                              <option value="Yes" {% if pt.allowmail == 'Yes' %} selected {% endif %}>Yes</option>
+                              <option value="No" {% if pt.allowmail == 'No' %} selected {% endif %}>No</option>
+                            </select>
+                          </div>
+                          <label for="leavemsg" class="col-form-label col-lg-3"
+                            >Leave Message With</label
+                          >
+                          <div class="col-12 col-md-5 col-lg-3">
+                            <input type="text" name="leavemsg" class="form-control" value="{{ pt.leavemsg }}"/>
+                          </div>
+                        </div>
+                        <div class="form-group row container">
+                          <label for="allowimmreg" class="col-form-label col-lg-3"
+                            >Allow Immunization Registry Use</label
+                          >
+                          <div class="col-12 col-md-5 col-lg-3">
+                            <select name="allowimmreg" class="form-control">
+                              <option value="" {% if pt.allowimmreg == '' %} selected {% endif %}>Select</option>
+                              <option value="Yes" {% if pt.allowimmreg == 'Yes' %} selected {% endif %}>Yes</option>
+                              <option value="No" {% if pt.allowimmreg == 'No' %} selected {% endif %}>No</option>
+                            </select>
+                          </div>
+                          <label for="allowimmshare" class="col-form-label col-lg-3"
+                            >Allow Immunization Info Share</label
+                          >
+                          <div class="col-12 col-md-5 col-lg-3">
+                            <select name="allowimmshare" class="form-control">
+                              <option value="" {% if pt.allowimmshare == '' %} selected {% endif %}>Select</option>
+                              <option value="Yes" {% if pt.allowimmshare == 'Yes' %} selected {% endif %}>Yes</option>
+                              <option value="No" {% if pt.allowimmshare == 'No' %} selected {% endif %}>No</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-group row container">
+                          <label for="allowhie" class="col-form-label col-lg-3"
+                            >Allow Health Info Exchange</label
+                          >
+                          <div class="col-12 col-md-5 col-lg-3">
+                            <select name="allowhie" class="form-control">
+                              <option value="" {% if pt.allowhie == '' %} selected {% endif %}>Select</option>
+                              <option value="Yes" {% if pt.allowhie == 'Yes' %} selected {% endif %}>Yes</option>
+                              <option value="No" {% if pt.allowhie == 'No' %} selected {% endif %}>No</option>
+                            </select>
+                          </div>
+                          <label for="allowpp" class="col-form-label col-lg-3"
+                            >Allow Patient Portal</label
+                          >
+                          <div class="col-12 col-md-5 col-lg-3">
+                            <select name="allowpp" class="form-control">
+                              <option value="" {% if pt.allowpp == '' %} selected {% endif %}>Select</option>
+                              <option value="Yes" {% if pt.allowpp == 'Yes' %} selected {% endif %}>Yes</option>
+                              <option value="No" {% if pt.allowpp == 'No' %} selected {% endif %}>No</option>
+                            </select>
+                          </div>
+                        </div>
+        
+                        <div class="form-group row container">
+                          <label for="immstatus" class="col-form-label col-lg-3"
+                            >Immunization Registry Status</label
+                          >
+                          <div class="col-12 col-md-5 col-lg-3">
+                            <select name="immstatus" class="form-control">
+                              <option value="" {% if pt.immstatus == '' %} selected {% endif %}>Select</option>
+                              <option value="Active" {% if pt.immstatus == 'Active' %} selected {% endif %}>Active</option>
+                              <option value="Inactive" {% if pt.immstatus == 'Inactive' %} selected {% endif %}>Inactive</option>
+                              <option value="Unknown" {% if pt.immstatus == 'Unknown' %} selected {% endif %}>Unknown</option>
+                            </select>
+                          </div>
+                          <label for="imstatusdt" class="col-form-label col-lg-3"
+                            >Immunization Status Effective Date</label
+                          >
+                          <div class="col-12 col-md-5 col-lg-3">
+                            <input type="date" name="imstatusdt" class="form-control" {% if pt.date %} value="{{ pt.imstatusdt|date:'Y-m-d' }}" {% endif %}/>
+                          </div>
+                        </div>
+                        <div class="form-group row container">
+                          <label for="pubcode" class="col-form-label col-lg-3"
+                            >Publicity Code</label
+                          >
+                          <div class="col-12 col-md-5 col-lg-3">
+                            <input type="text" name="pubcode" class="form-control" value="{{ pt.pubcode }}"/>
+                          </div>
+                          <label for="pubcodedate" class="col-form-label col-lg-3"
+                            >Publicity Code Effective Date</label
+                          >
+                          <div class="col-12 col-md-5 col-lg-3">
+                            <input type="date" name="pubcodedate" class="form-control" {% if pt.date %} value="{{ pt.pubcodedate|date:'Y-m-d' }}" {% endif %}/>
+                          </div>
+                        </div>
+                        <div class="form-group row container">
+                          <label for="protind" class="col-form-label col-lg-3"
+                            >Protection Indicator</label
+                          >
+                          <div class="col-12 col-md-5 col-lg-3">
+                            <input type="text" name="protind" class="form-control" value="{{ pt.protind }}"/>
+                          </div>
+                          <label for="protinddate" class="col-form-label col-lg-3"
+                            >Protection Indicator Effective Date</label
+                          >
+                          <div class="col-12 col-md-5 col-lg-3">
+                            <input type="date" name="protinddate" class="form-control" {% if pt.date %} value="{{ pt.protinddate|date:'Y-m-d' }}" {% endif %}/>
+                          </div>
+                        </div>
+                        <div class="form-group row container">
+                          <label for="carestatus" class="col-form-label col-lg-3"
+                            >Care Team Status</label
+                          >
+                          <div class="col-12 col-md-5 col-lg-3">
+                            <select name="carestatus" class="form-control">
+                              <option value="Unassigned" {% if pt.carestatus  ==  'Unassigned' %} selected {% endif %}>Unassigned</option>
+                              <option value="Active" {% if pt.carestatus  ==  'Active' %} selected {% endif %}>Active</option>
+                              <option value="Inactive" {% if pt.carestatus  ==  'Inactive' %} selected {% endif %}>Inactive</option>
+                              <option value="Suspended" {% if pt.carestatus  ==  'Suspended' %} selected {% endif %}>Suspended</option>
+                            </select>
+                          </div>
+                          <label for="ptcat" class="col-form-label col-lg-3"
+                            >Patient Categories</label
+                          >
+                          <div class="col-12 col-md-5 col-lg-3">
+                            <select name="ptcat" class="form-control">
+                              <option value="" {% if pt.ptcat == '' %} selected {% endif %}>Select</option>
+                              <option value="1" {% if pt.ptcat == '1' %} selected {% endif %}>Group 1</option>
+                              <option value="2" {% if pt.ptcat == '2' %} selected {% endif %}>Group 2</option>
+                              <option value="3" {% if pt.ptcat == '3' %} selected {% endif %}>Group 3</option>
+                              <option value="4" {% if pt.ptcat == '4' %} selected {% endif %}>Group 4</option>
+                              <option value="5" {% if pt.ptcat == '5' %} selected {% endif %}>Group 5</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-group row container">
+                          <label for="careteam" class="col-form-label col-lg-3">Provider/Doctor ID</label>
+                          <div class="col-12 col-md-5 col-lg-3">
+                            <select name="careteam" class="form-control" required>
+                              <option value="" {% if pt.careteam  ==  '' %} selected {% endif %}>Select</option>
+                              {% for i in doct %}
+                              <option value="{{ i.registrationID }}" {% if pt.careteam ==  i.registrationID  %} selected {% endif %}>{{ i.name }}</option>
+                              {% endfor %}
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="card col-12 p-0">
+                    <div class="card-header bg-info cp" data-toggle="collapse" data-target="#employer">
+                      <h3 class="mb-0 text-white">
+                        EMPLOYER
+                      </h3>
+                    </div>
+                    <div id="employer" data-parent="#accordion" class="collapse">
+                      <div class="card-body">
+                        <div class="form-group row container">
+                          <label for="occupation" class="col-form-label col-lg-3"
+                            >Occupation</label
+                          >
+                          <div class="col-12 col-sm-5 col-lg-3">
+                            <input
+                              type="text"
+                              name="occupation"
+                              placeholder="Occupation"
+                              class="form-control"
+                              value="{{ pt.occupation }}"
+                            />
+                          </div>
+                          <label for="Industry" class="col-form-label col-lg-3"
+                            >Industry</label
+                          >
+                          <div class="col-12 col-sm-5 col-lg-3">
+                            <input
+                              type="text"
+                              name="industry"
+                              placeholder="Law/Engineering/Construction.."
+                              class="form-control"
+                              value="{{ pt.industry }}"
+                            />
+                          </div>
+                        </div>
+                        <div class="form-group row container">
+                          <label for="empname" class="col-form-label col-lg-3"
+                            >Employer Name</label
+                          >
+                          <div class="col-12 col-sm-5 col-lg-3">
+                            <input
+                              type="text"
+                              name="empname"
+                              placeholder="Employer Name"
+                              class="form-control"
+                              value="{{ pt.empname }}"
+                            />
+                          </div>
+                          <label for="empaddress" class="col-form-label col-lg-3"
+                            >Employer Address</label
+                          >
+                          <div class="col-12 col-sm-8 col-lg-3">
+                            <textarea
+                              name="empaddress"
+                              class="form-control"
+                              rows="3"
+                            >{{ pt.empaddress }}</textarea>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="card col-12 p-0">
+                    <div class="card-header bg-info cp" data-toggle="collapse" data-target="#stats">
+                      <h3 class="mb-0 text-white">
+                        STATS
+                      </h3>
+                    </div>
+                    <div id="stats" data-parent="#accordion" class="collapse">
+                      <div class="card-body">
+                        <div class="form-group row container">
+                          <label for="language" class="col-form-label col-lg-3"
+                            >Language</label
+                          >
+                          <div class="col-12 col-sm-5 col-lg-3">
+                            <select name="language" class="form-control">
+                              <option value="" {% if pt.language  ==  '' %} selected {% endif %}>Select</option>
+                              <option value="English" {% if pt.language  ==  'English' %} selected {% endif %}>English</option>
+                              <option value="Telugu" {% if pt.language  ==  'Telugu' %} selected {% endif %}>Telugu</option>
+                              <option value="Tamil" {% if pt.language  ==  'Tamil' %} selected {% endif %}>Tamil</option>
+                              <option value="Malayalam" {% if pt.language  ==  'Malayalam' %} selected {% endif %}>Malayalam</option>
+                              <option value="Hindi" {% if pt.language  ==  'Hindi' %} selected {% endif %}>Hindi</option>
+                              <option value="Kannada" {% if pt.language  ==  'Kannada' %} selected {% endif %}>Kannada</option>
+                            </select>
+                          </div>
+                          <label for="ethnicity" class="col-form-label col-lg-3"
+                            >Ethnicity</label
+                          >
+                          <div class="col-12 col-sm-5 col-lg-3">
+                            <select name="ethnicity" class="form-control">
+                              <option value="Unassigned" {% if pt.etnicity  ==  'Unassigned' %} selected {% endif %}>Unassigned</option>
+                              <option value="Declined to specify" {% if pt.etnicity  ==  'Declined to specify' %} selected {% endif %}>Declined to specify</option>
+                              <option value="Hispanic or Latino" {% if pt.etnicity  ==  'Hispanic or Latino' %} selected {% endif %}>Hispanic or Latino</option>
+                              <option value="Not Hispanic or Latino" {% if pt.etnicity  ==  'Not Hispanic or Latino' %} selected {% endif %}>
+                                Not Hispanic or Latino
+                              </option>
+                            </select>
+                          </div>
+                        </div>
+        
+                        <div class="form-group row container">
+                          <label for="famsize" class="col-form-label col-lg-3"
+                            >Family Size</label
+                          >
+                          <div class="col-12 col-sm-8 col-lg-3">
+                            <input type="text" name="famsize" class="form-control" value="{{ pt.famsize }}"/>
+                          </div>
+                        </div>
+        
+                        <div class="form-group row container">
+                          <label for="race" class="col-form-label col-lg-3"
+                            >Financial Review Date</label
+                          >
+                          <div class="col-12 col-sm-5 col-lg-3">
+                            <input type="date" name="finreview" class="form-control" {% if pt.finreview %} value="{{ pt.finreview|date:'Y-m-d' }}" {% endif %}/>
+                          </div>
+                          <label for="income" class="col-form-label col-lg-3"
+                            >Monthly income</label
+                          >
+                          <div class="col-12 col-sm-8 col-lg-3">
+                            <input type="text" name="income" class="form-control" value="{{ pt.income }}"/>
+                          </div>
+                        </div>
+        
+                        <div class="form-group row container">
+                          <label for="homeless" class="col-form-label col-lg-3"
+                            >Homeless etc,?</label
+                          >
+                          <div class="col-12 col-sm-5 col-lg-3">
+                            <input type="text" name="homeless" class="form-control" value="{{ pt.homeless }}"/>
+                          </div>
+                          <label for="migrant" class="col-form-label col-lg-3"
+                            >Migrant/seasonal</label
+                          >
+                          <div class="col-12 col-sm-8 col-lg-3">
+                            <select name="migrant" class="form-control">
+                              <option value="" {% if pt.migrant  ==  '' %} selected {% endif %}>Select</option>
+                              <option value="Yes" {% if pt.migrant  ==  'Yes' %} selected {% endif %}>Yes</option>
+                              <option value="No" {% if pt.migrant  ==  'No' %} selected {% endif %}>No</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="form-group row container">
+                          <label for="religion" class="col-form-label col-lg-3"
+                            >Religion</label
+                          >
+                          <div class="col-12 col-sm-5 col-lg-3">
+                            <input type="text" name="religion" class="form-control" value="{{ pt.religion }}"/>
+                          </div>
+                          <label for="vfc" class="col-form-label col-lg-3"
+                            >VFC Eligible</label
+                          >
+                          <div class="col-12 col-sm-8 col-lg-3">
+                            <select name="vfc" class="form-control">
+                              <option value="" {% if pt.vfc  ==  '' %} selected {% endif %}>Select</option>
+                              <option value="Yes" {% if pt.vfc  ==  'Yes' %} selected {% endif %}>Yes</option>
+                              <option value="No" {% if pt.vfc  ==  'No' %} selected {% endif %}>No</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="card col-12 p-0">
+                    <div class="card-header bg-info cp" data-toggle="collapse" data-target="#misc">
+                      <h3 class="mb-0 text-white">
+                        MISC
+                      </h3>
+                    </div>
+                    <div id="misc" data-parent="#accordion" class="collapse">
+                      <div class="card-body">
+                        <div class="form-group row container">
+                          <label for="deceased" class="col-form-label col-lg-3"
+                            >Date Deceased</label
+                          >
+                          <div class="col-12 col-sm-5 col-lg-3">
+                            <input type="date" name="deceased" class="form-control" {% if pt.deceased %} value="{{ pt.deceased|date:'Y-m-d' }}" {% endif %}/>
+                          </div>
+                          <label for="reasondeceased" class="col-form-label col-lg-3"
+                            >Reason Deceased</label
+                          >
+                          <div class="col-12 col-sm-5 col-lg-3">
+                            <input type="text" name="reasondeceased" class="form-control" value="{{ pt.deceased }}"/>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="card col-12 p-0">
+                    <div class="card-header bg-info cp" data-toggle="collapse" data-target="#guardian">
+                      <h3 class="mb-0 text-white">
+                          GUARDIAN
+                        
+                      </h3>
+                    </div>
+                    <div id="guardian" data-parent="#accordion" class="collapse">
+                      <div class="card-body">
+                        <div class="form-group row container">
+                          <label for="guardian" class="col-form-label col-lg-3"
+                            >Guardian Name</label
+                          >
+                          <div class="col-12 col-sm-5 col-lg-3">
+                            <input type="text" name="guardian" class="form-control" value="{{ pt.guardian }}" required/>
+                          </div>
+                          <label for="relationship" class="col-form-label col-lg-3"
+                            >Relationship</label
+                          >
+                          <div class="col-12 col-sm-5 col-lg-3">
+                            <input
+                              type="text"
+                              name="guardianrelation"
+                              class="form-control"
+                              value="{{ pt.guardianrelation }}"
+                              required
+                            />
+                          </div>
+                        </div>
+                        <div class="form-group row container">
+                          <label for="guardiansex" class="col-form-label col-lg-3"
+                            >Gender</label
+                          >
+                          <div class="col-12 col-sm-5 col-lg-3">
+                            <select name="guardiansex" class="form-control">
+                              <option value="" {% if pt.guardiansex  ==  '' %} selected {% endif %}>Select</option>
+                              <option value="Male" {% if pt.guardiansex  ==  'Male' %} selected {% endif %}>Male</option>
+                              <option value="Female" {% if pt.guardiansex  ==  'Female' %} selected {% endif %}>Female</option>
+                              <option value="Other" {% if pt.guardiansex  ==  'Other' %} selected {% endif %}>Other</option>
+                            </select>
+                          </div>
+                        </div>
+        
+                        <div class="form-group row container">
+                          <label for="guardaddress" class="col-form-label col-lg-3"
+                            >Address</label
+                          >
+                          <div class="col-12 col-sm-5 col-lg-3">
+                            <input
+                              type="text"
+                              name="guardaddress"
+                              placeholder="Address Line 1"
+                              class="form-control"
+                              value="{{ pt.guardianaddress }}"
+                            />
+                          </div>
+                          <div class="col-12 col-sm-5 col-lg-3">
+                            <input
+                              type="text"
+                              name="guardaddressline2"
+                              placeholder="Address Line 2"
+                              class="form-control"
+                              value="{{ pt.guardianaddressline2 }}"
+                            />
+                          </div>
+                        </div>
+                        <div class="form-group row container">
+                          <label for="guardcity" class="col-form-label col-lg-3"
+                            >City</label
+                          >
+                          <div class="col-12 col-sm-5 col-lg-3">
+                            <input
+                              type="text"
+                              name="guardcity"
+                              placeholder="City"
+                              class="form-control"
+                              value="{{ pt.guardiancity }}"
+                            />
+                          </div>
+                          <div class="col-12 col-sm-5 col-lg-3">
+                            <input
+                              type="text"
+                              name="guardstate"
+                              placeholder="State"
+                              class="form-control"
+                              value="{{ pt.guardianstate }}"
+                            />
+                          </div>
+                        </div>
+                        <div class="form-group row container">
+                          <label for="guardpin" class="col-form-label col-lg-3"
+                            >Pincode</label
+                          >
+                          <div class="col-12 col-sm-5 col-lg-3">
+                            <input
+                              type="text"
+                              name="guardpin"
+                              placeholder="Postal PIN"
+                              class="form-control"
+                              value="{{ pt.guardianpin }}"
+                            />
+                          </div>
+                          <div class="col-12 col-sm-5 col-lg-3">
+                            <input
+                              type="country"
+                              name="guardcountry"
+                              placeholder="Country"
+                              class="form-control"
+                              value="{{ pt.guardiancountry }}"
+                            />
+                          </div>
+                        </div>
+                        <div class="form-group row container">
+                          <label for="guardphone" class="col-form-label col-12"
+                            >Mobile</label
+                          >
+                          <div class="col-12 col-sm-7 col-lg-4">
+                            <input
+                              type="text"
+                              name="guardphone"
+                              placeholder="10 digit Mobile"
+                              class="form-control"
+                              value="{{ pt.guardianphone }}"
+                              required
+                            />
+                          </div>
+                          <label for="guardemail" class="col-form-label col-12"
+                            >Email ID</label
+                          >
+                          <div class="col-12 col-sm-7 col-lg-4">
+                            <input
+                              type="email"
+                              name="guardemail"
+                              placeholder="abc@domain.com"
+                              class="form-control"
+                              value="{{ pt.guardianemail }}"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        
+                <div class="text-center">
+                  <button type="submit" class="btn text-center btn-outline-warning btn-lg my-5 ">SAVE</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      <!-- ADD ENCOUNTER -->
+
+
       <div class="modal fade" id="newencounter" tabindex="-1" role="dialog" aria-labelledby="newencounter" aria-hidden="true">
         <div class="modal-dialog modal-xl" role="document">
           <div class="modal-content">
@@ -1062,13 +1742,12 @@ background-color: rgb(217, 192, 255);
                   <label for="encprovider" class="col-form-label col-lg-3"
                     >Encounter Provider</label>
                   <div class="col-12 col-sm-5 col-lg-3">
-                    <input type="text" name="encprovider" class="form-control" required>
-                    <!-- <select name="encprovider" class="form-control">
-                      <option value="Mr">Mr</option>
-                      <option value="Mrs">Mrs</option>
-                      <option value="Ms">Ms</option>
-                      <option value="Dr">Dr</option>
-                    </select> -->
+                    <select name="encprovider" class="form-control" required>
+                      <option value="">Select</option>
+                      {% for i in doct %}
+                      <option value="{{ i.registrationID }}">{{ i.name }}</option>
+                      {% endfor %}
+                    </select>
                   </div>
                   <label for="referprovider" class="col-form-label col-lg-3"
                     >Referring Provider</label>
@@ -1144,8 +1823,14 @@ background-color: rgb(217, 192, 255);
 
 
 
-      <!-- PRESCRIPTIONS -->
 
+
+{% if request.user.is_staff %}
+
+
+
+
+      <!-- PRESCRIPTIONS -->
 
 
       <div
@@ -1183,7 +1868,11 @@ background-color: rgb(217, 192, 255);
                 <div class="row form-group container">
                   <div class="col-12 col-md-4"><label for="provider" class="col-form-label">Provider</label></div>
                   <div class="col-12 col-md-4">
-                    <input type="text" name="provider" class="form-control" required>
+                    <select name="provider" class="form-control">
+                      {% for i in doct %}
+                      <option value="{{ i.registrationID }}">{{ i.name }}</option>
+                      {% endfor %}
+                    </select>                 
                   </div>
                 </div>
 
@@ -1233,19 +1922,7 @@ background-color: rgb(217, 192, 255);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
       <!-- MEDICAL PROBLEMS -->
 
 
@@ -1403,7 +2080,7 @@ background-color: rgb(217, 192, 255);
       </div>
     </div>
 
-
+    {% endif %}
       <footer class="site-footer">
         <div class="container">
           <div class="row">

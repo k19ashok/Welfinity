@@ -1,0 +1,390 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <!-- Google Tag Manager -->
+     <script
+     type="text/javascript"
+     async=""
+     src="https://www.googletagmanager.com/gtag/js?id=G-6Q5PTWDYFM&amp;l=dataLayer&amp;cx=c"
+   ></script>
+   <script
+     async=""
+     src="https://www.googletagmanager.com/gtm.js?id=GTM-KZ9FQPX"
+   ></script>
+   <script>
+     (function (w, d, s, l, i) {
+       w[l] = w[l] || [];
+       w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+       var f = d.getElementsByTagName(s)[0],
+         j = d.createElement(s),
+         dl = l != "dataLayer" ? "&l=" + l : "";
+       j.async = true;
+       j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+       f.parentNode.insertBefore(j, f);
+     })(window, document, "script", "dataLayer", "GTM-KZ9FQPX");
+   </script>
+   <!-- End Google Tag Manager -->
+   <meta charset="utf-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="viewport" content="width=device-width,initial-scale=1" />
+   <meta
+     name="title"
+     content="Welfinity Healthcare- Care At home, Nursing Care, Elder care, Nanny Care, Critical Care"
+   />
+   <meta
+     name="description"
+     content="Welfinity Healthcare Offers Personal Care for Elders, Nursing care for Needy, Nanny Care for babies , Critical Care of Sick in  Hyderabad , Bangalore cities and in Telangana, Andhra Pradesh, Karnataka as well"
+   />
+   <meta
+     name="abstract"
+     content="Welfinity Healthcare Offers Personal Care for Elders, Nursing care for Needy, Nanny Care for babies , Critical Care of Sick in  Hyderabad , Bangalore cities and in Telangana, Andhra Pradesh, Karnataka as well"
+   />
+   <meta
+     name="keywords"
+     content="Personal Care, Nursing care, Nanny Care, Critical Care, India , Hyderabad, Telangana, Andhrapradesh, Karnakata"
+   />
+   <meta http-equiv="cache-control" content="no-cache" />
+   <meta http-equiv="expires" content="0" />
+   <meta http-equiv="pragma" content="no-cache" />
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   <link
+     rel="stylesheet"
+     href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+   />
+   <link
+     rel="stylesheet"
+     href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+   />
+   <link
+     rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+   />
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+   <title>Patient Dashboard</title>
+
+   <link href="js/app.7a158adf.js" rel="preload" as="script" />
+   <link href="js/chunk-vendors.8d040eea.js" rel="preload" as="script" />
+   <link
+     href="{% static 'css/chunk-vendors.d3feeb92.css' %}"
+     rel="stylesheet"
+   />
+   <link href="{% static 'css/app.d80733da.css' %}" rel="stylesheet" />
+   <link rel="stylesheet" 
+   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">   
+   <link rel=”stylesheet” href=”//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css”>
+  <link rel=”stylesheet” href=”https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css”>
+  <script src=”//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js”></script>
+<style>
+  .row-content
+{
+    margin: 0px auto;
+    padding: 50px 0px 50px 0px;
+}
+.nav-tabs .nav-items
+{
+  size: 80%;
+}
+
+.mycolor
+{
+background-color: rgb(217, 192, 255);
+}
+
+.col-form-label
+{
+  font-weight: bolder;
+}
+.cp
+{
+  cursor: pointer;
+}
+
+.bg
+{
+  background-image: url("{% static 'img/doc.jpg' %}");
+  background-size: contain;
+  min-height: 1400px;
+  background-repeat: round;
+}
+body{
+  background-color: rgb(227, 237, 245);
+}
+.navbar{
+  background-color: rgb(177, 218, 226);
+}
+</style>
+
+</head>
+<body>
+     <div id="nav">
+        <div>
+          <nav class="navbar navbar-expand-lg">
+            <div class="container">
+              <a href="#" class="navbar-brand"
+                ><img
+                  src="{% static 'img/nav_logo.31378e7a.png' %}"
+                  alt="nav_logo"
+                  width="200rem" /></a
+              ><button
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+                class="navbar-toggler"
+              >
+                <span class="navbar-toggler-icon"
+                  ></span>
+                  <!-- <i id="toggler-icon" class="fa fa-navicon"></i> -->
+              </button>
+              <div id="navbarNav" class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+
+                  <!-- <li class="nav-item">
+                    <a
+                      href="/login"
+                      class="nav-link contact"
+                      data-toggle="collapse"
+                      data-target="#navbarNav"
+                      >Sign In
+                    </a>
+                  </li> -->
+                  
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+      <div class="container-fluid my-5 bg">
+       
+          <div class="row justify-content-center align-items-center" style="padding-top:300px;">
+            
+              <div class="container">
+                <div class="card">
+                  <div class="card-header  bg-info">
+                    <h2 class="text-center">WELFINTY HEALTHCARE <br> <small>Care at your doorstep</small></h2>
+                  </div>
+                  <div class="card-body text-center">
+                    <button class="btn btn-success btn-lg" data-toggle="modal" data-target="#login">ENTER</button>
+                    <div class="row justify-content-center mt-2 text-danger">
+                      {% for i in messages %}
+                      {{ i }}
+                      {% endfor %}
+                      
+                    </div>
+                    </div>
+                </div>
+              </div>
+
+          </div>
+
+
+          
+      <div
+      class="modal fade"
+      id="login"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="login"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-sm-lg modal-md-sm" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="loginlabel">LOGIN</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          
+            <div class="modal-body">
+              <div class="container">
+                <form action="{% url 'log' %}" method="post">
+                  {% csrf_token %}
+                  <div class="form-group row container">
+                    <label for="username" class="col-form-label">USERNAME</label>
+                    <input type="text" class="form-control" name="username" required autofocus>
+                    <label for="password" class="col-form-label">PASSWORD</label>
+                    <input type="password" class="form-control" name="password" required>
+                  </div>
+                  <div class="form-group row container">
+                    <button type="submit" class="btn btn-success">LOGIN</button>
+                  </div>
+                  <a href="" class="text-danger">Forgot Password</a>
+                </form>
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+        
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <footer class="site-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-5">
+              <h1 class="mb-4 text-white">
+                We make living <strong>better</strong>.
+              </h1>
+            </div>
+            <div data-aos-delay="50" class="col-lg-3 col-md-6 col-12">
+              <h4 class="my-4">Contact Info</h4>
+              <p class="mb-1">
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAhCAYAAACbffiEAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAFlSURBVHja7NixS0JRFMfxr08fhYKCEehk4ObiEDjk5N/gHyC4uDhF81uCcHB0aY1oaXD1/QG+xb0hRVQEtUG5RCXvpqctamrxgcn9/QH38OFyzrnckNyeCwcQiwOJgRiIgRiIgRiIgQAhETmIJ0okyMOz2SbD4Stgk8lEGY0ugysmAeTtTUul8iieNxbf34jvb8TzxlKrtUWpdRAlJRAIOOL7GxERqVTupFZrfwPhOhDIzntE6y1ab4lGI9zf9+j1XgiHPykWzyiX87y/f2LbFrZt7XePTCYrBoMlrvvEYqF4eJgBsFgout0RpVKOXC5JNnuy31NL6y0fH5p4/IhWy6PfXwGQz59SrRYCu5Gd7xHbtkgkbgCo1y9QaolSS6rVAlpvicUaO0cENrWUWovjuNLpPP+aWo7jynSq/kez/0w63WQ+XwOQSh0zm12Zzf4nJNk4Mr8oBmIgBmIgBmIgBrJn+RoA0pWnbAC/lZYAAAAASUVORK5CYII="
+                  width="20px"
+                  alt="indiaflag"
+                /><a href="tel:+91 808 877 3805"> +91 8088773805</a>
+              </p>
+              <p class="mb-1">
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAhCAYAAACbffiEAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAFlSURBVHja7NixS0JRFMfxr08fhYKCEehk4ObiEDjk5N/gHyC4uDhF81uCcHB0aY1oaXD1/QG+xb0hRVQEtUG5RCXvpqctamrxgcn9/QH38OFyzrnckNyeCwcQiwOJgRiIgRiIgRiIgQAhETmIJ0okyMOz2SbD4Stgk8lEGY0ugysmAeTtTUul8iieNxbf34jvb8TzxlKrtUWpdRAlJRAIOOL7GxERqVTupFZrfwPhOhDIzntE6y1ab4lGI9zf9+j1XgiHPykWzyiX87y/f2LbFrZt7XePTCYrBoMlrvvEYqF4eJgBsFgout0RpVKOXC5JNnuy31NL6y0fH5p4/IhWy6PfXwGQz59SrRYCu5Gd7xHbtkgkbgCo1y9QaolSS6rVAlpvicUaO0cENrWUWovjuNLpPP+aWo7jynSq/kez/0w63WQ+XwOQSh0zm12Zzf4nJNk4Mr8oBmIgBmIgBmIgBrJn+RoA0pWnbAC/lZYAAAAASUVORK5CYII="
+                  width="20px"
+                  alt="indiaflag"
+                /><a href="tel:+91 850 010 8567"> +91 8500108567 </a>
+              </p>
+              <p class="mb-1">
+                <img
+                  src="data:image/png;base64,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"
+                  width="20px"
+                /><a href="tel:+1 844 Wel Asst"> +1 844 Wel Asst </a>
+              </p>
+              <p>
+                <a href="mailto:info@welfinity.com"
+                  ><i class="fa fa-envelope mr-2 footer-icon"></i>
+                  info@welfinity.com
+                </a>
+              </p>
+            </div>
+            <div data-aos-delay="50" class="col-lg-3 col-md-6 col-12">
+              <h4 class="my-4">Visit Us</h4>
+              <p class="mb-1">
+                <i class="fa fa-home mr-2 footer-icon"></i> 447, CQAL Layout,
+                Sahakarnagar, Bangalore
+              </p>
+            </div>
+            <div
+              data-aos-delay="50"
+              class="col-lg-4 mx-lg-auto text-center col-md-8 col-12"
+            >
+              <p class="copyright-text">
+                © 2020-2021 Welfinity Healthcare Pvt Ltd. <br />
+              </p>
+            </div>
+            <div data-aos-delay="50" class="col-lg-4 mx-lg-auto col-md-6 col-12">
+              <ul class="footer-link">
+                <li><a href="#">Disclaimer</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Privacy</a></li>
+              </ul>
+            </div>
+            <div data-aos-delay="60" class="col-lg-4 mx-lg-auto col-md-6 col-12">
+              <ul class="social-icon">
+                <li>
+                  <a
+                    href="https://wa.me/918088773805"
+                    target="_blank"
+                    class="fa fa-whatsapp"
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.instagram.com/welfinity/?hl=en"
+                    target="_blank"
+                    class="fa fa-instagram"
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.facebook.com/welfinityhealthcare"
+                    target="_blank"
+                    class="fa fa-facebook"
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://twitter.com/welfinity"
+                    target="_blank"
+                    class="fa fa-twitter"
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/company/welfinity/"
+                    target="_blank"
+                    class="fa fa-linkedin"
+                  ></a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-1 mx-lg-auto col-md-6 col-12">
+              <a
+                href=" https://play.google.com/store/apps/details?id=com.welfinity.www&amp;pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
+                ><img
+                  alt="Get it on Google Play"
+                  src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                  width="140rem"
+              /></a>
+            </div>
+          </div>
+        </div>
+        <!---->
+      </footer>
+    </div>
+<script>
+  $('.modal').on('shown.bs.modal', function() {
+    $(this).find('[autofocus]').focus();
+  });
+</script>
+</body>
+</html>
