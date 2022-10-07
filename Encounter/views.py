@@ -409,11 +409,12 @@ def encSummary(request,pid,encid):
     enc=Encounter.objects.get(encid=encid)
     vitals=Vitals.objects.get(encid=encid)
     notes=ClinicalNotes.objects.get(encid=encid)
+    doct=Doctors.objects.all()
     ros=ROS.objects.get(encid=encid)
     soap=SOAP.objects.get(encid=encid)
     try:
         p=Prescription.objects.filter(pid=pid)
-        return render(request,'encounter.html',{'enc':enc,'pt':pt,'vitals':vitals,'notes':notes,'ros':ros,'soap':soap,'p':p})
+        return render(request,'encounter.html',{'enc':enc,'pt':pt,'vitals':vitals,'notes':notes,'ros':ros,'soap':soap,'p':p,'doct':doct})
 
     except:
         return render(request,'encounter.html',{'enc':enc,'pt':pt,'vitals':vitals,'notes':notes,'ros':ros,'soap':soap})

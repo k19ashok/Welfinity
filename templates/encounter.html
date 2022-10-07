@@ -748,7 +748,7 @@ body{
                         <h6 class="fw-bold">kg</h6>
                       </div>
                       <div class="col-2">
-                        <input type="text" class="form-control" name="weight" value="{{ vitals.weight }}"/>
+                        <input type="text" class="form-control" name="weight" {% if vitals.weight %} value="{{ vitals.weight }}" {% endif %}/>
                       </div>
                       <div class="col-4">
                         <select name="weightabn" class="form-control">
@@ -771,7 +771,7 @@ body{
                         <h6 class="fw-bold">cm</h6>
                       </div>
                       <div class="col-2">
-                        <input type="text" class="form-control" name="height" value="{{ vitals.height }}"/>
+                        <input type="text" class="form-control" name="height" {% if vitals.height %} value="{{ vitals.height }}" {% endif %}/>
                       </div>
                       <div class="col-4">
                         <select name="heightabn" class="form-control">
@@ -796,7 +796,7 @@ body{
                           type="text"
                           class="form-control"
                           name="bpsystolic"
-                          value="{{ vitals.bpsystolic }}"
+                          {% if vitals.bpsystolic %} value="{{ vitals.bpsystolic }}" {% endif %}
                         />
                       </div>
                       <div class="col-4">
@@ -822,7 +822,7 @@ body{
                           type="text"
                           class="form-control"
                           name="bpdiastolic"
-                          value="{{ vitals.bpdiastolic }}"
+                          {% if vitals.bpdiastolic %} value="{{ vitals.bpdiastolic }}" {% endif %}
                         />
                       </div>
                       <div class="col-4">
@@ -844,7 +844,7 @@ body{
                         <h6 class="fw-bold">per min</h6>
                       </div>
                       <div class="col-2">
-                        <input type="text" class="form-control" name="pulse" value="{{ vitals.pulse }}"/>
+                        <input type="text" class="form-control" name="pulse" {% if vitals.pulse %} value="{{ vitals.pulse }}" {% endif %}/>
                       </div>
                       <div class="col-4">
                         <select name="pulseabn" class="form-control">
@@ -869,7 +869,7 @@ body{
                           type="text"
                           class="form-control"
                           name="respiration"
-                          value="{{ vitals.respiration }}"
+                          {% if vitals.respiration %} value="{{ vitals.respiration }}" {% endif %}
                         />
                       </div>
                       <div class="col-4">
@@ -895,7 +895,7 @@ body{
                           type="text"
                           class="form-control"
                           name="temperature"
-                          value="{{ vitals.temperature }}"
+                          {% if vitals.temperature %} value="{{ vitals.temperature }}" {% endif %}
                         />
                       </div>
                       <div class="col-4">
@@ -921,7 +921,7 @@ body{
                           type="text"
                           class="form-control"
                           name="oxygensaturation"
-                          value="{{ vitals.oxygensaturation }}"
+                          {% if vitals.oxygensaturation %} value="{{ vitals.oxygensaturation }}" {% endif %}
                         />
                       </div>
                       <div class="col-4">
@@ -947,7 +947,7 @@ body{
                           type="text"
                           class="form-control"
                           name="oxygenflowrate"
-                          value="{{ vitals.oxygenflowrate }}"
+                          {% if vitals.oxygenflowrate %} value="{{ vitals.oxygenflowrate }}" {% endif %}
                         />
                       </div>
                       <div class="col-4">
@@ -973,8 +973,7 @@ body{
                           type="text"
                           class="form-control"
                           name="inhaledoxygenconc"
-                          value="{{ vitals.inhaledoxygenconc }}"
-                        />
+                          {% if vitals.inhaledoxygenconc %} value="{{ vitals.inhaledoxygenconc }}" {% endif %}                        />
                       </div>
                       <div class="col-4">
                         <select name="inhaledoxygenconcabn" class="form-control">
@@ -999,8 +998,7 @@ body{
                           type="text"
                           class="form-control"
                           name="headcircumference"
-                          value="{{ vitals.headcircumference }}"
-                        />
+                          {% if vitals.headcircumference %} value="{{ vitals.headcircumference }}" {% endif %}                        />
                       </div>
                       <div class="col-4">
                         <select name="headcircumferenceabn" class="form-control">
@@ -1025,7 +1023,7 @@ body{
                           type="text"
                           class="form-control"
                           name="waistcircumference"
-                          value="{{ vitals.waistcircumference }}"
+                          {% if vitals.waistcircumference %} value="{{ vitals.waistcircumference }}" {% endif %}
                         />
                       </div>
                       <div class="col-4">
@@ -1047,7 +1045,7 @@ body{
                         <h6 class="fw-bold">kg/m^2</h6> 
                       </div>
                       <div class="col-2">
-                        <input type="text" class="form-control" name="bmi" value="{{ vitals.bmi }}"/>
+                        <input type="text" class="form-control" name="bmi" {% if vitals.bmi %} value="{{ vitals.bmi }}" {% endif %}/>
                       </div>
                       <div class="col-4">
                         <select name="bmiabn" class="form-control">
@@ -1072,7 +1070,7 @@ body{
                           type="text"
                           class="form-control"
                           name="pediatricbmipercentile"
-                          value="{{ vitals.pediatricbmipercentile }}"
+                          {% if vitals.pediatricbmipercentile %} value="{{ vitals.pediatricbmipercentile }}" {% endif %}
                         />
                       </div>
                       <div class="col-4">
