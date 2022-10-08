@@ -71,7 +71,10 @@ def log(request):
             if user.is_staff:
                 return redirect('doc')
             else:
-                pt=PatientData.objects.get(phone=username)
+                try:
+                    pt=PatientData.objects.get(phone=username)
+                except:
+                    pt=PatientData.objects.get(guardianphone=username)
                 return redirect('dash',pt.pid)
         else:
             messages.info(request,"WRONG PASSWORD")
