@@ -26,7 +26,10 @@ def home(request):
             return redirect('doc')
         else:
             print(user.username)
-            pt=PatientData.objects.get(phone=user.username)
+            try:
+                pt=PatientData.objects.get(phone=user.username)
+            except:
+                pt=PatientData.objects.get(guardianphone=user.username)
             return redirect('dash',pt.pid)
     return render(request,'home.html')
 
